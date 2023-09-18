@@ -1,0 +1,34 @@
+.header {
+    display: grid;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-default);
+    padding: 0 calc(10% + 100px);
+
+    &__logo {
+        font-size: 36px;
+        font-weight: 900;
+        padding: 15px 0 0 0;
+        color: var(--color-text-header);
+
+        svg {
+            fill: var(--color-text-header);
+            max-height: 45px;
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            svg {
+                animation: svg-spin infinite 20s linear;
+            }
+        }
+
+        @keyframes svg-spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
