@@ -1,0 +1,44 @@
+@import './fonts.scss';
+@import './_colors.scss';
+
+/* stylelint-disable-next-line block-no-empty */
+:root {
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h4,
+h5,
+p {
+    margin: 0;
+}
+
+/* stylelint-disable-next-line block-no-empty */
+@media (prefers-color-scheme: dark) {
+}
+
+.Toastify__toast {
+    font-family: 'Roboto', sans-serif !important;
+
+    div[role='progressbar'] {
+        background: var(--color-primary) !important;
+    }
+
+    div[role='progressbar'].Toastify__progress-bar--error {
+        background: var(--color-danger) !important;
+    }
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    button {
+        display: none !important;
+    }
+}

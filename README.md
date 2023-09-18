@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Дипломная работа к профессии Frontend-разработчик «Система бронирования ж/д билетов»
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Краткое описание задачи дипломной работы
 
-## Available Scripts
+Создать SPA на React для сервиса покупки билетов на ж/д, свёрстанное по [макетам в Figma](https://www.figma.com/file/7981GjEsjSpBUKolk4xFoT/%D0%97%D0%B0%D0%BA%D0%B0%D0%B7-%D0%B1%D0%B8%D0%BB%D0%B5%D1%82%D0%BE%D0%B2?node-id=0%3A1), в котором в качестве API используется [внешний сервер](https://students.netoservices.ru/fe-diplom/).
 
-In the project directory, you can run:
+## Этапы разработки
 
-### `npm start`
+1. [Установка и настройка проекта](./reference/steps/setup.md).
+2. [Вёрстка проекта и роутинг](./reference/steps/markup.md).
+3. [Компоненты](./reference/steps/сomponents.md).
+4. [Собираем всё вместе](./reference/steps/finish.md).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Описание проекта
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Основные элементы
 
-### `npm test`
+1. Вагон.
+1. Направление.
+1. Группа направлений.
+1. Место (билет).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Вагон
 
-### `npm run build`
+1. Вагон может быть одним из типов: сидячий, люкс (СВ), купе, плацкарт.
+1. У каждого типа вагона своя карта рассадки мест.
+1. У каждого вагона своя стоимость билетов.
+1. Для каждого вагона есть возможность выбора дополнительных услуг:
+   бельё, кондиционер и Wi-Fi.
+1. Для некоторых вагонов стоимость белья включена в стоимость билета, то есть стоимость белья не должна прибавляться при формировании конечной стоимости билета.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Направление
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Направление — путь движения вагона из одного города в другой.
+1. Направление предполагает движение поезда только в одну сторону.
+1. Направление имеет дату отправления и дату прибытия.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Группа направлений
 
-### `npm run eject`
+1. Используется для того, чтобы обеспечить возможность путешествия из одного города в другой и обратно.
+1. Объединяет в себе два направления
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Место (билет)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Имеет свой номер на карте вагона.
+1. Может быть занято другим пассажиром.
+1. Закреплено за конкретным направлением.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Далее [Информация по API](./reference/api.md)
