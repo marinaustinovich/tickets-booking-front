@@ -1,0 +1,17 @@
+{
+    "year": "2018 WEB",
+    "contacts": {
+        "title": "Contact us",
+        "phone-number": "8 (800) 000 00 00",
+        "email": "inbox@mail.ru",
+        "skype": "tu.train.tickets",
+        "address": "Moscow st. Moskovskaya 27-35 555 555"
+    },
+    "subscription": {
+       "title": "Subscription",
+       "input-label": "Stay up to date",
+       "placeholder": "e-mail",
+       "button-label": "send",
+       "subscription-label": "Follow Us"
+    }
+}

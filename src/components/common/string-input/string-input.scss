@@ -1,0 +1,70 @@
+/* stylelint-disable block-no-empty */
+.string-input {
+    width: 100%;
+
+    &__label {
+        width: 100%;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: normal;
+        color: var(--color-text-header);
+        margin-bottom: 7px;
+        display: block;
+
+        &-required {
+            color: var(--color-danger);
+        }
+    }
+
+    &__textarea-input {
+        height: 100px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: normal;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        padding: 17px;
+        border: 1px solid var( --color-button-text-default);
+        border-radius: 3px;
+        transition: border 0.3s;
+        color: var(--color-button-text-default);
+
+        &--disabled {
+            background-color: var(--color-input-background-disabled);
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover:not(&--warning, &--disabled) {
+            border: 1px solid var(--color-input-border-hover);
+        }
+
+        &:focus:not(&--warning) {
+            border: 1px solid var(--color-primary);
+        }
+
+        &--warning {
+            border: 1px solid var(--color-danger);
+        }
+
+        &::placeholder {
+            color: var(--color-text-header);
+        }
+    }
+
+    &__help {
+        font-weight: 600;
+        width: 100%;
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 4px;
+        color: var(--color-text-default);
+
+        &--warning {
+            color: var(--color-danger);
+        }
+    }
+}

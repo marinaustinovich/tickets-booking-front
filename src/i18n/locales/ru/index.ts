@@ -1,7 +1,9 @@
 import global from './global';
+import common from './common';
 
 export const ru = {
-    global
+    global,
+    common,
 };
 
 export default ru;

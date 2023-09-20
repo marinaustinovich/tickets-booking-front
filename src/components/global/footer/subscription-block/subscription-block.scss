@@ -1,0 +1,27 @@
+.subscription-block {
+    display: grid;
+    gap: 28px;
+    font-size: 24px;
+    font-weight: 400;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 500;
+        color: var(--color-text-white);
+    }
+
+    &__list {
+        display: flex;
+        gap: 48px;
+        
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__row {
+        display: grid;
+        gap: 28px;
+    }
+}

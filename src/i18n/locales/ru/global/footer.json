@@ -1,0 +1,17 @@
+{
+    "year": "2018 WEB",
+    "contacts": {
+        "title": "Свяжитесь с нами",
+        "phone-number": "8 (800) 000 00 00",
+        "email": "inbox@mail.ru",
+        "skype": "tu.train.tickets",
+        "address": "г. Москва ул. Московская 27-35 555 555"
+    },
+    "subscription": {
+       "title": "Подписка",
+       "input-label": "Будьте в курсе событий",
+       "placeholder": "e-mail",
+       "button-label": "отправить",
+       "subscription-label": "Подписывайтесь на нас"
+    }
+}

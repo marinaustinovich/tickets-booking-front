@@ -1,0 +1,17 @@
+.footer {
+    display: grid;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-header);   
+
+    &__contacts-subscription {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 190px;
+        padding: 49px calc(10% + 145px);
+        border-bottom: 1px solid var(--color-text-header);
+    }
+
+    &__branding {
+        padding: 0 calc(10% + 100px);
+    }
+}

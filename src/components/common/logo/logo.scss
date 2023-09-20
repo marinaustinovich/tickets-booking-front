@@ -1,0 +1,29 @@
+.logo {
+    display: flex;
+    gap: 10px;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--color-text-header);
+
+    svg {
+        fill: var(--color-text-header);
+        pointer-events: none;
+    }
+
+    &.small {
+        padding: 22px 0 33px 0;
+
+        svg {
+            width: 100%;
+            max-height: 40px;
+        }
+    }
+
+    &.medium {
+        padding: 15px 0 0 0;
+
+        svg {
+            max-height: 45px;
+        }
+    }
+}
