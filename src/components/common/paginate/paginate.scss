@@ -1,0 +1,32 @@
+.paginate {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--color-text-disabled);
+    height: 19px;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+
+    .break {
+        display: none;
+    }
+
+    .page-item {
+        background-image: url(../../../icons/paginate.svg);
+
+        a.page-link {
+            text-indent: -9999px;
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 20px;
+            height: 19px;
+            display: inline-block;
+        }
+
+        &.active {
+            background-image: url(../../../icons/active-paginate.svg);
+        }
+    }
+}

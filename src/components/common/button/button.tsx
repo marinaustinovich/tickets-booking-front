@@ -7,7 +7,7 @@ import './button.scss';
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     children: ReactNode;
     className?: string;
-    view?: 'default' ;
+    view?: 'default' | 'primary' ;
     size?: 'default' | 'large' ;
     plain?: boolean;
     badgeText?: string;

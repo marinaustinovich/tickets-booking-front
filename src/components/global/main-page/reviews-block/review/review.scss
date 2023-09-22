@@ -1,0 +1,52 @@
+.review {
+    display: flex;
+    gap: 40px;
+    padding: 60px 0;
+
+    &__avatar {
+
+        img {
+            $size: 200px;
+
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    &__name {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    &__text {
+        position: relative;
+        color: var(--color-text-disabled);
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 300;
+
+        &::before,
+        &::after {
+            content: '“';
+            position: absolute;
+            width: 33px;
+            height: 39px;
+            flex-shrink: 0;
+            font-size: 36px;
+            font-weight: 500;
+        }
+
+        &::before {
+            left: -0.7em;
+            top: -0.2em;
+        }
+
+        &::after {
+            content: '”';
+            right: -1em;
+            bottom: -0.7em;
+        }
+    }
+}

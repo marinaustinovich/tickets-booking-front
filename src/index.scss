@@ -1,5 +1,6 @@
 @import './fonts.scss';
 @import './_colors.scss';
+@import './global.scss';
 
 /* stylelint-disable-next-line block-no-empty */
 :root {
@@ -11,6 +12,7 @@ body {
 }
 
 h1,
+h2,
 h4,
 h5,
 p {

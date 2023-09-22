@@ -1,0 +1,22 @@
+{
+    "info-block": {
+        "title": "About us",
+        "content": {
+            "greetings": "We are glad to see you! We have been working for you since 2003. For 14 years we have been watching how every day more and more people order train tickets via the Internet.",
+            "warning-info": "You can buy cheap train tickets 90 days before the train's departure.\nThanks to dynamic pricing, the price of tickets at this time is the lowest.",
+            "online-ticket-ordering-advantages": "Today you can order train tickets online in just 2 clicks, but is it worth it?\nWe will tell you about the advantages of ordering online."
+        }
+    },
+    "how-works-block": {
+        "title": "How it works",
+        "button-label": "Learn more",
+        "benefits-list": {
+            "comfortable": "Convenient ordering on the website",
+            "skip-office-visit": "No need to go to the office",
+            "diverse-path-choices": "Huge choice of directions"
+        }
+    },
+    "reviews-block": {
+        "title": "Reviews"
+    }
+}

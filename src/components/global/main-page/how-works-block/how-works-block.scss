@@ -1,0 +1,29 @@
+.how-works-block {
+    display: grid;
+    gap: 30px;
+
+    background: linear-gradient(to top, rgba(187, 123, 6, 0.37), rgba(189, 126, 10, 0.658)), url('../../../../../public/image/main-page-background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    &__wrapper {
+        padding: 80px calc(10% + 145px) 75px calc(10% + 100px);
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        
+        h2 {
+            color: var(--color-text-white);
+        }
+    }
+
+    &__benefits-list {
+        display: flex;
+        justify-content: center;
+        gap: 200px;
+        padding-top: 75px;
+    }
+}

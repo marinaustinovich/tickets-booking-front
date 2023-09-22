@@ -1,0 +1,23 @@
+.icon-block {
+    display: flex;         
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    gap: 34px;
+
+    &__label {
+        max-width: 226px;
+        color: #e5e5e5;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    svg {
+        $size: 162px;
+
+        width: $size;
+        height: $size;
+    }
+}

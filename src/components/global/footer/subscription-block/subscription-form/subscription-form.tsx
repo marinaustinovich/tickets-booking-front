@@ -1,4 +1,4 @@
-import { Button, StringInput } from 'components';
+import { Button } from 'components';
 import React, { ReactNode, useCallback } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { classname } from 'utils';
 
 import './subscription-form.scss';
+import { StringInput } from 'fields';
 
 const cn = classname('subscription-form');
 

@@ -1,0 +1,11 @@
+.reviews-block {
+    display: grid;
+    gap: 12px;
+    padding: 160px calc(10% + 145px) 95px calc(10% + 100px);
+
+    &__review-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+}

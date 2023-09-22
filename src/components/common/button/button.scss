@@ -52,7 +52,7 @@
     &--view {
         &-default {
             border: 1px solid var(--color-text-white);
-            background: var(--color-background-dark);
+            background: transparent;
             color: var(--color-text-header);
 
             &:hover {
@@ -66,18 +66,22 @@
                 border: 1px solid var(--color-text-white);
                 color: var(--color-text-button-hover);
             }
-
-            &:disabled {
-                background: #fff;
-                border: 1px solid var(--color-table-border);
-                color: #c0c4cc;
-            }
         }
 
-        &-plain-primary {
-            border-color: #d9ecff;
-            background: #ecf5ff;
-            color: #8cc5ff;
+        &-primary {
+            border-color: var(--color-primary);
+            background: var(--color-primary);
+            color: var(--color-background-dark);
+            border-radius: 5px;
+
+            &:hover {
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+            &:focus {
+                background: var( --color-background-default);
+                color: var(--color-primary);
+            }
         }
 
         &-danger {
