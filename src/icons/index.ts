@@ -1,4 +1,3 @@
-import { Paginate } from 'components/common';
 import { ReactComponent as ReactLogoIcon } from './logo.svg';
 import { ReactComponent as GroupTwoIcon } from './group-two.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
@@ -16,6 +15,10 @@ import { ReactComponent as CityIcon } from './city.svg';
 import { ReactComponent as GlobeIcon } from './globe.svg';
 import { ReactComponent as PaginateIcon } from './paginate.svg';
 import { ReactComponent as ActivePaginateIcon } from './active-paginate.svg';
+import { ReactComponent as CalendarIcon } from './calendar.svg';
+import { ReactComponent as ArrowRightWithoutStickIcon } from './arrow-right-without-stick.svg';
+import { ReactComponent as ArrowLeftWithoutStickIcon } from './arrow-left-without-stick.svg';
+import { ReactComponent as CircularDirectionArrowsIcon } from './circular-direction-arrows.svg';
 
 export {
     ReactLogoIcon,
@@ -34,5 +37,9 @@ export {
     CityIcon,
     GlobeIcon,
     PaginateIcon,
-    ActivePaginateIcon
+    ActivePaginateIcon,
+    CalendarIcon,
+    ArrowRightWithoutStickIcon,
+    ArrowLeftWithoutStickIcon,
+    CircularDirectionArrowsIcon
 };

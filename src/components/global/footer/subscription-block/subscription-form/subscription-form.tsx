@@ -2,11 +2,11 @@ import { Button } from 'components';
 import React, { ReactNode, useCallback } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
-
+import { StringInput } from 'fields';
+import { required } from 'validators';
 import { classname } from 'utils';
 
 import './subscription-form.scss';
-import { StringInput } from 'fields';
 
 const cn = classname('subscription-form');
 
@@ -36,7 +36,13 @@ export const SubscriptionForm = ({ children, ...rest }: FormProps) => {
             render={({ handleSubmit }) => (
                 <form autoComplete='off' onSubmit={handleSubmit} id={formId} className={cn()} {...rest}>
                     <div className={cn('row')}>
-                        <Field name='email' label={t(`${locale}input-label`)} component={StringInput} placeholder={t(`${locale}placeholder`)} />
+                        <Field
+                            name='email'
+                            label={t(`${locale}input-label`)}
+                            component={StringInput}
+                            placeholder={t(`${locale}placeholder`)}
+                            validate={required}
+                        />
                         <Button>{t(`${locale}button-label`)}</Button>
                     </div>
                 </form>

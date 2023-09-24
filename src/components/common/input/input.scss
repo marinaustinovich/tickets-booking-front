@@ -24,7 +24,7 @@
             width: 100%;
             color: var(--color-button-text-default);
             font-family: 'Roboto', sans-serif;
-            font-size: 24px;
+            font-size: 18px;
             line-height: normal;
 
             &:not(.input-wrapper__input--with-adornment),
@@ -45,7 +45,7 @@
             }
 
             &::placeholder {
-                font-size: 24px;
+                font-size: 18px;
                 color: var(--color-text-header);
             }
 

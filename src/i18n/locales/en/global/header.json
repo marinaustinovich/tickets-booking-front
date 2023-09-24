@@ -1,3 +1,7 @@
 {
-    "title": "Logo"
+    "title": "Logo",
+    "travel-datepicker": {
+        "title-first-row": "Entire life - ",
+        "title-second-row": "journey!"
+    }
 }

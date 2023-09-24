@@ -1,0 +1,25 @@
+.travel-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    // gap: 69px;
+    grid-row-gap: 69px;
+    grid-column-gap: 34px;
+    background: rgba(41, 41, 41, 0.8);
+    padding: 79px 21px 52px 21px;
+
+    &__from-wrapper {
+        position: relative;
+    }
+
+    &__submit {
+        grid-column-start: 2;
+    }
+
+    &__swap-icon {
+        position: absolute;
+        top: calc(50% + (7px + 36px) / 2);
+        right: -29px;
+        transform: translateY(-50%);
+    }
+}

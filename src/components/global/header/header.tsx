@@ -1,6 +1,7 @@
 import { classname } from 'utils';
 import { Logo } from 'components';
 import { Navbar } from './navbar';
+import { TravelDatePicker } from './travel-datepicker';
 
 import './header.scss';
 
@@ -10,6 +11,7 @@ export const Header = () => (
     <header className={cn()}>
         <Logo />
         <Navbar />
+        <TravelDatePicker />
     </header>
 );
 
