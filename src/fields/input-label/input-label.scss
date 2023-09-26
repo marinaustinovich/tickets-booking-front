@@ -1,0 +1,22 @@
+.input-label {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: normal;
+    color: var(--color-text-header);
+    margin: 0;
+    display: flex;
+    gap: 4px;
+
+    min-width: 0;
+
+    &--required span:first-child {
+        color: var(--color-danger);
+        font-weight: 500;
+    }
+
+    &__text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

@@ -1,0 +1,11 @@
+.input-error {
+    position: absolute;
+    width: 100%;
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    background-color: var(--color-text-white);
+    color: var(--color-danger);
+    border-radius: 3px;
+    padding: 3px 0;
+}

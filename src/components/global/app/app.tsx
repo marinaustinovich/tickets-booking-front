@@ -1,22 +1,21 @@
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+
 import { classname } from 'utils';
-import { Header } from '../header';
 import { Footer } from '../footer';
+import MainPage from 'pages/main/main';
 
 import './app.scss';
-import { MainPage } from '../main-page';
 
 const cn = classname('app');
 
-export const App = () => {
-    return (
-        <div className={cn()}>
-            <Header />
-            <div className='content'>
-                <MainPage />
-            </div>
-            <Footer />
-        </div>
-    );
-};
+export const App = () => (
+    <div className={cn()}>
+        <Routes>
+            <Route path='/' element={<MainPage />} />
+        </Routes>
+        <Footer />
+    </div>
+);
 
 export default App;

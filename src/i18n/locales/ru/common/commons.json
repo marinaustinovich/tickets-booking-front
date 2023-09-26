@@ -1,6 +1,6 @@
 {
     "logo-title": "Лого",
-    "string-input-placeholder": "Пожалуйста, введите что-нибудь",
+    "placeholder": "Пожалуйста, введите что-нибудь",
     "datepicker": {
         "date-input-placeholder": "ДД/ММ/ГГ",
         "0": "Январь",

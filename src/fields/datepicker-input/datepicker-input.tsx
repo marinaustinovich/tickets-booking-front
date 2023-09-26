@@ -1,7 +1,7 @@
 import React from 'react';
 import { FieldRenderProps, Field } from 'react-final-form';
 
-import { DatePicker } from 'components';
+import { DatePicker, InputError } from 'components';
 import { classname } from 'utils';
 
 import './datepicker-input.scss';
@@ -19,7 +19,7 @@ type DatePickerInputProps = {
 };
 
 export const DatePickerInput = (props: DatePickerInputProps) => {
-    const { input, label, required, meta, className } = props;
+    const { input, meta, className } = props;
     const { active, touched, submitError, dirtySinceLastSubmit } = meta;
     const { name } = input;
 
@@ -28,13 +28,8 @@ export const DatePickerInput = (props: DatePickerInputProps) => {
 
     return (
         <div className={cn('', [className])}>
-            {label && (
-                <label className={cn('label')} htmlFor={name}>
-                    {required && <span className={cn('label-required')}>*</span>} {label}
-                </label>
-            )}
             <Field name={name} component={DatePicker} {...props} />
-            {isErrorVisible && <div className={cn('error')}>{error}</div>}
+            {isErrorVisible && <InputError error={error}/>}
         </div>
     );
 };

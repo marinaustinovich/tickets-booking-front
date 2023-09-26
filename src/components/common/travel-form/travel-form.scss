@@ -21,5 +21,13 @@
         top: calc(50% + (7px + 36px) / 2);
         right: -29px;
         transform: translateY(-50%);
+
+        svg {
+            fill: var(--color-text-white);
+        }
+
+        svg:hover {
+            fill: var(--color-primary);
+        }
     }
 }

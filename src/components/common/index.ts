@@ -6,3 +6,5 @@ export * from './icon-block';
 export * from './paginate';
 export * from './datepicker';
 export * from './icon-button';
+export * from './autocomplete-input';
+export * from './input-error';

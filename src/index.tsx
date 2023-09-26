@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client';
+import { Provider } from "react-redux";
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { App } from './components';
@@ -7,6 +8,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import './index.scss';
 import i18next from 'i18next';
+import { store } from 'store';
 
 initializeI18next()
     .then(() => {
@@ -15,12 +17,14 @@ initializeI18next()
         if (!rootElement) {
             throw new Error("Cannot find element with id 'root'");
         }
-        
+
         const root = ReactDOM.createRoot(rootElement);
         root.render(
             <I18nextProvider i18n={i18next}>
                 <BrowserRouter>
-                    <App />
+                    <Provider  store={store}>
+                        <App />
+                    </Provider>
                 </BrowserRouter>
             </I18nextProvider>,
         );

@@ -1,17 +1,17 @@
 import React from 'react';
+import { Header, MainContent } from 'components';
+import { classname } from 'utils';
 
-import { classname } from '@utils';
-
-import './main-page.scss';
+import './main.scss';
 
 const cn = classname('main-page');
 
 const MainPage = () => {
   
-
     return (
         <div className={cn()}>
-            Main
+            <Header />
+            <MainContent />
         </div>
     );
 };

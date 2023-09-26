@@ -1,13 +1,13 @@
 import { classname } from 'utils';
 
-import './main-page.scss';
+import './main-content.scss';
 import { InfoBlock } from './info-block';
 import { HowWorksBlock } from './how-works-block';
 import { ReviewsBlock } from './reviews-block';
 
-const cn = classname('main-page');
+const cn = classname('main-content');
 
-export const MainPage = () => {
+export const MainContent = () => {
     return (
         <main className={cn()}>
             <InfoBlock />
@@ -17,4 +17,4 @@ export const MainPage = () => {
     );
 };
 
-export default MainPage;
+export default MainContent;

@@ -1,6 +1,6 @@
 {
     "logo-title": "Logo",
-    "string-input-placeholder": "Please input something",
+    "placeholder": "Please input something",
     "datepicker": {
         "date-input-placeholder": "DD/MM/YY",
         "0": "January",

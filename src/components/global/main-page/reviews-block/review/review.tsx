@@ -2,7 +2,7 @@ import { classname } from 'utils';
 
 import './review.scss';
 import { User } from 'types';
-import { UserAvatarUrlEnum } from 'enums/urlEnum';
+import { UrlsEnum } from 'enums/urlEnum';
 
 type Props = {
     user: User;
@@ -16,7 +16,7 @@ export const Review = ({ user }: Props) => {
     return (
         <div className={cn()}>
             <div className={cn('avatar')}>
-                <img src={avatar ?? UserAvatarUrlEnum.URL} alt={`${name}'s avatar`} />
+                <img src={avatar ?? UrlsEnum.AVATAR_DEFAULT_URL} alt={`${name}'s avatar`} />
             </div>
             <div className={cn('content')}>
                 <div className={cn('name')}>{name ?? 'unknown'}</div>

@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react';
 import { FieldRenderProps } from 'react-final-form';
-
+import { useTranslation } from 'react-i18next';
 import { Input } from 'components';
 import { classname } from 'utils';
 
 import './string-input.scss';
-import { useTranslation } from 'react-i18next';
+
 
 type Props = {
     input: FieldRenderProps<string>['input'];
@@ -55,7 +55,7 @@ export const StringInput = (props: Props) => {
     const isErrorVisible = !active && touched && !!error;
     const helpText = (isErrorVisible && error) || help;
 
-    const placeholderText = placeholder === undefined ? t('commons.string-input-placeholder') : placeholder;
+    const placeholderText = placeholder === undefined ? t('commons.placeholder') : placeholder;
 
     const handleChange = useCallback(
         (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
