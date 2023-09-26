@@ -4,12 +4,13 @@ import './footer.scss';
 import { Branding } from './branding';
 import { ContactsBlock } from './contacts-block';
 import { SubscriptionBlock } from './subscription-block';
+import { UrlsEnum } from 'enums';
 
 const cn = classname('footer');
 
 export const Footer = () => {
     return (
-        <footer className={cn()}>
+        <footer className={cn()} id={UrlsEnum.CONTACTS}>
             <div className={cn('contacts-subscription')}>
                 <ContactsBlock />
                 <SubscriptionBlock />

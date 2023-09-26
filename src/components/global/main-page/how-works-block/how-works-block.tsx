@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import './how-works-block.scss';
 import { Button, IconBlock } from 'components';
 import { CityIcon, ComputerIcon, GlobeIcon } from 'icons';
+import { UrlsEnum } from 'enums';
 
 const cn = classname('how-works-block');
 
@@ -12,7 +13,7 @@ export const HowWorksBlock = () => {
     const locale = 'main.how-works-block.';
 
     return (
-        <section className={cn()}>
+        <section className={cn()} id={UrlsEnum.HOW_IT_WORKS}>
             <div className={cn('wrapper')}>
                 <div className={cn('head')}>
                     <h2>{t(`${locale}title`)}</h2>

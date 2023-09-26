@@ -1,6 +1,5 @@
 .header {
     display: grid;
-    background: url('../../../../public/image/header-main-page-background.png'), linear-gradient(to top, rgba(89, 55, 3, 0.8), rgba(69, 40, 1, 0.9)),
-        var(--color-background-dark);
+    background-color: var(--color-background-dark);
     color: var(--color-text-default);
 }

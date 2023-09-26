@@ -1,19 +1,16 @@
 import React from 'react';
-import { Header, MainContent } from 'components';
+import { MainHeader, MainContent } from 'components';
 import { classname } from 'utils';
 
 import './main.scss';
 
 const cn = classname('main-page');
 
-const MainPage = () => {
-  
-    return (
-        <div className={cn()}>
-            <Header />
-            <MainContent />
-        </div>
-    );
-};
+const MainPage = () => (
+    <div className={cn()}>
+        <MainHeader />
+        <MainContent />
+    </div>
+);
 
 export default MainPage;

@@ -2,6 +2,7 @@ import { classname } from 'utils';
 import { useTranslation } from 'react-i18next';
 
 import './info-block.scss';
+import { UrlsEnum } from 'enums';
 
 const cn = classname('info-block');
 
@@ -10,7 +11,7 @@ export const InfoBlock = () => {
     const locale = 'main.info-block.';
 
     return (
-        <section className={cn()}>
+        <section className={cn()} id={UrlsEnum.ABOUT_US}>
             <h2>{t(`${locale}title`)}</h2>
             <div className={cn('content')}>
                 <p>{t(`${locale}content.greetings`)}</p>

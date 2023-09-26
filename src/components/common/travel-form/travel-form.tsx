@@ -1,16 +1,17 @@
 import React, { useCallback } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { DatePickerInput, FormControl, InputLabel } from 'fields';
+import { useAppDispatch } from 'store';
+import { fetchRoutesAction } from 'store/route';
 import { classname } from 'utils';
 import { FormIdEnum } from 'enums';
 import { required } from 'validators';
 import { Button } from '../button';
 import { CircularDirectionArrowsIcon } from 'icons';
 import { IconButton } from '../icon-button';
-import { fetchRoutes } from 'api/routes';
 import { CitiesInput } from './cities-input';
 
 import './travel-form.scss';
@@ -31,19 +32,21 @@ const cn = classname('travel-form');
 export const TravelForm = ({ initialValues }: TravelFormProps) => {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
-    const handleFormSubmit = useCallback(async (values: TravelFormState) => {
-        const { toCity, fromCity } = values;
-        const preFilters = {
-            ...values,
-            fromCityId: fromCity,
-            toCityId: toCity,
-        };
-        const routes = await fetchRoutes(preFilters);
-        if (routes) {
+    const handleFormSubmit = useCallback(
+        async (values: TravelFormState) => {
+            const { toCity, fromCity } = values;
+            const preFilters = {
+                ...values,
+                fromCityId: fromCity,
+                toCityId: toCity,
+            };
+            dispatch(fetchRoutesAction(preFilters));
             navigate('/tickets');
-        }
-    }, [navigate]);
+        },
+        [navigate, dispatch],
+    );
 
     const handleSwapFields = useCallback((form: any) => {
         const toValue = form.getFieldState('toCity')?.value;

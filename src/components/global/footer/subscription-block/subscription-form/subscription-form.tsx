@@ -3,8 +3,8 @@ import React, { ReactNode, useCallback } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 import { StringInput } from 'fields';
-import { required } from 'validators';
 import { classname } from 'utils';
+import { fetchSubscribe } from 'api/subscribe';
 
 import './subscription-form.scss';
 
@@ -15,9 +15,9 @@ type FormProps = {
     className?: string;
 };
 
-type SubscriptionFormState = Partial<{
+type SubscriptionFormState = {
     email: string;
-}>;
+};
 
 const formId = 'subscriptionForm';
 
@@ -26,24 +26,21 @@ export const SubscriptionForm = ({ children, ...rest }: FormProps) => {
     const locale = 'footer.subscription.';
 
     const handleFormSubmit = useCallback((values: SubscriptionFormState) => {
-        console.log(values);
+        fetchSubscribe(values);
     }, []);
 
     return (
         <Form<SubscriptionFormState>
-            onSubmit={handleFormSubmit}
+            onSubmit={async (values, form) => {
+                await handleFormSubmit(values);
+                form.reset();
+            }}
             subscription={{ values: true }}
             render={({ handleSubmit }) => (
                 <form autoComplete='off' onSubmit={handleSubmit} id={formId} className={cn()} {...rest}>
                     <div className={cn('row')}>
-                        <Field
-                            name='email'
-                            label={t(`${locale}input-label`)}
-                            component={StringInput}
-                            placeholder={t(`${locale}placeholder`)}
-                            validate={required}
-                        />
-                        <Button>{t(`${locale}button-label`)}</Button>
+                        <Field name='email' label={t(`${locale}input-label`)} component={StringInput} placeholder={t(`${locale}placeholder`)} />
+                        <Button type='submit'>{t(`${locale}button-label`)}</Button>
                     </div>
                 </form>
             )}

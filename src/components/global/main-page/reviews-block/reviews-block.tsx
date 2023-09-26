@@ -6,6 +6,7 @@ import './reviews-block.scss';
 import { User } from 'types';
 import Review from './review/review';
 import { Paginate } from 'components/common';
+import { UrlsEnum } from 'enums';
 
 const cn = classname('reviews-block');
 
@@ -31,7 +32,7 @@ export const ReviewsBlock = () => {
     ];
 
     return (
-        <section className={cn()}>
+        <section className={cn()} id={UrlsEnum.REVIEWS}>
             <h2>{t(`${locale}title`)}</h2>
             <div className={cn('review-list')}>
                 {users.map(user => (

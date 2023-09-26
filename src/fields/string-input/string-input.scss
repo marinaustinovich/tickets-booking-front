@@ -63,7 +63,9 @@
         color: var(--color-text-default);
 
         &--warning {
+            background-color: var(--color-text-white);
             color: var(--color-danger);
+            border-radius: 3px;
         }
     }
 }
