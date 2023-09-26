@@ -1,0 +1,29 @@
+.schedule-row {
+    display: flex;
+    gap: 40px;
+
+    &__datetime {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--color-text-default);
+    }
+
+    &__city-name {
+        font-size: 18px;
+    }
+
+    &__station-name {
+        display: flex;
+        gap: 4px;
+        color: var(--color-text-disabled);
+        font-size: 16px;
+    }
+
+    &__driving-time {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        color: var(--color-text--label-disabled);
+        font-size: 18px;
+    }
+}

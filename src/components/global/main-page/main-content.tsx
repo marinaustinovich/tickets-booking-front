@@ -1,9 +1,9 @@
 import { classname } from 'utils';
-
-import './main-content.scss';
 import { InfoBlock } from './info-block';
 import { HowWorksBlock } from './how-works-block';
 import { ReviewsBlock } from './reviews-block';
+
+import './main-content.scss';
 
 const cn = classname('main-content');
 
@@ -17,4 +17,3 @@ export const MainContent = () => {
     );
 };
 
-export default MainContent;

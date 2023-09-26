@@ -1,0 +1,14 @@
+{
+    "trains": {
+        "found-count": "found",
+        "station": "station",
+        "min-price": "From",
+        "select-button-label": "Select seats",
+        "classSeat": {
+            "first": "Lux",
+            "second": "Coupe",
+            "third": "Reserved seat",
+            "fourth": "Sedentary"
+        }
+    }
+}

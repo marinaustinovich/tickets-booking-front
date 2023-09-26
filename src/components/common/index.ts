@@ -8,3 +8,5 @@ export * from './datepicker';
 export * from './icon-button';
 export * from './autocomplete-input';
 export * from './input-error';
+export * from './schedule-row';
+export * from './seat-row';

@@ -1,0 +1,8 @@
+.tickets-header {
+    background: url('../../../../public/image/header-tickets-page-background.png'), linear-gradient(to top, rgba(89, 55, 3, 0.8), rgba(69, 40, 1, 0.9)),
+        var(--color-background-dark);
+
+    &__form-wrapper {
+        padding: 111px calc(10% + 30px) 0 calc(10% + 60px);
+    }
+}

@@ -29,6 +29,11 @@ export type RoutesFilters = Partial<{
     sort: 'date' | 'price' | 'duration';
 }>;
 
+export type Routes = {
+    total_count: number;
+    items: TrainInfo[] | [];
+};
+
 export type TrainInfo = {
     have_first_class: boolean;
     have_second_class: boolean;
@@ -38,12 +43,46 @@ export type TrainInfo = {
     have_air_conditioning: boolean;
     is_express: boolean;
     min_price: number;
-    train: string;
+    available_seats: number;
+    available_seats_info: SeatsInfo;
+    departure: DepartureInfo;
+    arrival?: DepartureInfo;
+};
+
+export type SeatsInfo = Partial<{
+    first: number;
+    second: number;
+    third: number;
+    fourth: number;
+}>;
+
+export type PriceInfo = {
+    top_price: number;
+    bottom_price: number;
+    side_price?: number;
+};
+
+export type Train = {
+    _id: string;
+    name: string;
+};
+
+export type DepartureInfo = {
+    have_first_class: boolean;
+    have_second_class: boolean;
+    have_third_class: boolean;
+    have_fourth_class: boolean;
+    have_wifi: boolean;
+    have_air_conditioning: boolean;
+    is_express: boolean;
+    min_price: number;
+    duration: number;
+    available_seats: number;
+    available_seats_info: SeatsInfo;
+    train: Train;
     from: DepartureOrArrivalInfo;
     to: DepartureOrArrivalInfo;
-    duration: number;
-    price_info: Record<string, number>;
-    seats_info: Record<string, number>;
+    price_info: Record<string, PriceInfo>;
 };
 
 export type DepartureOrArrivalInfo = {
@@ -51,8 +90,3 @@ export type DepartureOrArrivalInfo = {
     railway_station_name: string;
     city: City;
 };
-
-export type Route = Partial<{
-    total_count: number;
-    items: [];
-}>;

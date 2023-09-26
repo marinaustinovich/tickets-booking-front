@@ -2,6 +2,7 @@
     box-sizing: border-box;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     transition: 0.3s;
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
@@ -9,10 +10,6 @@
     height: 60px;
     position: relative;
     border: 1px solid transparent;
-
-    &:focus {
-        border: none;
-    }
 
     &:not(:disabled) {
         cursor: pointer;
@@ -34,6 +31,7 @@
             }
         }
 
+        &-large-narrow,
         &-large {
             padding: 16px 77px 15px 76px;
             font-weight: 700;
@@ -46,6 +44,11 @@
                 width: $size;
                 height: $size;
             }
+        }
+
+        
+        &-large-narrow {
+            padding: 6px 13px 9px 8px;
         }
     }
 
@@ -68,7 +71,8 @@
             }
         }
 
-        &-primary {
+        &-primary,
+        &-primary-white {
             border-color: var(--color-primary);
             background: var(--color-primary);
             color: var(--color-background-dark);
@@ -84,6 +88,9 @@
             }
         }
 
+        &-primary-white {
+            color: var(--color-text-white);
+        }
         &-danger {
             color: #fff;
             background: #f56c6c;

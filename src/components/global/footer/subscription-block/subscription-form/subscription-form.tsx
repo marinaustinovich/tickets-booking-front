@@ -5,8 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { StringInput } from 'fields';
 import { classname } from 'utils';
 import { fetchSubscribe } from 'api/subscribe';
+import { composeValidators, emailValidator } from 'validators';
 
 import './subscription-form.scss';
+
 
 const cn = classname('subscription-form');
 
@@ -39,7 +41,13 @@ export const SubscriptionForm = ({ children, ...rest }: FormProps) => {
             render={({ handleSubmit }) => (
                 <form autoComplete='off' onSubmit={handleSubmit} id={formId} className={cn()} {...rest}>
                     <div className={cn('row')}>
-                        <Field name='email' label={t(`${locale}input-label`)} component={StringInput} placeholder={t(`${locale}placeholder`)} />
+                        <Field
+                            name='email'
+                            label={t(`${locale}input-label`)}
+                            component={StringInput}
+                            placeholder={t(`${locale}placeholder`)}
+                            validate={composeValidators(emailValidator)}
+                        />
                         <Button type='submit'>{t(`${locale}button-label`)}</Button>
                     </div>
                 </form>

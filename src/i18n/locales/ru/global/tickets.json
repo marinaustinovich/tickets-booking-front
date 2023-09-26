@@ -1,0 +1,14 @@
+{
+    "trains": {
+        "found-count": "найдено",
+        "station": "вокзал",
+        "min-price": "От",
+        "select-button-label": "Выбрать места",
+        "classSeat": {
+            "first": "Люкс",
+            "second": "Купе",
+            "third": "Плацкарт",
+            "fourth": "Сидячий"
+        }
+    }
+}

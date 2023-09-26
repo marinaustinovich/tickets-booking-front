@@ -1,0 +1,28 @@
+.general-train-info-block {
+    display: grid;
+    gap: 17px;
+    background-color: var(--color-background-paper);
+    padding: 54px 25px 31px 25px;
+
+    font-size: 16px;
+
+    &__train-name {
+        color: var(--color-text-weight);
+        text-align: center;
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__avatar {
+        $size: 86px;
+
+        width: $size;
+        height: $size;
+    }
+
+    &__from {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+    }
+}

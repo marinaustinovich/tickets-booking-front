@@ -3,7 +3,13 @@
     border: none;
 
     &:hover {
+        background: transparent;
         color: var(--color-primary);
+
+        & > svg path, & > svg circle {
+            fill: var(--color-primary);
+            stroke: var(--color-text-default);
+        }
     }
 
     &:not(:hover) {
@@ -32,6 +38,28 @@
 
             & > svg {
                 $size: 16px;
+
+                width: $size;
+                height: $size;
+            }
+        }
+
+        &-midi {
+            padding: 0px;
+
+            & > svg {
+                $size: 30px;
+
+                width: $size;
+                height: $size;
+            }
+        }
+
+        &-large {
+            padding: 0px;
+            background: transparent;
+            & > svg {
+                $size: 36px;
 
                 width: $size;
                 height: $size;

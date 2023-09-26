@@ -23,6 +23,28 @@ const styles: StylesConfig<SelectOption<string>, false> = {
         },
         fontSize: '18px',
     }),
+    menu: (base: CSSObject) => ({
+        ...base,
+        backgroundColor: 'var(--color-background-options)',
+        borderRadius: '3px',
+        boxShadow: '0px 4px 4px 0px rgba(0, 0, 0, 0.25)',
+        marginTop: '4px',
+    }),
+    option: (base: CSSObject, state: any) => ({
+        ...base,
+        fontSize: '18px',
+        fontVariant: 'all-small-caps',
+        backgroundColor: state.isFocused
+            ? 'var( --color-background-options)'
+            : state.isSelected
+            ? 'var(--color-border-default)'
+            : 'var(--color-background-options)',
+        color: 'var(--color-background-dark)',
+        padding: '8px 12px',
+        '&:hover': {
+            backgroundColor: 'var(--color-input-border-hover)',
+        },
+    }),
     placeholder: (base: CSSObject) => ({
         ...base,
         overflow: 'hidden',

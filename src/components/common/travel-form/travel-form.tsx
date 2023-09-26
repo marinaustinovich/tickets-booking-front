@@ -25,20 +25,21 @@ type TravelFormState = {
 
 type TravelFormProps = {
     initialValues?: TravelFormState;
+    isRow?: boolean;
 };
 
 const cn = classname('travel-form');
 
-export const TravelForm = ({ initialValues }: TravelFormProps) => {
+export const TravelForm = ({ initialValues, isRow }: TravelFormProps) => {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
     const handleFormSubmit = useCallback(
         async (values: TravelFormState) => {
-            const { toCity, fromCity } = values;
+            const { toCity, fromCity, ...rest } = values;
             const preFilters = {
-                ...values,
+                ...rest,
                 fromCityId: fromCity,
                 toCityId: toCity,
             };
@@ -61,7 +62,7 @@ export const TravelForm = ({ initialValues }: TravelFormProps) => {
             onSubmit={handleFormSubmit}
             initialValues={initialValues}
             render={({ handleSubmit, form }) => (
-                <form className={cn()} id={FormIdEnum.TRAVEL} onSubmit={handleSubmit}>
+                <form className={cn('', { row: isRow })} id={FormIdEnum.TRAVEL} onSubmit={handleSubmit}>
                     <div className={cn('from-wrapper')}>
                         <FormControl>
                             <InputLabel>{t('travel-form.direction-label')}</InputLabel>

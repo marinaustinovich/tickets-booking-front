@@ -1,8 +1,8 @@
-import { Route, RoutesFilters } from 'types/routes';
+import { Routes, RoutesFilters } from 'types/routes';
 import { PaginatedData, RequestWithStatus } from 'utils';
 
 export type RoutesSliceState = {
-    fetchRoutes: RequestWithStatus<PaginatedData<Route[]>>;
+    fetchRoutes: RequestWithStatus<PaginatedData<Routes[]>>;
     filters: RoutesFilters;
-    routesList: Route[],
+    routesList: Routes;
 };

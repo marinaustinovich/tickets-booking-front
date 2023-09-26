@@ -7,10 +7,8 @@ import './main-header.scss';
 const cn = classname('main-header');
 
 export const MainHeader = () => (
-    <header className={cn()}>
+    <div className={cn()}>
         <Header />
         <TravelDatePicker />
-    </header>
+    </div>
 );
-
-export default MainHeader;

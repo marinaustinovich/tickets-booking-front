@@ -1,3 +1,4 @@
+import { ru } from './../i18n/locales/ru/index';
 import { ReactComponent as ReactLogoIcon } from './logo.svg';
 import { ReactComponent as GroupTwoIcon } from './group-two.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
@@ -19,6 +20,11 @@ import { ReactComponent as CalendarIcon } from './calendar.svg';
 import { ReactComponent as ArrowRightWithoutStickIcon } from './arrow-right-without-stick.svg';
 import { ReactComponent as ArrowLeftWithoutStickIcon } from './arrow-left-without-stick.svg';
 import { ReactComponent as CircularDirectionArrowsIcon } from './circular-direction-arrows.svg';
+import { ReactComponent as TrainIcon } from './train.svg';
+import { ReactComponent as LeftArrowIcon } from './left-arrow.svg';
+import { ReactComponent as LeftArrowYellowIcon } from './left-arrow-yellow.svg';
+import { ReactComponent as RightArrowYellowIcon } from './left-arrow-yellow.svg';
+import { ReactComponent as RubIcon } from './rub.svg';
 
 export {
     ReactLogoIcon,
@@ -41,5 +47,10 @@ export {
     CalendarIcon,
     ArrowRightWithoutStickIcon,
     ArrowLeftWithoutStickIcon,
-    CircularDirectionArrowsIcon
+    CircularDirectionArrowsIcon,
+    TrainIcon,
+    LeftArrowIcon,
+    LeftArrowYellowIcon,
+    RightArrowYellowIcon,
+    RubIcon
 };

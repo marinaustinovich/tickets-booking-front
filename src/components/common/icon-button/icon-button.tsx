@@ -6,7 +6,7 @@ import './icon-button.scss';
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     className?: string;
-    size?: 'default' | 'mini';
+    size?: 'default' | 'mini' | 'midi' | 'large';
     active?: boolean;
     Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };

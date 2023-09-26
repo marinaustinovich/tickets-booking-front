@@ -1,0 +1,32 @@
+.seat-row {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    font-size: 16px;
+
+    &__class-seat {
+        color: var(--color-text-weight);
+        font-weight: 400;
+    }
+
+    &__count {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+
+    &__min-price {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    &__min-price-label {
+        color: var(--color-text-disabled);
+    }
+
+    &__min-price-value {
+        color: var(--color-text-button-hover);
+        font-size: 24px;
+        font-weight: 700;
+    }
+}
