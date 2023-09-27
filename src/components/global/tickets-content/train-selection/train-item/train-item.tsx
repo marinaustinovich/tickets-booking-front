@@ -15,13 +15,14 @@ type Props = {
 const cn = classname('train-item');
 
 export const TrainItem = ({ train }: Props) => {
-    const { departure, arrival } = train;
+    const { departure, arrival, available_seats_info    } = train;
+    const priceInfo = {...departure.price_info, ...arrival?.price_info}
 
     return (
         <div className={cn()}>
             <GeneralTrainInfoBlock from={departure.from} to={departure.to} train={departure.train}/>
             <ScheduleInfoBlock departure={departure} arrival={arrival} />
-            <SeatInfoBlock availableSeatsInfo={departure.available_seats_info} priceInfo={departure.price_info} />
+            <SeatInfoBlock availableSeatsInfo={available_seats_info} priceInfo={priceInfo} departure={departure} />
         </div>
     );
 };

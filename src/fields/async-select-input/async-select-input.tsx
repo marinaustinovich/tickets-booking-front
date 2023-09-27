@@ -54,6 +54,7 @@ const styles: StylesConfig<SelectOption<string>, false> = {
     }),
     input: (base: CSSObject) => ({
         ...base,
+        minWidth: '2px',
         color: 'var(--color-button-text-default)',
     }),
     valueContainer: (base: CSSObject) => ({

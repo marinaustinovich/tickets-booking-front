@@ -3,6 +3,10 @@
     gap: 130px;
     padding: 253px calc(10% + 100px) 0 calc(10% + 175px);
 
+    &__title {
+        min-width: 10px;
+    }
+
     &__title p {
         color: var(--color-text-white);
         font-size: 72px;

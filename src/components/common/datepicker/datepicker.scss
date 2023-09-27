@@ -111,7 +111,8 @@
             color: var(--color-primary);
         }
 
-        &.react-datepicker__day--outside-month {
+        &.react-datepicker__day--outside-month,
+        &.react-datepicker__day--disabled {
             color: var(--color-text-disabled);
         }
     }

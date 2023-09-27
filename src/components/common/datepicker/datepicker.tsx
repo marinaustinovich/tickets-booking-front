@@ -42,9 +42,13 @@ export const DatePicker = ({ input, placeholder, className, ...rest }: DatePicke
                 setValue(date);
                 input.onChange(date?.toISOString() || null);
             }}
+            minDate={new Date()} 
+            filterDate={(date: Date) => {
+                return date >= new Date();
+            }}
             shouldCloseOnSelect={true}
             calendarStartDay={1}
-            // useWeekdaysShort={false}
+            useWeekdaysShort={false}
             showPopperArrow={false}
             placeholderText={placeholder ?? t(`${locale}.date-input-placeholder`)}
             {...rest}

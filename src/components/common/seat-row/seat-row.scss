@@ -1,5 +1,6 @@
 .seat-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 44fr 11fr 58fr;
     gap: 17px;
     align-items: center;
     font-size: 16px;

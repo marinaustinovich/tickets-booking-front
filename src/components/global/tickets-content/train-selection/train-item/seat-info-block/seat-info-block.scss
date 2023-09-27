@@ -3,4 +3,11 @@
     align-items: start;
     gap: 24px;
     padding: 43px 21px 24px 25px;
+
+    &__advantages {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        justify-content: flex-end;
+    }
 }

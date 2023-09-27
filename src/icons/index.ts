@@ -23,8 +23,12 @@ import { ReactComponent as CircularDirectionArrowsIcon } from './circular-direct
 import { ReactComponent as TrainIcon } from './train.svg';
 import { ReactComponent as LeftArrowIcon } from './left-arrow.svg';
 import { ReactComponent as LeftArrowYellowIcon } from './left-arrow-yellow.svg';
-import { ReactComponent as RightArrowYellowIcon } from './left-arrow-yellow.svg';
+import { ReactComponent as RightArrowYellowIcon } from './right-arrow-yellow.svg';
 import { ReactComponent as RubIcon } from './rub.svg';
+import { ReactComponent as WifiIcon } from './wifi.svg';
+import { ReactComponent as ExpressIcon } from './express.svg';
+import { ReactComponent as CupIcon } from './cup.svg';
+
 
 export {
     ReactLogoIcon,
@@ -52,5 +56,8 @@ export {
     LeftArrowIcon,
     LeftArrowYellowIcon,
     RightArrowYellowIcon,
-    RubIcon
+    RubIcon,
+    WifiIcon,
+    ExpressIcon,
+    CupIcon
 };
