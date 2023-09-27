@@ -9,6 +9,21 @@
             "second": "Купе",
             "third": "Плацкарт",
             "fourth": "Сидячий"
+        },
+        "train-form": {
+            "travel-date-field-label": "Дата поездки",
+            "return-date-field-label": "Дата возвращения",
+            "coupe-field-label": "Купе",
+            "reserved-seat-field-label": "Плацкарт",
+            "sedentary-field-label": "Сидячий",
+            "lux-field-label": "Люкс",
+            "wi-fi-field-label": "Wi-Fi",
+            "express-field-label": "Экспресс",
+            "price-field-label": "Стоимость",
+            "from-field-label": "От",
+            "before-field-label": "До",
+            "there-field-label": "Туда",
+            "back-field-label": "Обратно"
         }
     }
 }

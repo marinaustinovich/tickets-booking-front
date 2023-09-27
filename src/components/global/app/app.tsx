@@ -14,7 +14,7 @@ export const App = () => (
     <div className={cn()}>
         <Routes>
             <Route path='/' element={<MainPage />} />
-            <Route path='/tickets' element={<TicketsPage />} />
+            <Route path='/tickets/*' element={<TicketsPage />} />
         </Routes>
         <Footer />
     </div>

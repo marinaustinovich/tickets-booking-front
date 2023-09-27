@@ -28,7 +28,9 @@ import { ReactComponent as RubIcon } from './rub.svg';
 import { ReactComponent as WifiIcon } from './wifi.svg';
 import { ReactComponent as ExpressIcon } from './express.svg';
 import { ReactComponent as CupIcon } from './cup.svg';
-
+import { ReactComponent as CoupeIcon } from './coupe.svg';
+import { ReactComponent as SedentaryIcon } from './sedentary.svg';
+import { ReactComponent as StarIcon } from './star.svg';
 
 export {
     ReactLogoIcon,
@@ -59,5 +61,8 @@ export {
     RubIcon,
     WifiIcon,
     ExpressIcon,
-    CupIcon
+    CupIcon,
+    CoupeIcon,
+    SedentaryIcon,
+    StarIcon
 };

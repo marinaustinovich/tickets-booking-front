@@ -1,0 +1,17 @@
+.train-form {
+    display: grid;
+    background: var(--color-background-form);
+
+    &__date-group {
+        display: grid;
+        gap: 28px;
+        padding: 43px 36px 34px 28px;
+    }
+
+    &__switch-group {
+        display: grid;
+        gap: 28px;
+        border-top: 1px solid var(--color-text-header);
+        padding: 43px 36px 34px 68px;
+    }
+}

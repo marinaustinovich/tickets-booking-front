@@ -9,6 +9,21 @@
             "second": "Coupe",
             "third": "Reserved seat",
             "fourth": "Sedentary"
+        },
+        "train-form": {
+            "travel-date-field-label": "Travel date",
+            "return-date-field-label": "Return date",
+            "coupe-field-label": "Coupe",
+            "reserved-seat-field-label": "Reserved seat",
+            "sedentary-field-label": "Sedentary",
+            "lux-field-label": "Lux",
+            "wi-fi-field-label": "Wi-Fi",
+            "express-field-label": "Express",
+            "price-field-label": "Price",
+            "from-field-label": "From",
+            "before-field-label": "Before",
+            "there-field-label": "There",
+            "back-field-label": "Back"
         }
     }
 }

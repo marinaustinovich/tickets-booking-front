@@ -5,3 +5,4 @@ export * from './select-field';
 export * from './async-select-input';
 export * from './form-control';
 export * from './input-label';
+export * from './switch-input';
