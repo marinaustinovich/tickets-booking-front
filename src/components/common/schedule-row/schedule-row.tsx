@@ -25,18 +25,17 @@ const Schedule = ({ info, isFull, isTextAlignEnd }: ScheduleProps) => {
 
     const { datetime, railway_station_name, city } = info;
     return (
-        <div className={cn('wrapper', { text: isTextAlignEnd ? 'text-end' : '' })}>
+        <div className={cn('wrapper', { text: isTextAlignEnd ? 'end' : '' })}>
             {isFull && <div className={cn('datetime')}>{formatTimestampToTime(datetime)}</div>}
             <div className={cn('city-name')}>{capitalizeHyphenatedString(city.name)}</div>
-            <p className={cn('station-name')}>
+            <div className={cn('station-name')}>
                 {capitalizeHyphenatedString(railway_station_name)} {t('tickets.trains.station')}
-            </p>
+            </div>
         </div>
     );
 };
 
 export const ScheduleRow = ({ from, to, duration, Icon }: ScheduleRowProps) => {
-    console.log(from, to, duration, Icon);
     if (!from || !to) {
         return null;
     }
@@ -48,7 +47,7 @@ export const ScheduleRow = ({ from, to, duration, Icon }: ScheduleRowProps) => {
                 {duration && <span>{formatTimestampToTime(duration)}</span>}
                 {Icon && <Icon />}
             </div>
-            <Schedule info={to} isFull={!!duration} isTextAlignEnd={!!duration} />
+            <Schedule info={to} isFull={!!duration} isTextAlignEnd={!duration} />
         </div>
     );
 };
