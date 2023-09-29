@@ -38,11 +38,9 @@ const initialState: RoutesSliceState = {
     },
     routesList: {
         total_count: 0,
-        items: []
+        items: [],
     },
-  lastTicketsList: {
-        items: []
-    },
+    lastTicketsList: [],
 };
 
 const routesSlice = createSlice({

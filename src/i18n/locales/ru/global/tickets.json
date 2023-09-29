@@ -25,5 +25,8 @@
             "there-field-label": "Туда",
             "back-field-label": "Обратно"
         }
+    },
+    "last-tickets": {
+        "title": "Последние билеты"
     }
 }

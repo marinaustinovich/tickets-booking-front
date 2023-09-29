@@ -12,3 +12,5 @@ export * from './schedule-row';
 export * from './seat-row';
 export * from './direction-block';
 export * from './range';
+export * from './min-price-block';
+export * from './advantages-block';

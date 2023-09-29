@@ -9,22 +9,24 @@ type ScheduleRowProps = {
     from?: DepartureOrArrivalInfo;
     to?: DepartureOrArrivalInfo;
     duration?: number;
-    Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    Icon?: React.FC<React.SVGProps<SVGSVGElement>>;
 };
 
 type ScheduleProps = {
     info: DepartureOrArrivalInfo;
+    isFull: boolean;
+    isTextAlignEnd?: boolean;
 };
 
 const cn = classname('schedule-row');
 
-const Schedule = ({ info }: ScheduleProps) => {
+const Schedule = ({ info, isFull, isTextAlignEnd }: ScheduleProps) => {
     const { t } = useTranslation('global');
 
     const { datetime, railway_station_name, city } = info;
     return (
-        <div className={cn('wrapper')}>
-            <div className={cn('datetime')}>{formatTimestampToTime(datetime)}</div>
+        <div className={cn('wrapper', { text: isTextAlignEnd ? 'text-end' : '' })}>
+            {isFull && <div className={cn('datetime')}>{formatTimestampToTime(datetime)}</div>}
             <div className={cn('city-name')}>{capitalizeHyphenatedString(city.name)}</div>
             <p className={cn('station-name')}>
                 {capitalizeHyphenatedString(railway_station_name)} {t('tickets.trains.station')}
@@ -34,18 +36,19 @@ const Schedule = ({ info }: ScheduleProps) => {
 };
 
 export const ScheduleRow = ({ from, to, duration, Icon }: ScheduleRowProps) => {
-    if (!from || !to || !duration) {
+    console.log(from, to, duration, Icon);
+    if (!from || !to) {
         return null;
     }
 
     return (
         <div className={cn()}>
-            <Schedule info={from} />
+            <Schedule info={from} isFull={!!duration} />
             <div className={cn('driving-time')}>
-                <span>{formatTimestampToTime(duration)}</span>
-                <Icon />
+                {duration && <span>{formatTimestampToTime(duration)}</span>}
+                {Icon && <Icon />}
             </div>
-            <Schedule info={to} />
+            <Schedule info={to} isFull={!!duration} isTextAlignEnd={!!duration} />
         </div>
     );
 };

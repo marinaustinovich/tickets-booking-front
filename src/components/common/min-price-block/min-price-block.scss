@@ -1,0 +1,31 @@
+.min-price-block {
+    display: flex;
+    gap: 6px;
+
+    &__label {
+        color: var(--color-text-disabled);
+    }
+
+    &__value {
+        font-weight: 700;
+    }
+
+    &--view-default {
+        align-items: center;
+
+        .min-price-block__value {
+            color: var(--color-text-button-hover);
+            font-size: 24px;
+        }
+    }
+
+    &--view-primary {
+        align-items: end;
+
+        .min-price-block__value {
+            color: var(--color-primary);
+            font-size: 36px;
+            line-height: 26px;
+        }
+    }
+}

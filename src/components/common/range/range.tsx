@@ -31,7 +31,7 @@ export const Range = ({ min, max, size = 'medium' }: Props) => {
     }, []);
 
     return (
-        <div className={cn('', {size: size})}>
+        <div className={cn('', {size})}>
             <MultiRangeSlider min={min} max={max} step={1} minValue={minValue} maxValue={maxValue} onInput={e => handleInput(e)} />
         </div>
     );

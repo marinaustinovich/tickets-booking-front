@@ -25,5 +25,8 @@
             "there-field-label": "There",
             "back-field-label": "Back"
         }
+    },
+    "last-tickets": {
+        "title": "Last tickets"
     }
 }
