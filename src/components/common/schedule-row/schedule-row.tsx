@@ -26,17 +26,16 @@ const Schedule = ({ info }: ScheduleProps) => {
         <div className={cn('wrapper')}>
             <div className={cn('datetime')}>{formatTimestampToTime(datetime)}</div>
             <div className={cn('city-name')}>{capitalizeHyphenatedString(city.name)}</div>
-            <div className={cn('station-name')}>
-                <span>{capitalizeHyphenatedString(railway_station_name)}</span>
-                <span>{t('tickets.trains.station')}</span>
-            </div>
+            <p className={cn('station-name')}>
+                {capitalizeHyphenatedString(railway_station_name)} {t('tickets.trains.station')}
+            </p>
         </div>
     );
 };
 
 export const ScheduleRow = ({ from, to, duration, Icon }: ScheduleRowProps) => {
     if (!from || !to || !duration) {
-        return null; 
+        return null;
     }
 
     return (

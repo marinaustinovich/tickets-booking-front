@@ -34,6 +34,11 @@ export type Routes = {
     items: TrainInfo[] | [];
 };
 
+export type LastTickets = {
+    items: TrainInfo[];
+};
+
+
 export type TrainInfo = {
     have_first_class: boolean;
     have_second_class: boolean;

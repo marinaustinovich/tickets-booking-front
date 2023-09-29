@@ -12,21 +12,23 @@ import { useTranslation } from 'react-i18next';
 
 const cn = classname('datepicker');
 
-type DatePickerProps = Omit<ReactDatePickerProps, 'onChange'> & FieldRenderProps<string>;
+type DatePickerProps = Omit<ReactDatePickerProps, 'onChange'> & FieldRenderProps<string | Date>;
 
 export const DatePicker = ({ input, placeholder, className, ...rest }: DatePickerProps) => {
     const { t } = useTranslation('common');
     const locale = 'commons.datepicker';
     const [value, setValue] = useState<Date | null>(input.value ? new Date(input.value) : null);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
 
     const DatePickerCustomHeader = memo(function DatePickerCustomHeader({ decreaseMonth, increaseMonth, date }: ReactDatePickerCustomHeaderProps) {
         return (
             <div className={cn('header')}>
-                <IconButton className={cn('navigation')} Icon={ArrowLeftWithoutStickIcon} onClick={decreaseMonth} size='mini'/>
+                <IconButton className={cn('navigation')} Icon={ArrowLeftWithoutStickIcon} onClick={decreaseMonth} size='mini' />
                 <div className={cn('current-date')}>
                     <span className={cn('current-month')}> {t(`${locale}.${date.getMonth()}`)}</span>
                 </div>
-                <IconButton className={cn('navigation')} Icon={ArrowRightWithoutStickIcon} onClick={increaseMonth} size='mini'/>
+                <IconButton className={cn('navigation')} Icon={ArrowRightWithoutStickIcon} onClick={increaseMonth} size='mini' />
             </div>
         );
     });
@@ -42,9 +44,11 @@ export const DatePicker = ({ input, placeholder, className, ...rest }: DatePicke
                 setValue(date);
                 input.onChange(date?.toISOString() || null);
             }}
-            minDate={new Date()} 
+            minDate={today}
             filterDate={(date: Date) => {
-                return date >= new Date();
+                const comparingDate = new Date(date);
+                comparingDate.setHours(0, 0, 0, 0);
+                return comparingDate >= today;
             }}
             shouldCloseOnSelect={true}
             calendarStartDay={1}

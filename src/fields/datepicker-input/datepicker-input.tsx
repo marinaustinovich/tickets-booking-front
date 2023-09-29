@@ -1,5 +1,5 @@
 import React from 'react';
-import { FieldRenderProps, Field } from 'react-final-form';
+import { FieldRenderProps } from 'react-final-form';
 
 import { DatePicker, InputError } from 'components';
 import { classname } from 'utils';
@@ -18,18 +18,16 @@ type DatePickerInputProps = {
     required?: boolean;
 };
 
-export const DatePickerInput = (props: DatePickerInputProps) => {
-    const { input, meta, className } = props;
-    const { active, touched, submitError, dirtySinceLastSubmit } = meta;
-    const { name } = input;
+export const DatePickerInput = ({ input, meta, className, ...restProps }: DatePickerInputProps) => {
+    const {dirty, submitError, dirtySinceLastSubmit } = meta;
 
     const error = meta.error || (!dirtySinceLastSubmit && submitError);
-    const isErrorVisible = !active && touched && !!error;
+    const isErrorVisible = (dirty && !!error) || (!dirtySinceLastSubmit && submitError);
 
     return (
         <div className={cn('', [className])}>
-            <Field name={name} component={DatePicker} {...props} />
-            {isErrorVisible && <InputError error={error}/>}
+            <DatePicker input={input} meta={meta} {...restProps} />
+            {isErrorVisible && <InputError error={error} />}
         </div>
     );
 };

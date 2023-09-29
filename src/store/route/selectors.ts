@@ -9,6 +9,13 @@ export const routesSelector = createSelector(
     (routesData) =>routesData ?? []
 );
 
+const fetchLastTicketsDataSelector = (state: AppState) => SearchSelector(state).lastTicketsList;
+export const lastTicketsSelector = createSelector(
+    [fetchLastTicketsDataSelector],
+    (latestTicketsData) =>latestTicketsData ?? []
+);
+
+
 
 
 

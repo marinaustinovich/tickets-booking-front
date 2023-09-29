@@ -1,0 +1,12 @@
+.price-range-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &__labels {
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-text-white);
+        font-size: 18px;
+    }
+}

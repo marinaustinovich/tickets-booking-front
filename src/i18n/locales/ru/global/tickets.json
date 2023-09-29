@@ -20,8 +20,8 @@
             "wi-fi-field-label": "Wi-Fi",
             "express-field-label": "Экспресс",
             "price-field-label": "Стоимость",
-            "from-field-label": "От",
-            "before-field-label": "До",
+            "min-count-price-field-label": "1920",
+            "max-count-price-field-label": "7000",
             "there-field-label": "Туда",
             "back-field-label": "Обратно"
         }

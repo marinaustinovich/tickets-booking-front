@@ -14,4 +14,11 @@
         border-top: 1px solid var(--color-text-header);
         padding: 43px 36px 34px 68px;
     }
+
+    &__price {
+        display: grid;
+        gap: 28px;
+        border-top: 1px solid var(--color-text-header);
+        padding: 37px 32px 34px 32px;
+    }
 }

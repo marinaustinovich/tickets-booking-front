@@ -1,0 +1,23 @@
+.direction-block {
+    display: grid;
+    padding: 33px 32px 37px 34px;
+    border-top: 1px solid var(--color-text-header);
+
+    &__title {
+        display: flex;
+        svg {
+            align-self: center;
+        }
+    }
+
+    &__label {
+        padding-left: 12px;
+        color: var(--color-text-white);
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    &__show-btn {
+        margin-left: auto;
+    }
+}

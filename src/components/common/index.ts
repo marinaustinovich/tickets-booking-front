@@ -10,3 +10,5 @@ export * from './autocomplete-input';
 export * from './input-error';
 export * from './schedule-row';
 export * from './seat-row';
+export * from './direction-block';
+export * from './range';

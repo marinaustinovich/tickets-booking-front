@@ -15,6 +15,7 @@ type Props = {
     className?: string;
     Icon: React.FC<React.SVGProps<SVGSVGElement>>;
 };
+
 export const SwitchInput = ({ input, meta, label, disabled, className, Icon }: Props) => {
     const [checked, setChecked] = useState<boolean>(Boolean(input.value));
 

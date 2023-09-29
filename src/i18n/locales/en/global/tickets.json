@@ -20,8 +20,8 @@
             "wi-fi-field-label": "Wi-Fi",
             "express-field-label": "Express",
             "price-field-label": "Price",
-            "from-field-label": "From",
-            "before-field-label": "Before",
+            "min-count-price-field-label": "1920",
+            "max-count-price-field-label": "7000",
             "there-field-label": "There",
             "back-field-label": "Back"
         }

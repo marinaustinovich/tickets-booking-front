@@ -1,4 +1,3 @@
-import { ru } from './../i18n/locales/ru/index';
 import { ReactComponent as ReactLogoIcon } from './logo.svg';
 import { ReactComponent as GroupTwoIcon } from './group-two.svg';
 import { ReactComponent as LogoIcon } from './logo.svg';
@@ -31,6 +30,10 @@ import { ReactComponent as CupIcon } from './cup.svg';
 import { ReactComponent as CoupeIcon } from './coupe.svg';
 import { ReactComponent as SedentaryIcon } from './sedentary.svg';
 import { ReactComponent as StarIcon } from './star.svg';
+import { ReactComponent as ToArrowIcon } from './to-arrow.svg';
+import { ReactComponent as BackArrowIcon } from './back-arrow.svg';
+import { ReactComponent as PlusIcon } from './plus.svg';
+
 
 export {
     ReactLogoIcon,
@@ -64,5 +67,8 @@ export {
     CupIcon,
     CoupeIcon,
     SedentaryIcon,
-    StarIcon
+    StarIcon,
+    ToArrowIcon,
+    BackArrowIcon,
+    PlusIcon
 };

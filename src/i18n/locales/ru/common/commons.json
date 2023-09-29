@@ -15,5 +15,13 @@
         "9": "Октябрь",
         "10": "Ноябрь",
         "11": "Декабрь"
+    },
+    "range-input": {
+        "from-field-label": "От",
+        "before-field-label": "До"
+    },
+    "transit-time-block": {
+        "departure-time-field-label": "Время отбытия",
+        "arrival-time-field-label": "Время прибытия"
     }
 }

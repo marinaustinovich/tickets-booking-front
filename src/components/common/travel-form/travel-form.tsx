@@ -8,7 +8,7 @@ import { useAppDispatch } from 'store';
 import { fetchRoutesAction } from 'store/route';
 import { classname } from 'utils';
 import { FormIdEnum } from 'enums';
-import { required } from 'validators';
+import { required, validateDates } from 'validators';
 import { Button } from '../button';
 import { CircularDirectionArrowsIcon } from 'icons';
 import { IconButton } from '../icon-button';
@@ -43,6 +43,7 @@ export const TravelForm = ({ initialValues, isRow }: TravelFormProps) => {
                 fromCityId: fromCity,
                 toCityId: toCity,
             };
+
             dispatch(fetchRoutesAction(preFilters));
             navigate('/tickets');
         },
@@ -61,6 +62,7 @@ export const TravelForm = ({ initialValues, isRow }: TravelFormProps) => {
         <Form<TravelFormState>
             onSubmit={handleFormSubmit}
             initialValues={initialValues}
+            validate={validateDates}
             render={({ handleSubmit, form }) => (
                 <form className={cn('', { row: isRow })} id={FormIdEnum.TRAVEL} onSubmit={handleSubmit}>
                     <div className={cn('from-wrapper')}>
