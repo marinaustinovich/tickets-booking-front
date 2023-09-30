@@ -32,10 +32,10 @@ export const TrainSelection = () => {
     return (
         <div className={cn()}>
             <div className={cn('sidebar')}>
-                <TrainForm initialValues={initialValues}/>
-               <LastTickets />
+                <TrainForm initialValues={initialValues} />
+                <LastTickets />
             </div>
-            <TrainsList trains={routes.items} />
+            <TrainsList trains={routes.items} totalCount={routes.total_count}/>
         </div>
     );
 };

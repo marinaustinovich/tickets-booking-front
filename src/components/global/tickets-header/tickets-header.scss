@@ -5,4 +5,47 @@
     &__form-wrapper {
         padding: 111px calc(10% + 30px) 0 calc(10% + 60px);
     }
+
+    &__steps {
+        display: flex;
+        background-color: var(--color-background-form);
+    }
+
+    &__step {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        padding: 0 0 0 180px;
+
+        h3 {
+            text-transform: none;
+            color: var(--color-text-white);
+        }
+
+        span {
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            border: 3px solid var(--color-text-white);
+            border-radius: 50%;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--color-text-white);
+        }
+    }
+
+    .current-step:after {
+        content: '';
+        position: absolute;
+        right: -99px;
+        top: 50%;
+        border: 50px solid transparent;
+        border-left-color: var(--color-primary);
+        transform: translateY(-50%);
+    }
+
+    .current-step {
+        background-color: var(--color-primary);
+    }
 }

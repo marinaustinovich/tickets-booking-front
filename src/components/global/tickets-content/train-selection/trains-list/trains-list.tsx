@@ -8,12 +8,13 @@ import { NumericPaginate } from 'components/common';
 import './trains-list.scss';
 
 type Props = {
+    totalCount: number;
     trains: TrainInfo[] | [];
 };
 
 const cn = classname('trains-list');
 
-export const TrainsList = ({ trains }: Props) => {
+export const TrainsList = ({ trains, totalCount }: Props) => {
     const { t } = useTranslation('global');
     const [page, setPage] = useState(1);
     const lastPage = 10;
@@ -23,7 +24,7 @@ export const TrainsList = ({ trains }: Props) => {
         <div className={cn()}>
             <div className={cn('total-info')}>
                 <div>
-                    {t('tickets.trains.found-count')}: {trains?.length ?? 0}
+                    {t('tickets.trains.found-count')}: {totalCount}
                 </div>
             </div>
             <div className={cn('items')}>

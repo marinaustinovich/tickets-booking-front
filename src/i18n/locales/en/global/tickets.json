@@ -1,4 +1,10 @@
 {
+    "header": {
+        "passengers": "Passengers",
+        "tickets": "Tickets",
+        "payment": "Payment",
+        "verification": "Verification"
+    },
     "trains": {
         "found-count": "found",
         "station": "station",

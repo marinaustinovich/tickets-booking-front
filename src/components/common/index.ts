@@ -15,3 +15,4 @@ export * from './range';
 export * from './min-price-block';
 export * from './advantages-block';
 export * from './numeric-paginator';
+export * from './travel-form';

@@ -1,4 +1,10 @@
 {
+    "header": {
+        "passengers": "Пассажиры",
+        "tickets": "Билеты",
+        "payment": "Оплата",
+        "verification": "Проверка"
+    },
     "trains": {
         "found-count": "найдено",
         "station": "вокзал",

@@ -33,6 +33,7 @@ import { ReactComponent as StarIcon } from './star.svg';
 import { ReactComponent as ToArrowIcon } from './to-arrow.svg';
 import { ReactComponent as BackArrowIcon } from './back-arrow.svg';
 import { ReactComponent as PlusIcon } from './plus.svg';
+import { ReactComponent as ArrowRightThin } from './arrow-right-thin.svg';
 
 
 export {
@@ -70,5 +71,6 @@ export {
     StarIcon,
     ToArrowIcon,
     BackArrowIcon,
-    PlusIcon
+    PlusIcon,
+    ArrowRightThin
 };
