@@ -7,4 +7,11 @@
         display: grid;
         gap: 47px;
     }
+
+    &__sort {
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-text-disabled);
+        font-size: 18px;
+    }
 }

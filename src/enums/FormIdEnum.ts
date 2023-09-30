@@ -1,3 +1,5 @@
 export enum FormIdEnum {
-    TRAVEL = 'travelFormId'
+    TRAVEL = 'travelFormId',
+    TRAIN = 'trainFormId',
+    SORT = 'sortFormId'
 }

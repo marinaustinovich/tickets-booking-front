@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 
 import { classname } from 'utils';
 import { useAppSelector } from 'store';
@@ -14,28 +14,13 @@ const cn = classname('train-selection');
 export const TrainSelection = () => {
     const routes = useAppSelector(routesSelector);
 
-    const initialValues = useMemo(() => {
-        if (!routes) {
-            return {
-                toCity: '641037eb5c49ea004632ee6e',
-                fromCity: '641037eb5c49ea004632ee72',
-            };
-        }
-
-        return {
-            toCity: '641037eb5c49ea004632ee6e',
-            fromCity: '641037eb5c49ea004632ee72',
-            // price: [routes.items[0].min_price, routes.items[0].min_price],
-        };
-    }, [routes]);
-
     return (
         <div className={cn()}>
             <div className={cn('sidebar')}>
-                <TrainForm initialValues={initialValues} />
+                <TrainForm />
                 <LastTickets />
             </div>
-            <TrainsList trains={routes.items} totalCount={routes.total_count}/>
+            <TrainsList trains={routes.items} totalCount={routes.total_count} />
         </div>
     );
 };

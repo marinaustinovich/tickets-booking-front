@@ -30,6 +30,10 @@
             "max-count-price-field-label": "7000",
             "there-field-label": "There",
             "back-field-label": "Back"
+        },
+        "sort-form": {
+            "sort-field-label": "Sort by:",
+            "count-sort-field-label": "Show by:"
         }
     },
     "last-tickets": {

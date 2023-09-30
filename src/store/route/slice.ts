@@ -3,11 +3,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { composeBuilder, requestInitial } from 'utils';
 import { fetchRoutesAction } from './actions';
 import { RoutesSliceState } from './types';
-import { LastTickets, Routes } from 'types/routes';
+import { CitiesId, LastTickets, Routes, RoutesFilters } from 'types/routes';
 
 const initialState: RoutesSliceState = {
     fetchRoutes: requestInitial(),
     fetchLastTickets: requestInitial(),
+    citiesId:{
+        fromCityId: null,
+        toCityId: null,
+    },
     filters: {
         fromCityId: null,
         toCityId: null,
@@ -47,6 +51,12 @@ const routesSlice = createSlice({
     name: 'routes',
     initialState,
     reducers: {
+        setCitiesId: (state, action: PayloadAction<CitiesId>) => {
+            state.citiesId = action.payload;
+        },
+        setFilters: (state, action: PayloadAction<RoutesFilters>) => {
+            state.filters = action.payload;
+        },
         setRoutesList: (state, action: PayloadAction<Routes>) => {
             state.routesList = action.payload;
         },

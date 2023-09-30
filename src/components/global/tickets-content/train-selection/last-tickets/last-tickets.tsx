@@ -14,7 +14,6 @@ export const LastTickets = () => {
     const { t } = useTranslation('global');
     const dispatch = useAppDispatch();
     const lastTickets = useAppSelector(lastTicketsSelector);
-    console.log('lastTickets', lastTickets);
 
     useEffect(() => {
         dispatch(fetchLastTicketsAction());

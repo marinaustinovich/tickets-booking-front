@@ -4,8 +4,10 @@ import { TrainInfo } from 'types';
 import { useTranslation } from 'react-i18next';
 import { TrainItem } from '../train-item';
 import { NumericPaginate } from 'components/common';
+import { SortForm } from '../sort-form';
 
 import './trains-list.scss';
+
 
 type Props = {
     totalCount: number;
@@ -22,13 +24,14 @@ export const TrainsList = ({ trains, totalCount }: Props) => {
 
     return (
         <div className={cn()}>
-            <div className={cn('total-info')}>
+            <div className={cn('sort')}>
                 <div>
-                    {t('tickets.trains.found-count')}: {totalCount}
+                    {t('tickets.trains.found-count')}: {totalCount ?? 0}
                 </div>
+                <SortForm />
             </div>
             <div className={cn('items')}>
-                {trains.map(train => (
+                {trains && trains.map(train => (
                     <TrainItem train={train} key={train.departure.train._id} />
                 ))}
             </div>

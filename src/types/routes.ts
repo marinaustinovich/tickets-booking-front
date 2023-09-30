@@ -1,5 +1,10 @@
 import { City } from './city-filters';
 
+export type CitiesId = {
+    fromCityId: string | null;
+    toCityId: string | null;
+}
+
 export type RoutesFilters = Partial<{
     fromCityId: string | null;
     toCityId: string | null;

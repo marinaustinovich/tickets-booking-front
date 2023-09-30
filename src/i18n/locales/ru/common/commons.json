@@ -23,5 +23,10 @@
     "transit-time-block": {
         "departure-time-field-label": "Время отбытия",
         "arrival-time-field-label": "Время прибытия"
+    },
+    "sort-by-select": {
+        "date": "Времени",
+        "price": "Стоимости",
+        "duration": "Длительности"
     }
 }

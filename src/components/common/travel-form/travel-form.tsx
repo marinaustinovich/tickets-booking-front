@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import { DatePickerInput, FormControl, InputLabel } from 'fields';
-import { useAppDispatch } from 'store';
-import { fetchRoutesAction } from 'store/route';
+import { useAppDispatch, useAppSelector } from 'store';
+import { citiesIdSelector, fetchRoutesAction } from 'store/route';
 import { classname } from 'utils';
 import { FormIdEnum } from 'enums';
 import { required, validateDates } from 'validators';
@@ -13,49 +13,60 @@ import { Button } from '../button';
 import { CircularDirectionArrowsIcon } from 'icons';
 import { IconButton } from '../icon-button';
 import { CitiesInput } from './cities-input';
+import { routesActions } from 'store/route/slice';
 
 import './travel-form.scss';
 
 type TravelFormState = {
-    dateEnd: string;
-    dateStart: string;
-    toCity: string;
-    fromCity: string;
+    dateEnd?: string;
+    dateStart?: string;
+    toCityId: string;
+    fromCityId: string;
 };
 
 type TravelFormProps = {
-    initialValues?: TravelFormState;
     isRow?: boolean;
 };
 
 const cn = classname('travel-form');
 
-export const TravelForm = ({ initialValues, isRow }: TravelFormProps) => {
+export const TravelForm = ({ isRow }: TravelFormProps) => {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
+    const citiesId = useAppSelector(citiesIdSelector);
+
+    const initialValues = useMemo(() => {
+        const { fromCityId, toCityId } = citiesId;
+
+        return {
+            toCityId: toCityId || '',
+            fromCityId: fromCityId || '',
+        };
+    }, [citiesId]);
 
     const handleFormSubmit = useCallback(
         async (values: TravelFormState) => {
-            const { toCity, fromCity, ...rest } = values;
-            const preFilters = {
-                ...rest,
-                fromCityId: fromCity,
-                toCityId: toCity,
-            };
+            const { toCityId, fromCityId } = values;
 
-            dispatch(fetchRoutesAction(preFilters));
+            dispatch(
+                routesActions.setCitiesId({
+                    fromCityId,
+                    toCityId,
+                }),
+            );
+            dispatch(fetchRoutesAction(values));
             navigate('/tickets');
         },
         [navigate, dispatch],
     );
 
     const handleSwapFields = useCallback((form: any) => {
-        const toValue = form.getFieldState('toCity')?.value;
-        const fromValue = form.getFieldState('fromCity')?.value;
+        const toValue = form.getFieldState('toCityId')?.value;
+        const fromValue = form.getFieldState('fromCityId')?.value;
 
-        form.change('toCity', fromValue);
-        form.change('fromCity', toValue);
+        form.change('toCityId', fromValue);
+        form.change('fromCityId', toValue);
     }, []);
 
     return (
@@ -68,11 +79,11 @@ export const TravelForm = ({ initialValues, isRow }: TravelFormProps) => {
                     <div className={cn('from-wrapper')}>
                         <FormControl>
                             <InputLabel>{t('travel-form.direction-label')}</InputLabel>
-                            <Field name='fromCity' component={CitiesInput} placeholder={t('travel-form.from-placeholder')} validate={required} />
+                            <Field name='fromCityId' component={CitiesInput} placeholder={t('travel-form.from-placeholder')} validate={required} />
                         </FormControl>
                         <IconButton className={cn('swap-icon')} Icon={CircularDirectionArrowsIcon} onClick={() => handleSwapFields(form)} />
                     </div>
-                    <Field name='toCity' component={CitiesInput} placeholder={t('travel-form.to-placeholder')} validate={required} />
+                    <Field name='toCityId' component={CitiesInput} placeholder={t('travel-form.to-placeholder')} validate={required} />
                     <FormControl>
                         <InputLabel>{t('travel-form.date-label')}</InputLabel>
                         <Field name='dateStart' component={DatePickerInput} parse={value => value} />

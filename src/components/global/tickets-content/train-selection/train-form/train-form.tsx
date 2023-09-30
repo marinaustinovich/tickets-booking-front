@@ -1,36 +1,36 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 
 import { DatePickerInput, FormControl, InputLabel, SwitchInput, PriceRangeInput } from 'fields';
-import { useAppDispatch } from 'store';
-import { fetchRoutesAction } from 'store/route';
+import { useAppDispatch, useAppSelector } from 'store';
+import { citiesIdSelector, fetchRoutesAction } from 'store/route';
 import { FormValuesSpy, classname } from 'utils';
 import { FormIdEnum } from 'enums';
 import { BackArrowIcon, CoupeIcon, ExpressIcon, SedentaryIcon, StarIcon, ToArrowIcon, WifiIcon } from 'icons';
 import { validateDates } from 'validators';
 import { DirectionBlock } from 'components';
+import { TrainFormState } from 'types';
+
 
 import './train-form.scss';
 
-type TrainFormState = {
-    dateEnd?: string;
-    dateStart?: string;
-    toCity: string;
-    fromCity: string;
-    price?: number[];
-};
-
-type TrainFormProps = {
-    initialValues?: TrainFormState;
-};
-
 const cn = classname('train-form');
 
-export const TrainForm = ({ initialValues }: TrainFormProps) => {
+export const TrainForm = () => {
     const { t } = useTranslation('global');
     const locale = 'tickets.trains.train-form';
     const dispatch = useAppDispatch();
+    const citiesId = useAppSelector(citiesIdSelector);
+
+    const initialValues = useMemo(() => {
+        const { fromCityId, toCityId } = citiesId;
+
+        return {
+            toCityId: toCityId || '',
+            fromCityId: fromCityId || '',
+        };
+    }, [citiesId]);
 
     const handleFormSubmit = useCallback(() => undefined, []);
 
@@ -43,7 +43,7 @@ export const TrainForm = ({ initialValues }: TrainFormProps) => {
                 priceTo: price ? price[1] : null,
             };
             console.log(preFilters);
-            // dispatch(fetchRoutesAction(preFilters));
+            dispatch(fetchRoutesAction(preFilters));
         },
         [dispatch],
     );
@@ -54,7 +54,7 @@ export const TrainForm = ({ initialValues }: TrainFormProps) => {
             validate={validateDates}
             initialValues={initialValues}
             render={({ handleSubmit, values }) => (
-                <form className={cn()} id={FormIdEnum.TRAVEL} onSubmit={handleSubmit}>
+                <form className={cn()} id={FormIdEnum.TRAIN} onSubmit={handleSubmit}>
                     <FormValuesSpy onChange={handleFormChange} debounceTime={300} />
                     <div className={cn('date-group')}>
                         <FormControl>

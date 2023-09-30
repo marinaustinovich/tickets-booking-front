@@ -12,6 +12,7 @@ export const fetchRoutesAction = createAsyncThunk<any, RoutesFilters>('RoutesSea
     try {
         const result = await fetchRoutes(filters);
         dispatch(routesActions.setRoutesList(result));
+        dispatch(routesActions.setFilters(filters))
 
         return result;
     } catch (error) {

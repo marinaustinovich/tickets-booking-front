@@ -1,16 +1,30 @@
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
-import { configureStore } from '@reduxjs/toolkit';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage'; 
 
 import { searchReducer } from './search';
 
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['search'] 
+};
+
+const rootReducer = combineReducers({
+    search: searchReducer,
+  });
+  
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-    reducer: {
-        search: searchReducer,
-    },
-    middleware: getDefaultMiddleware => 
-        getDefaultMiddleware({ serializableCheck: false }),
-    devTools: process.env.NODE_ENV !== 'production',
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware => 
+      getDefaultMiddleware({ serializableCheck: false }),
+  devTools: process.env.NODE_ENV !== 'production',
 });
+
+export const persistor = persistStore(store);
 
 export type AppState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

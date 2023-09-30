@@ -1,4 +1,4 @@
-import React, { useCallback, useId } from 'react';
+import React, { useCallback, useId, useEffect } from 'react';
 import { FieldRenderProps } from 'react-final-form';
 import Select, { ControlProps } from 'react-select';
 import { useTranslation } from 'react-i18next';
@@ -16,10 +16,8 @@ const styles = {
         ...base,
         boxShadow: 'none',
         minHeight: '60px',
-        borderColor: `var(${state.selectProps.menuIsOpen ? '--color-primary' : '--color-button-border-default'})`,
-        '&:hover': {
-            borderColor: `var(${state.selectProps.menuIsOpen ? '--color-primary' : '--color-input-border-hover'})`,
-        },
+        border: 'none',
+        backgroundColor: 'transparent',
         fontSize: '18px',
     }),
     placeholder: (base: CSSObject) => ({
@@ -36,6 +34,17 @@ const styles = {
     valueContainer: (base: CSSObject) => ({
         ...base,
         padding: '2px 12px',
+    }),
+    option: (base: CSSObject, state: any) => ({
+        ...base,
+        fontSize: '18px',
+        fontVariant: 'all-small-caps',
+        backgroundColor: state.isFocused ? 'var(--color-background-button-hover)' : 'var( --color-background-default)',
+        color: state.isFocused ? 'var(--color-text-white)' : 'var(--color-background-form)',
+        padding: '8px 11px',
+        '&:hover': {
+            backgroundColor: 'var(--color-background-button-hover)',
+        },
     }),
     dropdownIndicator: (base: CSSObject) => ({
         ...base,
@@ -54,6 +63,7 @@ const styles = {
 
 export const SelectField = ({ input, options, ...rest }: FieldRenderProps<string>) => {
     const { t } = useTranslation('common');
+
     const handleChange = useCallback(
         (option: SelectOption<string>) => {
             input.onChange(option?.value);

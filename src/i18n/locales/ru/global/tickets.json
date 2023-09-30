@@ -30,6 +30,11 @@
             "max-count-price-field-label": "7000",
             "there-field-label": "Туда",
             "back-field-label": "Обратно"
+        },
+        "sort-form": {
+            "sort-field-label": "Сортировать по:",
+            "count-sort-field-label": "Показывать по:"
+
         }
     },
     "last-tickets": {

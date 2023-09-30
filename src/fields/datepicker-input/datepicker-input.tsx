@@ -26,7 +26,7 @@ export const DatePickerInput = ({ input, meta, className, ...restProps }: DatePi
 
     return (
         <div className={cn('', [className])}>
-            <DatePicker input={input} meta={meta} {...restProps} />
+            <DatePicker input={input} meta={meta} {...restProps} autocomplete="off"/>
             {isErrorVisible && <InputError error={error} />}
         </div>
     );

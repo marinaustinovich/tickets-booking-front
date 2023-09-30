@@ -23,5 +23,10 @@
     "transit-time-block": {
         "departure-time-field-label": "Departure time",
         "arrival-time-field-label": "Arrival time"
+    },
+    "sort-by-select": {
+        "date": "Date",
+         "price": "Price",
+          "duration": "Duration"
     }
 }
