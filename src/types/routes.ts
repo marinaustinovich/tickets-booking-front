@@ -1,13 +1,12 @@
+import { ResultsPerPageEnum, SortByEnum } from 'enums';
 import { City } from './city-filters';
 
 export type CitiesId = {
     fromCityId: string | null;
     toCityId: string | null;
-}
+};
 
-export type RoutesFilters = Partial<{
-    fromCityId: string | null;
-    toCityId: string | null;
+export type BaseFilters = Partial<{
     dateStart: string | null;
     dateEnd: string | null;
     dateStartArrival: string | null;
@@ -29,10 +28,18 @@ export type RoutesFilters = Partial<{
     endDepartureHourTo: number | null;
     endArrivalHourFrom: number | null;
     endArrivalHourTo: number | null;
-    limit: number | null;
-    offset: number | null;
-    sort: 'date' | 'price' | 'duration';
 }>;
+
+export type TrainFilters = CitiesId & BaseFilters;
+
+export type RoutesFilters = BaseFilters &
+    Partial<{
+        fromCityId: string | null;
+        toCityId: string | null;
+        limit: ResultsPerPageEnum;
+        offset: number | null;
+        sort: SortByEnum;
+    }>;
 
 export type Routes = {
     total_count: number;

@@ -14,8 +14,8 @@ const cn = classname('react-select-container');
 const styles = {
     control: (base: CSSObject, state: ControlProps) => ({
         ...base,
+        minHeight: '22px',
         boxShadow: 'none',
-        minHeight: '60px',
         border: 'none',
         backgroundColor: 'transparent',
         fontSize: '18px',
@@ -29,11 +29,17 @@ const styles = {
     }),
     input: (base: CSSObject) => ({
         ...base,
+        padding: '0',
+        margin: '0',
         color: 'var(--color-button-text-default)',
     }),
     valueContainer: (base: CSSObject) => ({
         ...base,
         padding: '2px 12px',
+    }),
+    singleValue: (base: CSSObject) => ({
+        ...base,
+        overflow: 'visible',
     }),
     option: (base: CSSObject, state: any) => ({
         ...base,
@@ -56,8 +62,7 @@ const styles = {
     }),
     indicatorsContainer: (base: CSSObject) => ({
         ...base,
-        padding: '0 12px',
-        gap: '6px',
+        display: 'none',
     }),
 };
 
@@ -70,6 +75,12 @@ export const SelectField = ({ input, options, ...rest }: FieldRenderProps<string
         },
         [input],
     );
+
+    useEffect(() => {
+        if (!input.value && options && options.length > 0) {
+            handleChange(options[0]);
+        }
+    }, [input.value, options, handleChange]);
 
     return (
         <Select
@@ -84,9 +95,6 @@ export const SelectField = ({ input, options, ...rest }: FieldRenderProps<string
             isMulti={false}
             onChange={handleChange}
             value={options?.find((option: SelectOption) => option.value === input.value)}
-            components={{
-                IndicatorSeparator: () => null,
-            }}
             styles={styles}
             placeholder={t('commons.placeholder')}
         />

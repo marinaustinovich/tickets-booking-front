@@ -1,8 +1,11 @@
 .sort-by-select {
     display: flex;
-    
+    gap: 12px;
+    width: 100%;
+
     &__label {
         color: var(--color-text-disabled);
         font-size: 18px;
+        white-space: nowrap;
     }
 }

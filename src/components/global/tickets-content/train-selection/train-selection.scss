@@ -5,7 +5,8 @@
  padding: 95px calc(10% + 65px) 193px calc(10% + 65px);
 
  &__sidebar {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     gap: 94px;
  }
 }

@@ -28,5 +28,10 @@
         "date": "Времени",
         "price": "Стоимости",
         "duration": "Длительности"
+    },
+    "results-per-page": {
+        "five": "5",
+        "ten": "10",
+        "twenty": "20"
     }
 }

@@ -3,14 +3,40 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { composeBuilder, requestInitial } from 'utils';
 import { fetchRoutesAction } from './actions';
 import { RoutesSliceState } from './types';
-import { CitiesId, LastTickets, Routes, RoutesFilters } from 'types/routes';
+import { CitiesId, LastTickets, Routes, RoutesFilters, TrainFilters } from 'types';
+import { ResultsPerPageEnum, SortByEnum } from 'enums';
 
 const initialState: RoutesSliceState = {
     fetchRoutes: requestInitial(),
     fetchLastTickets: requestInitial(),
-    citiesId:{
+    citiesId: {
         fromCityId: null,
         toCityId: null,
+    },
+    trainFilters: {
+        fromCityId: null,
+        toCityId: null,
+        dateStart: null,
+        dateEnd: null,
+        dateStartArrival: null,
+        dateEndArrival: null,
+        haveFirstClass: false,
+        haveSecondClass: false,
+        haveThirdClass: false,
+        haveFourthClass: false,
+        haveWifi: false,
+        haveAirConditioning: false,
+        haveExpress: false,
+        priceFrom: null,
+        priceTo: null,
+        startDepartureHourFrom: null,
+        startDepartureHourTo: null,
+        startArrivalHourFrom: null,
+        startArrivalHourTo: null,
+        endDepartureHourFrom: null,
+        endDepartureHourTo: null,
+        endArrivalHourFrom: null,
+        endArrivalHourTo: null,
     },
     filters: {
         fromCityId: null,
@@ -36,9 +62,9 @@ const initialState: RoutesSliceState = {
         endDepartureHourTo: null,
         endArrivalHourFrom: null,
         endArrivalHourTo: null,
-        limit: null,
+        limit: ResultsPerPageEnum.FIVE,
         offset: null,
-        sort: 'date',
+        sort: SortByEnum.DATE,
     },
     routesList: {
         total_count: 0,
@@ -56,6 +82,9 @@ const routesSlice = createSlice({
         },
         setFilters: (state, action: PayloadAction<RoutesFilters>) => {
             state.filters = action.payload;
+        },
+        setTrainFilters: (state, action: PayloadAction<TrainFilters>) => {
+            state.trainFilters = action.payload;
         },
         setRoutesList: (state, action: PayloadAction<Routes>) => {
             state.routesList = action.payload;

@@ -28,5 +28,10 @@
         "date": "Date",
          "price": "Price",
           "duration": "Duration"
+    },
+    "results-per-page": {
+        "five": "5",
+        "ten": "10",
+        "twenty": "20"
     }
 }

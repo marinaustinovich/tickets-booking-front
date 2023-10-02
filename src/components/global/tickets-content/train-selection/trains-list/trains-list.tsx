@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { classname } from 'utils';
 import { TrainInfo } from 'types';
 import { useTranslation } from 'react-i18next';
@@ -7,7 +7,6 @@ import { NumericPaginate } from 'components/common';
 import { SortForm } from '../sort-form';
 
 import './trains-list.scss';
-
 
 type Props = {
     totalCount: number;
@@ -19,8 +18,13 @@ const cn = classname('trains-list');
 export const TrainsList = ({ trains, totalCount }: Props) => {
     const { t } = useTranslation('global');
     const [page, setPage] = useState(1);
-    const lastPage = 10;
     const isShowPaginate = trains && trains.length > 0;
+
+    const lastPage = useMemo(() => {
+        if (trains.length === 0) return 0;
+
+        return Math.ceil(totalCount / trains.length);
+    }, [totalCount, trains.length]);
 
     return (
         <div className={cn()}>
@@ -30,11 +34,7 @@ export const TrainsList = ({ trains, totalCount }: Props) => {
                 </div>
                 <SortForm />
             </div>
-            <div className={cn('items')}>
-                {trains && trains.map(train => (
-                    <TrainItem train={train} key={train.departure.train._id} />
-                ))}
-            </div>
+            <div className={cn('items')}>{trains && trains.map(train => <TrainItem train={train} key={train.departure.train._id} />)}</div>
             {isShowPaginate && <NumericPaginate lastPage={lastPage} page={page} onChange={setPage} />}
         </div>
     );

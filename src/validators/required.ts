@@ -3,8 +3,8 @@ import i18next from 'i18next';
 import { FieldValidator } from './types';
 
 type FormValues = {
-    dateEnd?: string;
-    dateStart?: string;
+    dateEnd?: string | null;
+    dateStart?: string | null;
     [key: string]: any;
 };
 
@@ -13,13 +13,11 @@ export const required: FieldValidator = value => (value ? undefined : i18next.t(
 export const validateDates = <T extends FormValues>(values: T) => {
     const errors: Partial<T> = {} as Partial<T>;
 
-    if (values.dateStart && values.dateEnd) {
-        const startDate = new Date(values.dateStart);
-        const endDate = new Date(values.dateEnd);
+    const startDate = values.dateStart ? new Date(values.dateStart) : null;
+    const endDate = values.dateEnd ? new Date(values.dateEnd) : null;
 
-        if (endDate < startDate) {
-            errors.dateEnd = i18next.t('common:validators.date-end');
-        }
+    if (startDate && endDate && endDate < startDate) {
+        errors.dateEnd = i18next.t('common:validators.date-end');
     }
     
     return errors;

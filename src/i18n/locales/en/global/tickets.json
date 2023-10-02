@@ -33,7 +33,7 @@
         },
         "sort-form": {
             "sort-field-label": "Sort by:",
-            "count-sort-field-label": "Show by:"
+            "results-per-page-field-label": "Show by:"
         }
     },
     "last-tickets": {

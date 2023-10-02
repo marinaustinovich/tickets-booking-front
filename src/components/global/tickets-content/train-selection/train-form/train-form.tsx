@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 
 import { DatePickerInput, FormControl, InputLabel, SwitchInput, PriceRangeInput } from 'fields';
 import { useAppDispatch, useAppSelector } from 'store';
-import { citiesIdSelector, fetchRoutesAction } from 'store/route';
+import { citiesIdSelector } from 'store/route';
 import { FormValuesSpy, classname } from 'utils';
 import { FormIdEnum } from 'enums';
 import { BackArrowIcon, CoupeIcon, ExpressIcon, SedentaryIcon, StarIcon, ToArrowIcon, WifiIcon } from 'icons';
 import { validateDates } from 'validators';
 import { DirectionBlock } from 'components';
 import { TrainFormState } from 'types';
-
+import { routesActions } from 'store/route/slice';
 
 import './train-form.scss';
 
@@ -42,8 +42,9 @@ export const TrainForm = () => {
                 priceFrom: price ? price[0] : null,
                 priceTo: price ? price[1] : null,
             };
-            console.log(preFilters);
-            dispatch(fetchRoutesAction(preFilters));
+            
+            dispatch(routesActions.setTrainFilters(preFilters));
+          
         },
         [dispatch],
     );
@@ -53,7 +54,7 @@ export const TrainForm = () => {
             onSubmit={handleFormSubmit}
             validate={validateDates}
             initialValues={initialValues}
-            render={({ handleSubmit, values }) => (
+            render={({ handleSubmit }) => (
                 <form className={cn()} id={FormIdEnum.TRAIN} onSubmit={handleSubmit}>
                     <FormValuesSpy onChange={handleFormChange} debounceTime={300} />
                     <div className={cn('date-group')}>

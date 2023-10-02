@@ -33,7 +33,7 @@
         },
         "sort-form": {
             "sort-field-label": "Сортировать по:",
-            "count-sort-field-label": "Показывать по:"
+            "results-per-page-field-label": "Показывать по:"
 
         }
     },

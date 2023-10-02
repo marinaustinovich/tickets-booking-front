@@ -5,14 +5,10 @@ import { RoutesFilters } from 'types';
 import { fetchLastTickets } from 'api/last-tickets';
 
 export const fetchRoutesAction = createAsyncThunk<any, RoutesFilters>('RoutesSearch/fetchRoutes', async (data, { rejectWithValue, getState, dispatch }) => {
-    const filters = {
-        ...data,
-    };
-
     try {
-        const result = await fetchRoutes(filters);
+        const result = await fetchRoutes(data);
         dispatch(routesActions.setRoutesList(result));
-        dispatch(routesActions.setFilters(filters))
+        dispatch(routesActions.setFilters(data))
 
         return result;
     } catch (error) {
@@ -20,16 +16,13 @@ export const fetchRoutesAction = createAsyncThunk<any, RoutesFilters>('RoutesSea
     }
 });
 
-export const fetchLastTicketsAction = createAsyncThunk<any, void>(
-    'RoutesSearch/fetchLastTickets',
-    async (_, { dispatch, rejectWithValue }) => {
-        try {
-            const result = await fetchLastTickets();
-            dispatch(routesActions.setLastTicketsList(result));
+export const fetchLastTicketsAction = createAsyncThunk<any, void>('RoutesSearch/fetchLastTickets', async (_, { dispatch, rejectWithValue }) => {
+    try {
+        const result = await fetchLastTickets();
+        dispatch(routesActions.setLastTicketsList(result));
 
-            return result;
-        } catch (error) {
-            return rejectWithValue(error);
-        }
+        return result;
+    } catch (error) {
+        return rejectWithValue(error);
     }
-);
+});

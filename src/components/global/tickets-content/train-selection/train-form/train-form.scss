@@ -1,5 +1,6 @@
 .train-form {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     background: var(--color-background-form);
 
     &__date-group {

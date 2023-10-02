@@ -16,3 +16,5 @@ export * from './min-price-block';
 export * from './advantages-block';
 export * from './numeric-paginator';
 export * from './travel-form';
+export * from './radio-button';
+export * from './radio-button-group';

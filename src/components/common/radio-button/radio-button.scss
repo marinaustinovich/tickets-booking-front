@@ -1,0 +1,47 @@
+.radio-button {
+    display: flex;
+    align-items: center;
+
+    &__control {
+        appearance: none;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    &__label-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__label,
+    &__description {
+        font-size: 18px;
+        color: var(--color-text-disabled);
+    }
+
+    &__label {
+        font-weight: 400;
+    }
+
+    &__description {
+        font-weight: 400;
+    }
+
+    &__control:hover + &__label-container &__label,
+    &__label-container:hover &__label {
+        color: var(--color-primary);
+    }
+
+    &__control:focus + &__label-container &__label,
+    &__control:checked + &__label-container &__label {
+        color: var(--color-background-dark);
+    }
+}
