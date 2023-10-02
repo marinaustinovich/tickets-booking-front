@@ -18,3 +18,4 @@ export * from './numeric-paginator';
 export * from './travel-form';
 export * from './radio-button';
 export * from './radio-button-group';
+export * from './dropdown';

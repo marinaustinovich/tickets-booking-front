@@ -14,7 +14,11 @@
             "first": "Lux",
             "second": "Coupe",
             "third": "Reserved seat",
-            "fourth": "Sedentary"
+            "fourth": "Sedentary",
+            "price": "average price",
+            "top-price": "top",
+            "bottom-price": "bottom",
+            "side-price": "side"
         },
         "train-form": {
             "travel-date-field-label": "Travel date",

@@ -22,9 +22,8 @@ export const SeatInfoBlock = ({ availableSeatsInfo, priceInfo, departure }: Prop
         <div className={cn()}>
             {Object.entries(availableSeatsInfo).map(([classSeat, count]) => {
                 const prices = priceInfo[classSeat];
-                const minPriceValue = findMinValue(prices);
 
-                return <SeatRow key={classSeat} classSeat={classSeat} count={count} minPrice={minPriceValue} />;
+                return <SeatRow key={classSeat} classSeat={classSeat} count={count} prices={prices} />;
             })}
             <AdvantagesBlock haveWiFi={haveWiFi} isExpress={isExpress} />
             <Button view='primary-white' size='large-narrow'>

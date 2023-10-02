@@ -14,7 +14,11 @@
             "first": "Люкс",
             "second": "Купе",
             "third": "Плацкарт",
-            "fourth": "Сидячий"
+            "fourth": "Сидячий",
+            "price": "средняя цена",
+            "top-price": "верхние",
+            "bottom-price": "нижние",
+            "side-price": "сидячие"
         },
         "train-form": {
             "travel-date-field-label": "Дата поездки",
