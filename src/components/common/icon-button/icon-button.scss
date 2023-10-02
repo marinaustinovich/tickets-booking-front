@@ -6,9 +6,14 @@
         background: transparent;
         color: var(--color-primary);
 
-        & > svg path, & > svg circle {
+        & > svg path,
+        & > svg circle {
             fill: var(--color-primary);
             stroke: var(--color-text-default);
+        }
+
+        & > svg line {
+            stroke: var(--color-primary);
         }
     }
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import { Field, Form } from 'react-final-form';
 import { useTranslation } from 'react-i18next';
 
@@ -14,12 +14,13 @@ import './sort-form.scss';
 const cn = classname('sort-form');
 
 export const SortForm = () => {
+    const lastValuesRef = useRef<SortFormState | null>(null);
     const { t } = useTranslation('global');
     const locale = 'tickets.trains.sort-form';
+    
     const dispatch = useAppDispatch();
     const trainFilters = useAppSelector(trainFiltersSelector);
     const sortFilters = useAppSelector(sortFiltersSelector);
-    console.log(sortFilters);
 
     const initialValues: SortFormState = useMemo(() => {
         const { sort, limit } = sortFilters;
@@ -36,18 +37,19 @@ export const SortForm = () => {
 
     const handleFormChange = useCallback(
         async (values: SortFormState) => {
-            const { price, ...rest } = values;
-            const preFilters = {
-                ...rest,
-                priceFrom: price ? price[0] : null,
-                priceTo: price ? price[1] : null,
-            };
+            if (lastValuesRef.current !== null) {
+                if (JSON.stringify(lastValuesRef.current) === JSON.stringify(values)) {
+                    return;
+                }
 
-            dispatch(fetchRoutesAction(preFilters));
+                dispatch(fetchRoutesAction(values));
+                lastValuesRef.current = values;
+            } else {
+                lastValuesRef.current = values;
+            }
         },
         [dispatch],
     );
-
     return (
         <Form<SortFormState>
             onSubmit={handleFormSubmit}

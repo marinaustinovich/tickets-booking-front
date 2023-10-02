@@ -4,7 +4,7 @@ import { classname } from 'utils';
 import { Header } from '../header';
 import { TravelForm } from 'components';
 import { StepsEnum } from 'enums/stepsEnum';
-import { ArrowRightThin } from 'icons';
+import { ArrowRightThinIcon } from 'icons';
 
 import './tickets-header.scss';
 
@@ -20,7 +20,7 @@ const Step = ({ label, index, className, isLast }: StepProps) => (
     <div className={cn('step', [className])}>
         <span>{index}</span>
         <h3>{label}</h3>
-        {!className && !isLast && <ArrowRightThin />}
+        {!className && !isLast && <ArrowRightThinIcon />}
     </div>
 );
 

@@ -36,15 +36,23 @@ export const TrainForm = () => {
 
     const handleFormChange = useCallback(
         async (values: TrainFormState) => {
-            const { price, ...rest } = values;
+            const { price, there, back, ...rest } = values;
+
             const preFilters = {
                 ...rest,
                 priceFrom: price ? price[0] : null,
                 priceTo: price ? price[1] : null,
+                startDepartureHourFrom: (there && there.departureHour) ? there.departureHour[0] : null,
+                startDepartureHourTo: (there && there.departureHour) ? there.departureHour[1] : null,
+                startArrivalHourFrom: (there && there.arrivalHour) ? there.arrivalHour[0] : null,
+                startArrivalHourTo:(there && there.arrivalHour) ? there.arrivalHour[1] : null,
+                endDepartureHourFrom: (back && back.departureHour) ? back.departureHour[0] : null,
+                endDepartureHourTo:(back && back.departureHour) ? back.departureHour[1] : null,
+                endArrivalHourFrom: (back && back.arrivalHour) ? back.arrivalHour[0] : null,
+                endArrivalHourTo: (back && back.arrivalHour) ? back.arrivalHour[1] : null,
             };
-            
+
             dispatch(routesActions.setTrainFilters(preFilters));
-          
         },
         [dispatch],
     );

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { IconButton } from '../icon-button';
-import { PlusIcon } from 'icons';
+import { MinusIcon, PlusIcon } from 'icons';
 import { classname } from 'utils';
 import { TransitTimeBlock } from '../transit-time-block/transit-time-block';
 
@@ -26,7 +26,7 @@ export const DirectionBlock = ({ Icon, label, nameField }: Props) => {
             <div className={cn('title')}>
                 <Icon />
                 <div className={cn('label')}>{label}</div>
-                <IconButton className={cn('show-btn')} Icon={PlusIcon} onClick={handleShowTimeBlock} />
+                <IconButton className={cn('show-btn')} Icon={isShowTimeBlock ? MinusIcon : PlusIcon} onClick={handleShowTimeBlock} />
             </div>
             {isShowTimeBlock && <TransitTimeBlock nameField={nameField} />}
         </div>

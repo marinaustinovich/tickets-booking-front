@@ -31,8 +31,8 @@ export const TransitTimeBlock = ({ nameField }: Props) => {
 
     return (
         <div className={cn('')}>
-            <TransitTimeRow label={t(`${locale}.departure-time-field-label`)} direction='DepartureHour' nameField={nameField} className='left' />
-            <TransitTimeRow label={t(`${locale}.arrival-time-field-label`)} direction='ArrivalHour' nameField={nameField} className='right' />
+            <TransitTimeRow label={t(`${locale}.departure-time-field-label`)} direction='departureHour' nameField={nameField} className='left' />
+            <TransitTimeRow label={t(`${locale}.arrival-time-field-label`)} direction='arrivalHour' nameField={nameField} className='right' />
         </div>
     );
 };
