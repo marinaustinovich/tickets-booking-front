@@ -1,0 +1,13 @@
+.train-content {
+    min-height: 40vh;
+    display: grid;
+    grid-template-columns: 3fr 8fr;
+    gap: 86px;
+    padding: 95px calc(10% + 65px) 193px calc(10% + 65px);
+   
+    &__sidebar {
+       display: flex;
+       flex-direction: column;
+       gap: 94px;
+    }
+}

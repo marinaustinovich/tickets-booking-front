@@ -1,1 +1,1 @@
-export * from './tickets-content';
+export * from './train-content';

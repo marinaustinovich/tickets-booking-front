@@ -4,7 +4,7 @@
 
     &__options {
         position: absolute;
-        top: 100%;
+        top: 150%;
         left: 50%;
         transform: translateX(-50%); 
         align-items: center;
@@ -21,6 +21,19 @@
         border-radius: 4px;
         min-width: 120px;
         z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; 
+            left: 50%;
+            transform: translateX(-50%) translateY(-100%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid var(--color-text-header); 
+        }
 
         &--open {
             display: block;

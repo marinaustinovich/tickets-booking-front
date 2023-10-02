@@ -5,3 +5,4 @@ export * from './main-page';
 export * from './main-header';
 export * from './tickets-header';
 export * from './tickets-content';
+export * from './passenger-content';

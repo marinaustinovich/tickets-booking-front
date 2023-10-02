@@ -56,7 +56,7 @@ export const TravelForm = ({ isRow }: TravelFormProps) => {
                 }),
             );
             dispatch(fetchRoutesAction(values));
-            navigate('/tickets');
+            navigate('/tickets/train');
         },
         [navigate, dispatch],
     );
