@@ -19,3 +19,5 @@ export * from './travel-form';
 export * from './radio-button';
 export * from './radio-button-group';
 export * from './dropdown';
+export * from './general-train-info-block';
+export * from './timestamp';

@@ -20,6 +20,7 @@ import { ReactComponent as ArrowRightWithoutStickIcon } from './arrow-right-with
 import { ReactComponent as ArrowLeftWithoutStickIcon } from './arrow-left-without-stick.svg';
 import { ReactComponent as CircularDirectionArrowsIcon } from './circular-direction-arrows.svg';
 import { ReactComponent as TrainIcon } from './train.svg';
+import { ReactComponent as TrainYellowIcon } from './train-yellow.svg';
 import { ReactComponent as LeftArrowIcon } from './left-arrow.svg';
 import { ReactComponent as LeftArrowYellowIcon } from './left-arrow-yellow.svg';
 import { ReactComponent as RightArrowYellowIcon } from './right-arrow-yellow.svg';
@@ -35,6 +36,7 @@ import { ReactComponent as BackArrowIcon } from './back-arrow.svg';
 import { ReactComponent as PlusIcon } from './plus.svg';
 import { ReactComponent as ArrowRightThinIcon } from './arrow-right-thin.svg';
 import { ReactComponent as MinusIcon } from './minus.svg';
+import { ReactComponent as WatchIcon } from './watch.svg';
 
 export {
     ReactLogoIcon,
@@ -59,6 +61,7 @@ export {
     ArrowLeftWithoutStickIcon,
     CircularDirectionArrowsIcon,
     TrainIcon,
+    TrainYellowIcon,
     LeftArrowIcon,
     LeftArrowYellowIcon,
     RightArrowYellowIcon,
@@ -74,4 +77,5 @@ export {
     PlusIcon,
     ArrowRightThinIcon,
     MinusIcon,
+    WatchIcon
 };

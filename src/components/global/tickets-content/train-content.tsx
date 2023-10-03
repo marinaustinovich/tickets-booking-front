@@ -22,7 +22,7 @@ export const TrainContent = () => {
 
             <Routes>
                 <Route index  element={<TrainsList trains={routes.items} totalCount={routes.total_count} />} />
-                <Route path='place' element={<PlaceSelection />} />
+                <Route path='place/:index' element={<PlaceSelection />} />
             </Routes>
         </main>
     );

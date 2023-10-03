@@ -1,12 +1,14 @@
-import { CitiesId, LastTickets, Routes, RoutesFilters, TrainFilters } from 'types/routes';
+import { CitiesId, LastTickets, Routes, RoutesFilters, CarriagesDetailsInfo, TrainFilters } from 'types/routes';
 import { PaginatedData, RequestWithStatus } from 'utils';
 
 export type RoutesSliceState = {
     fetchRoutes: RequestWithStatus<PaginatedData<Routes>>;
     fetchLastTickets: RequestWithStatus<LastTickets>;
-    citiesId: CitiesId,
-    trainFilters: TrainFilters,
+    fetchCarriagesDetails: RequestWithStatus<CarriagesDetailsInfo>;
+    citiesId: CitiesId;
+    trainFilters: TrainFilters;
     filters: RoutesFilters;
     routesList: Routes;
-    lastTicketsList: LastTickets
+    lastTicketsList: LastTickets;
+    carriagesDetails: CarriagesDetailsInfo;
 };

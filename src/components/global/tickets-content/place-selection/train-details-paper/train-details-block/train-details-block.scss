@@ -1,0 +1,25 @@
+.train-details-block {
+    display: flex;
+    background-color: var(--color-background-paper);
+
+    &__schedule {
+        padding: 25px 30px;
+        border-left: 1px solid var(--color-text-white);
+        border-right: 1px solid var(--color-text-white);
+
+        .schedule-row__driving-time {
+            align-items: center;
+            justify-content: center;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__time {
+        display: flex;
+        gap: 10px;
+        padding: 47px 35px;
+    }
+}

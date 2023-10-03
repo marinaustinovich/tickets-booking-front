@@ -22,3 +22,7 @@ export const routesSelector = createSelector([fetchRoutesDataSelector], routesDa
 
 const fetchLastTicketsDataSelector = (state: AppState) => SearchSelector(state).lastTicketsList;
 export const lastTicketsSelector = createSelector([fetchLastTicketsDataSelector], latestTicketsData => latestTicketsData ?? []);
+
+export const selectedTrainSelector = (index: number) => {
+    return createSelector([routesSelector], routes => routes.items[index]);
+};

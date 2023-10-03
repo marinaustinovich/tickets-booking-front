@@ -1,11 +1,6 @@
 import { ResultsPerPageEnum, SortByEnum } from 'enums';
 import { City } from './city-filters';
 
-export type CitiesId = {
-    fromCityId: string | null;
-    toCityId: string | null;
-};
-
 export type BaseFilters = Partial<{
     dateStart: string | null;
     dateEnd: string | null;
@@ -30,6 +25,11 @@ export type BaseFilters = Partial<{
     endArrivalHourTo: number | null;
 }>;
 
+export type CitiesId = {
+    fromCityId: string | null;
+    toCityId: string | null;
+};
+
 export type TrainFilters = CitiesId & BaseFilters;
 
 export type RoutesFilters = BaseFilters &
@@ -48,13 +48,16 @@ export type Routes = {
 
 export type LastTickets = TrainInfo[] | [];
 
-export type TrainInfo = {
+export type BasicInfo = {
     have_first_class: boolean;
     have_second_class: boolean;
     have_third_class: boolean;
     have_fourth_class: boolean;
     have_wifi: boolean;
     have_air_conditioning: boolean;
+};
+
+export type TrainInfo = BasicInfo & {
     is_express: boolean;
     min_price: number;
     available_seats: number;
@@ -62,6 +65,34 @@ export type TrainInfo = {
     departure: DepartureInfo;
     arrival?: DepartureInfo;
 };
+
+export type AvailableSeatInfo = {
+    index: number;
+    available: boolean;
+};
+
+export type CoachInfo = BasicInfo & {
+    _id: string;
+    name: string;
+    class_type: string;
+    price: number;
+    top_price: number;
+    bottom_price: number;
+    side_price: number;
+    linens_price: number;
+    wifi_price: number;
+    is_linens_included: boolean;
+    have_express: boolean;
+    train: string;
+    available_seats: number;
+};
+
+export type CarriageInfo = {
+    coach: CoachInfo;
+    seats: AvailableSeatInfo[];
+};
+
+export type CarriagesDetailsInfo = CarriageInfo[];
 
 export type SeatsInfo = Partial<{
     first: number;
@@ -81,13 +112,7 @@ export type Train = {
     name: string;
 };
 
-export type DepartureInfo = {
-    have_first_class: boolean;
-    have_second_class: boolean;
-    have_third_class: boolean;
-    have_fourth_class: boolean;
-    have_wifi: boolean;
-    have_air_conditioning: boolean;
+export type DepartureInfo = BasicInfo & {
     is_express: boolean;
     min_price: number;
     duration: number;

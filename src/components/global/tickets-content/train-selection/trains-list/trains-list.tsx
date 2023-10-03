@@ -34,7 +34,10 @@ export const TrainsList = ({ trains, totalCount }: Props) => {
                 </div>
                 <SortForm />
             </div>
-            <div className={cn('items')}>{trains && trains.map((train, index) => <TrainItem train={train}  key={`${train.departure.train._id}-${index}`}  />)}</div>
+            <div className={cn('items')}>
+                {trains &&
+                    trains.map((train, index) => <TrainItem train={train} key={`${train.departure.train._id}-${index}`} index={index} />)}
+            </div>
             {isShowPaginate && <NumericPaginate lastPage={lastPage} page={page} onChange={setPage} />}
         </div>
     );

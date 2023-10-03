@@ -14,15 +14,27 @@
     }
 
     &__avatar {
-        $size: 86px;
-
-        width: $size;
-        height: $size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &__from {
         display: flex;
         gap: 4px;
         align-items: center;
+    }
+
+    &--row {
+        display: flex;
+        gap: 27px;
+        padding: 17px 25px 16px 35px;
+
+        &__avatar {
+            $size: 30px;
+
+            width: $size;
+            height: $size;
+        }
     }
 }

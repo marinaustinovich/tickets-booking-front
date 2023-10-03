@@ -1,0 +1,21 @@
+.train-seats-selector {
+    border: 1px solid var(--color-text--label-disabled);
+    background: var(--color-text-white);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+
+    &__actions {
+        padding: 36px 19px;
+        display: flex;
+        gap: 10px;
+
+        svg {
+            background-color: var(--color-primary);
+            border-radius: 5px;
+            padding: 20px 23px;
+        }
+
+        svg path {
+            fill: var(--color-text-white);
+        }
+    }
+}
