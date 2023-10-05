@@ -5,18 +5,19 @@ import { LeftArrowYellowIcon, RightArrowYellowIcon } from 'icons';
 import { classname } from 'utils';
 import { TrainInfo } from 'types';
 import { TrainDetailsBlock } from '../train-details-block';
+import { PlaceDetailsForm } from '../place-details-form';
 
 import './train-seats-selector.scss';
-import { PlaceDetailsForm } from '../place-details-form';
 
 type Props = {
     isDeparture?: boolean;
     train: TrainInfo;
+    directionId: string;
 };
 
 const cn = classname('train-seats-selector');
 
-export const TrainSeatsSelector = ({ isDeparture, train }: Props) => {
+export const TrainSeatsSelector = ({ isDeparture, train, directionId }: Props) => {
     const { t } = useTranslation('global');
 
     return (
@@ -28,7 +29,7 @@ export const TrainSeatsSelector = ({ isDeparture, train }: Props) => {
                 </Button>
             </div>
             <TrainDetailsBlock isDeparture={isDeparture} departure={train.departure} arrival={train.arrival} />
-            <PlaceDetailsForm />
+            <PlaceDetailsForm directionId={directionId} />
         </div>
     );
 };

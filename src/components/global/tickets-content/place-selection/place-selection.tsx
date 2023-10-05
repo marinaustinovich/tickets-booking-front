@@ -22,8 +22,8 @@ export const PlaceSelection = () => {
     return (
         <div className={cn()}>
             <h3>{t('place-selection.title')}</h3>
-            <TrainSeatsSelector isDeparture={true} train={train} />
-            {train.arrival && <TrainSeatsSelector train={train} />}
+            <TrainSeatsSelector isDeparture={true} train={train} directionId={train.departure._id} />
+            {train.arrival && <TrainSeatsSelector train={train} directionId={train.arrival._id} />}
         </div>
     );
 };

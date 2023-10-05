@@ -1,0 +1,17 @@
+.carriage-selection-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+
+    &__focus {
+        & div {
+            color: var(--color-primary);
+        }
+
+        & svg path,
+        & svg circle {
+            fill: var(--color-primary);
+            stroke: var(--color-text-white);
+        }
+    }
+}

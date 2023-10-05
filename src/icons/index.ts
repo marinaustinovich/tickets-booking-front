@@ -37,6 +37,7 @@ import { ReactComponent as PlusIcon } from './plus.svg';
 import { ReactComponent as ArrowRightThinIcon } from './arrow-right-thin.svg';
 import { ReactComponent as MinusIcon } from './minus.svg';
 import { ReactComponent as WatchIcon } from './watch.svg';
+import { ReactComponent as ReservedSeatIcon } from './reserved-seat.svg';
 
 export {
     ReactLogoIcon,
@@ -77,5 +78,6 @@ export {
     PlusIcon,
     ArrowRightThinIcon,
     MinusIcon,
-    WatchIcon
+    WatchIcon,
+    ReservedSeatIcon,
 };

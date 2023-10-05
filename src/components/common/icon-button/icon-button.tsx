@@ -6,19 +6,23 @@ import './icon-button.scss';
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     className?: string;
-    size?: 'default' | 'mini' | 'midi' | 'large';
+    size?: 'default' | 'mini' | 'midi' | 'large' | 'max';
     active?: boolean;
     Icon: React.FC<React.SVGProps<SVGSVGElement>>;
+    label?: string;
 };
 
 const cn = classname('icon-button');
 
 export const IconButton = (props: Props) => {
-    const { className, size, Icon, ...rest } = props;
+    const { className, size, Icon, label, ...rest } = props;
 
     return (
-        <button type='button' className={cn('', { size: size || 'default' }, [className])} {...rest}>
-            <Icon />
-        </button>
+        <div className={cn('', [className])}>
+            <button type='button' className={cn('', { size: size || 'default' })} {...rest}>
+                <Icon />
+            </button>
+            {label && <div className={cn('label')}>{label}</div>}
+        </div>
     );
 };

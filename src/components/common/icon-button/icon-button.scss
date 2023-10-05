@@ -1,6 +1,8 @@
 .icon-button {
     border-radius: 4px;
     border: none;
+    padding: 0;
+    text-align: center;
 
     &:hover {
         background: transparent;
@@ -9,7 +11,7 @@
         & > svg path,
         & > svg circle {
             fill: var(--color-primary);
-            stroke: var(--color-text-default);
+            stroke: var(--color-text-white);
         }
 
         & > svg line {
@@ -28,8 +30,6 @@
 
     &--size {
         &-default {
-            padding: 0px;
-
             & > svg {
                 $size: 24px;
 
@@ -50,8 +50,6 @@
         }
 
         &-midi {
-            padding: 0px;
-
             & > svg {
                 $size: 30px;
 
@@ -61,8 +59,8 @@
         }
 
         &-large {
-            padding: 0px;
             background: transparent;
+
             & > svg {
                 $size: 36px;
 
@@ -70,5 +68,22 @@
                 height: $size;
             }
         }
+
+        &-max {
+            background: transparent;
+
+            & > svg {
+                $size: 56px;
+
+                width: $size;
+                height: $size;
+            }
+        }
+    }
+
+    &__label {
+        padding-top: 20px;
+        color: var(--color-text-disabled);
+        font-size: 24px;
     }
 }

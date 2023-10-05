@@ -8,5 +8,12 @@
         "adult-placeholder": "Adults",
         "child-placeholder": "Children's",
         "include-children-placeholder": "Children's placeholder"
+    },
+    "car-type": {
+        "title": "Car type",
+        "fourth": "Sedentary",
+        "third": "Reserved seat",
+        "second": "Coupe",
+        "first": "Lux"
     }
 }

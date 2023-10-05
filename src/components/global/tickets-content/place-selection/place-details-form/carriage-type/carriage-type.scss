@@ -1,0 +1,12 @@
+.carriage-type {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 27px 0 29px 0;
+    border-top: 1px dotted var(--color-text--label-disabled);
+
+    &__title {
+        padding-left: 18px;
+        color: var(--color-background-dark);
+    }
+}

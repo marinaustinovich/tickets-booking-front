@@ -50,6 +50,7 @@ export const SortForm = () => {
         },
         [dispatch],
     );
+    
     return (
         <Form<SortFormState>
             onSubmit={handleFormSubmit}

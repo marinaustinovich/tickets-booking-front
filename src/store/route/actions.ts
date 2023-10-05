@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchRoutes, fetchLastTickets, fetchCarriagesDetails } from 'api';
+import { fetchRoutes, fetchLastTickets } from 'api';
 import { routesActions } from './slice';
-import { RoutesFilters, CarriagesDetailsInfo } from 'types';
+import { RoutesFilters } from 'types';
 
 export const fetchRoutesAction = createAsyncThunk<any, RoutesFilters>('RoutesSearch/fetchRoutes', async (data, { rejectWithValue, getState, dispatch }) => {
     try {
@@ -25,17 +25,3 @@ export const fetchLastTicketsAction = createAsyncThunk<any, void>('RoutesSearch/
         return rejectWithValue(error);
     }
 });
-
-export const fetchCarriagesDetailsThunk  = createAsyncThunk<CarriagesDetailsInfo, string, { rejectValue: Error }>(
-    'RoutesSearch/fetchCarriagesDetails',
-    async (id, { dispatch, rejectWithValue }) => {
-        try {
-            const result: CarriagesDetailsInfo = await fetchCarriagesDetails(id);
-            dispatch(routesActions.setCarriagesDetails(result));
-
-            return result;
-        } catch (error: any) {
-            return rejectWithValue(error);
-        }
-    },
-);

@@ -1,15 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { composeBuilder, requestInitial } from 'utils';
-import { fetchRoutesAction } from './actions';
+import { fetchLastTicketsAction, fetchRoutesAction } from './actions';
 import { RoutesSliceState } from './types';
-import { CitiesId, LastTickets, Routes, RoutesFilters, CarriagesDetailsInfo, TrainFilters } from 'types';
+import { CitiesId, LastTickets, Routes, RoutesFilters, TrainFilters } from 'types';
 import { ResultsPerPageEnum, SortByEnum } from 'enums';
 
 const initialState: RoutesSliceState = {
     fetchRoutes: requestInitial(),
     fetchLastTickets: requestInitial(),
-    fetchCarriagesDetails: requestInitial(),
     citiesId: {
         fromCityId: null,
         toCityId: null,
@@ -72,7 +71,6 @@ const initialState: RoutesSliceState = {
         items: [],
     },
     lastTicketsList: [],
-    carriagesDetails: [],
 };
 
 const routesSlice = createSlice({
@@ -94,11 +92,8 @@ const routesSlice = createSlice({
         setLastTicketsList: (state, action: PayloadAction<LastTickets>) => {
             state.lastTicketsList = action.payload;
         },
-        setCarriagesDetails: (state, action: PayloadAction<CarriagesDetailsInfo>) => {
-            state.carriagesDetails = action.payload;
-        },
     },
-    extraReducers: builder => composeBuilder(builder, [fetchRoutesAction]),
+    extraReducers: builder => composeBuilder(builder, [fetchRoutesAction, fetchLastTicketsAction]),
 });
 
 export const routesActions = routesSlice.actions;
