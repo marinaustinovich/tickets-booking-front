@@ -1,4 +1,13 @@
 {
     "title": "Выбор места",
-    "choose-button-label": "Выбрать другой поезд"
+    "choose-button-label": "Выбрать другой поезд",
+    "number-tickets": {
+        "title": "Количество билетов",
+        "adult-clue": "Можно добавить еще {{number}} пассажиров ",
+        "child-clue": "Можно добавить еще {{number}} детей до 10 лет.Свое место в вагоне, как у взрослых, но дешевле в среднем на 50-65%",
+        "adult-placeholder": "Взрослых",
+        "child-placeholder": "Детских",
+        "include-children-placeholder": "Детских «без места»"
+    }
+
 }

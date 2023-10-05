@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { TrainSeatsSelector } from './train-details-paper';
+import { TrainSeatsSelector } from './train-seats-selector';
 import { useAppSelector } from 'store';
 import { selectedTrainSelector } from 'store/route';
 import { classname } from 'utils';

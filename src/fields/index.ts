@@ -9,3 +9,4 @@ export * from './switch-input';
 export * from './range-input';
 export * from './sort-by-select';
 export * from './results-per-page-radio-group';
+export * from './number-input';

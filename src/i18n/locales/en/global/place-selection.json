@@ -1,4 +1,12 @@
 {
     "title": "Place selection",
-    "choose-button-label": "Choose another train"
+    "choose-button-label": "Choose another train",
+    "number-tickets": {
+        "title": "Number of Tickets",
+        "adult-clue": "You can add {{number}} more passengers ",
+        "child-clue": "You can add another {{number}} children under 10 years old. Their own place in the carriage, like adults, but cheaper on average by 50-65%",
+        "adult-placeholder": "Adults",
+        "child-placeholder": "Children's",
+        "include-children-placeholder": "Children's placeholder"
+    }
 }

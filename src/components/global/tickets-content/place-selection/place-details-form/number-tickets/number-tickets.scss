@@ -1,0 +1,44 @@
+.number-tickets {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 40px 0 49px 0;
+
+    &__title {
+        padding-left: 18px;
+        color: var(--color-background-dark);
+    }
+
+    &__fields-block {
+        display: flex;
+    }
+
+    &__number-people {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        width: 33%;
+        padding: 20px 41px 20px 36px;
+        border: 1px solid transparent;
+        padding-left: 18px;
+        // background: var(--color-background-light-grey);
+        // box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &__number-people:first-child {
+        background: var(--color-background-light-grey);
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    &__number-people:hover {
+        border: 1px solid rgba(255, 168, 0, 0.79);
+    }
+
+    &__clue {
+        font-size: 16px;
+    }
+
+    &__child {
+        color: var(--color-text-disabled);
+    }
+}
