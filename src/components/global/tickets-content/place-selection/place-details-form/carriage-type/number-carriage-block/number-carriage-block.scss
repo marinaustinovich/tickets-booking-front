@@ -1,0 +1,14 @@
+.number-carriage-block {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 57px 30px 32px;
+    background-color: var(--color-background-light-yellow);
+    color: var(--color-background-dark);
+    text-align: center;
+    font-size: 24px;
+
+    &__number {
+        font-size: 72px;
+        font-weight: 700;
+    }
+}

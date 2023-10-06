@@ -1,3 +1,4 @@
+import { CarriageTypesEnum } from 'enums';
 import { BasicInfo } from './routes';
 
 export type AvailableSeatInfo = {
@@ -8,7 +9,7 @@ export type AvailableSeatInfo = {
 export type CoachInfo = BasicInfo & {
     _id: string;
     name: string;
-    class_type: string;
+    class_type: CarriageTypesEnum;
     price: number;
     top_price: number;
     bottom_price: number;

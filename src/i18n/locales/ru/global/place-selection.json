@@ -9,12 +9,20 @@
         "child-placeholder": "Детских",
         "include-children-placeholder": "Детских «без места»"
     },
-    "car-type": {
+    "carriage-type": {
         "title": "Тип вагона",
         "fourth": "Сидячий",
         "third": "Плацкарт",
         "second": "Купе",
         "first": "Люкс"
+    },
+    "seat-map": {
+        "header": {
+            "carriage-numbers": "Вагоны",
+            "info": "Нумерация вагонов начинается с головы поезда"
+        },
+        "carriage-details-block": {
+            "number": "вагон"
+        }
     }
-
 }

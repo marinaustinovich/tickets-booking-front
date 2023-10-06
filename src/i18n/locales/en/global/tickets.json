@@ -10,12 +10,12 @@
         "station": "station",
         "min-price": "From",
         "select-button-label": "Select seats",
-        "classSeat": {
+        "class-seat": {
             "first": "Lux",
             "second": "Coupe",
             "third": "Reserved seat",
             "fourth": "Sedentary",
-            "price": "average price",
+            "price": "lux",
             "top-price": "top",
             "bottom-price": "bottom",
             "side-price": "side"

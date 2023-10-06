@@ -1,0 +1,41 @@
+.seat-price-table {
+    width: 100%;
+    padding: 33px 59px 21px 85px;
+
+    tr {
+        display: flex;
+        gap: 84px;
+    }
+
+    &__header {
+        display: flex;
+        gap: 10px;
+        color: var(--color-text-disabled);
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    &__services-type {
+        color: var(--color-text--label-disabled);
+    }
+
+    &__numbers {
+        color: var(--color-text-default);
+    }
+
+    &__seat-type-label {
+        font-size: 24px;
+    }
+
+    &__price-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__seat-numbers,
+    &__price {
+        font-size: 24px;
+        font-weight: 700;
+    }
+}

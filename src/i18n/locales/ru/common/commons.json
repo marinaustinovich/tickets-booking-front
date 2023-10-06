@@ -34,5 +34,22 @@
         "ten": "10",
         "twenty": "20"
     },
+    "seat-price-table": {
+        "seats-label": "Места",
+        "price-label": "Стоимость",
+        "service-label": "Обслуживание",
+        "service-type-label": "ФПК",
+        "price": "Люкс",
+        "top-price": "Верхние",
+        "bottom-price": "Нижние",
+        "side-price": "Сидячие",
+        "tips": {
+            "conditioner": "кондиционер",
+            "wi-fi": "Wi-Fi",
+            "linen": "бельё",
+            "food": "питание"
+
+        }
+    },
     "language": "ru"
 }

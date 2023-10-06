@@ -11,7 +11,7 @@ type FetchCarriagesDetailsArgs = {
   
 export const fetchCarriagesDetailsThunk = createAsyncThunk<CarriagesDetailsInfo, FetchCarriagesDetailsArgs>(
     'RoutesSearch/fetchCarriagesDetails',
-    async ({id, filters}, { rejectWithValue, getState, dispatch }) => {
+    async ({id, filters}, { rejectWithValue, dispatch }) => {
         try {
             const result: CarriagesDetailsInfo = await fetchCarriagesDetails(id, filters);
             dispatch(ticketsActions.setCarriagesDetails(result));

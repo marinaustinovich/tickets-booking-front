@@ -10,3 +10,11 @@ export const trainFiltersSelector = createSelector([fetchTrainFiltersDataSelecto
 const fetchCarriagesDetailsDataSelector = (state: AppState) => SearchSelector(state).carriagesDetails;
 export const carriagesDetailsSelector = createSelector([fetchCarriagesDetailsDataSelector], carriageDetailsData => carriageDetailsData ?? []);
 
+export const carriageDetailByIndexSelector = createSelector(
+    [fetchCarriagesDetailsDataSelector, (state: AppState, index: number) => index],
+    (carriageDetailsData, index) => carriageDetailsData ? carriageDetailsData[index] : null
+);
+
+export const selectedCarriageSelector = (index: number) => {
+    return createSelector([carriagesDetailsSelector], carriages => carriages[index]);
+};

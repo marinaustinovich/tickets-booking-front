@@ -4,7 +4,7 @@ import { useAppDispatch } from 'store';
 import { CarriageTypesEnum } from 'enums';
 import { IconButton } from 'components/common';
 import { CoupeIcon, ReservedSeatIcon, SedentaryIcon, StarIcon } from 'icons';
-import { classname } from 'utils';
+import { classname, formatType } from 'utils';
 import { fetchCarriagesDetailsThunk } from 'store/ticket';
 
 import './carriage-selection-buttons.scss';
@@ -17,19 +17,22 @@ const cn = classname('carriage-selection-buttons');
 
 export const CarriageSelectionButtons = ({ directionId }: Props) => {
     const { t } = useTranslation('global');
-    const locale = 'place-selection.car-type';
+    const locale = 'place-selection.carriage-type';
     const dispatch = useAppDispatch();
 
     const [activeType, setActiveType] = useState<CarriageTypesEnum | null>(null);
 
     const handleButtonClick = useCallback(
         (type: CarriageTypesEnum) => {
-            setActiveType((prevType) => (prevType === type ? null : type));
+            setActiveType(prevType => (prevType === type ? null : type));
 
-            const filters = { [`have${type}Class`]: activeType !== type };
-            dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters }));
+            //TODO : пока сервер не возвращает массив вагонов, не работает фильтр
+            // const filters = { [`have${formatType(type)}Class`]: activeType !== type };
+            // dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters }));
+
+            dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters: {} }));
         },
-        [dispatch, directionId, activeType]
+        [dispatch, directionId, activeType],
     );
 
     const options = useMemo(() => {

@@ -9,11 +9,20 @@
         "child-placeholder": "Children's",
         "include-children-placeholder": "Children's placeholder"
     },
-    "car-type": {
+    "carriage-type": {
         "title": "Car type",
         "fourth": "Sedentary",
         "third": "Reserved seat",
         "second": "Coupe",
         "first": "Lux"
+    },
+    "seat-map": {
+        "header": {
+            "carriage-numbers": "Carriages",
+            "info": "Car numbering starts from the head of the train"
+        },
+        "carriage-details": {
+            "number-label": "carriage"
+        }
     }
 }

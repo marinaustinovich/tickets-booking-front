@@ -10,12 +10,12 @@
         "station": "вокзал",
         "min-price": "От",
         "select-button-label": "Выбрать места",
-        "classSeat": {
+        "class-seat": {
             "first": "Люкс",
             "second": "Купе",
             "third": "Плацкарт",
             "fourth": "Сидячий",
-            "price": "средняя цена",
+            "price": "люкс",
             "top-price": "верхние",
             "bottom-price": "нижние",
             "side-price": "сидячие"

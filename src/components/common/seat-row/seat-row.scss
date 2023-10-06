@@ -16,19 +16,8 @@
         font-size: 16px;
     }
 
-    &__min-price {
-        display: flex;
-        align-items: center;
-        gap: 6px;
+    &__count:hover {
+        cursor: pointer
     }
 
-    &__min-price-label {
-        color: var(--color-text-disabled);
-    }
-
-    &__min-price-value {
-        color: var(--color-text-button-hover);
-        font-size: 24px;
-        font-weight: 700;
-    }
 }

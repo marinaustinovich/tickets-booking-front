@@ -34,5 +34,22 @@
         "ten": "10",
         "twenty": "20"
     },
+    "seat-price-table": {
+        "seats-label": "Seats",
+        "price-label": "Price",
+        "service-label": "Service",
+        "service-type-label": "FPK",
+        "price": "Lux",
+        "top-price": "Top",
+        "bottom-price": "Bottom",
+        "side-price": "Side", 
+        "tips": {
+            "conditioner": "conditioner",
+            "wi-fi": "Wi-Fi",
+            "linen": "linen",
+            "food": "food"
+
+        }
+    },
     "language": "en"
 }

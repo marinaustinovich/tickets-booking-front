@@ -18,7 +18,7 @@ const cn = classname('seat-row');
 
 export const SeatRow = ({ classSeat, count, prices }: Props) => {
     const { t } = useTranslation('global');
-    const localeClass = 'tickets.trains.classSeat';
+    const localeClass = 'tickets.trains.class-seat';
     const minPriceValue = findMinValue(prices);
 
     const options: DropdownOption[] = useMemo(

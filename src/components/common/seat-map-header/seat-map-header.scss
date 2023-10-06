@@ -1,0 +1,29 @@
+.seat-map-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 34px 6px 34px;
+    background-color: var(--color-background-light-yellow);
+    color: var(--color-text-button-hover);
+    font-size: 16px;
+
+    &__numbers {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        color: var(--color-background-dark);
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    &__numbers-label {
+        font-size: 18px;
+    }
+    
+    &__number:hover {
+        cursor: pointer;
+    }
+    
+    &__info {
+        color: var(--color-background-dark);
+    }
+}

@@ -21,3 +21,6 @@ export * from './radio-button-group';
 export * from './dropdown';
 export * from './general-train-info-block';
 export * from './timestamp';
+export * from './seat-map-header';
+export * from './seat-price-table';
+export * from './tooltip';

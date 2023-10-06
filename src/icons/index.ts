@@ -38,6 +38,8 @@ import { ReactComponent as ArrowRightThinIcon } from './arrow-right-thin.svg';
 import { ReactComponent as MinusIcon } from './minus.svg';
 import { ReactComponent as WatchIcon } from './watch.svg';
 import { ReactComponent as ReservedSeatIcon } from './reserved-seat.svg';
+import { ReactComponent as AirConditionerIcon } from './air-conditioner.svg';
+import { ReactComponent as LinensIcon } from './linens.svg';
 
 export {
     ReactLogoIcon,
@@ -80,4 +82,6 @@ export {
     MinusIcon,
     WatchIcon,
     ReservedSeatIcon,
+    AirConditionerIcon,
+    LinensIcon,
 };

@@ -3,4 +3,8 @@
     gap: 7px;
     align-items: center;
     justify-content: flex-end;
+
+    svg path {
+        fill: var(--color-text-header);
+    }
 }

@@ -17,7 +17,6 @@ export const PlaceSelection = () => {
     const indexNumber = Number(index);
 
     const train = useAppSelector(selectedTrainSelector(indexNumber));
-    console.log(train);
 
     return (
         <div className={cn()}>
