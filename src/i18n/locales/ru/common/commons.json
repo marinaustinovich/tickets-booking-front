@@ -34,6 +34,7 @@
         "ten": "10",
         "twenty": "20"
     },
+    "number-carriage-block": "вагон",
     "seat-price-table": {
         "seats-label": "Места",
         "price-label": "Стоимость",
@@ -48,7 +49,6 @@
             "wi-fi": "Wi-Fi",
             "linen": "бельё",
             "food": "питание"
-
         }
     },
     "language": "ru"

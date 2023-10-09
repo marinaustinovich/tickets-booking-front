@@ -5,3 +5,4 @@ export * from './string';
 export * from './form';
 export * from './dates';
 export * from './calculate';
+export * from './converter-size-image';

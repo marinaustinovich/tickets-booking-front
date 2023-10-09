@@ -22,7 +22,7 @@ export const SwitchInput = ({ input, meta, label, disabled, className, Icon }: P
     const handleChange = useCallback(() => {
         const newValue = !checked;
         setChecked(newValue);
-        input.onChange(Number(newValue));
+        input.onChange(newValue);
     }, [checked, input]);
 
     useEffect(() => {

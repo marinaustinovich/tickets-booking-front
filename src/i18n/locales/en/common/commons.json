@@ -34,6 +34,7 @@
         "ten": "10",
         "twenty": "20"
     },
+    "number-carriage-block": "carriage",
     "seat-price-table": {
         "seats-label": "Seats",
         "price-label": "Price",

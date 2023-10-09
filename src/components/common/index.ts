@@ -24,3 +24,5 @@ export * from './timestamp';
 export * from './seat-map-header';
 export * from './seat-price-table';
 export * from './tooltip';
+export * from './number-carriage-block';
+export * from './interactive-carriage-map';

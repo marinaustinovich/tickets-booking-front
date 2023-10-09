@@ -12,13 +12,12 @@ type Props = {
 const cn = classname('number-carriage-block');
 
 export const NumberCarriageBlock = ({ numberCarriage }: Props) => {
-    const { t } = useTranslation('global');
-    const locale = 'place-selection.seat-map.carriage-details-block';
+    const { t } = useTranslation('common');
 
     return (
         <div className={cn()}>
             <span className={cn('number')}>{formatIndex(numberCarriage + 1)}</span>
-            <span>{t(`${locale}.number`)}</span>
+            <span>{t('commons.number-carriage-block')}</span>
         </div>
     );
 };

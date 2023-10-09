@@ -16,12 +16,11 @@ export const CarriageType = ({ directionId }: Props) => {
     const { t } = useTranslation('global');
     const locale = 'place-selection.carriage-type';
     const carriages = useAppSelector(carriagesDetailsSelector);
-    console.log(carriages);
 
     return (
         <div className={cn()}>
             <h4 className={cn('title')}>{t(`${locale}.title`)}</h4>
-            <CarriageSelectionButtons directionId={directionId} />
+            <CarriageSelectionButtons directionId={directionId}  />
             {carriages && carriages.length > 0 && <SeatMap carriages={carriages} />}
         </div>
     );

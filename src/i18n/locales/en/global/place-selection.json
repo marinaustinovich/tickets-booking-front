@@ -1,5 +1,6 @@
 {
     "title": "Place selection",
+    "next-button-label": "Next",
     "choose-button-label": "Choose another train",
     "number-tickets": {
         "title": "Number of Tickets",
@@ -21,8 +22,8 @@
             "carriage-numbers": "Carriages",
             "info": "Car numbering starts from the head of the train"
         },
-        "carriage-details": {
-            "number-label": "carriage"
+        "carriage-plan": {
+            "occupied-places-number": "{{number}} человек выбирают места в этом поезде"
         }
     }
 }

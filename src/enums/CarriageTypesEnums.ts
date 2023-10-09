@@ -4,3 +4,8 @@ export enum CarriageTypesEnum {
     SECOND = 'second',
     FIRST = 'first',
 }
+
+export enum OriginalImageSize {
+    WIDTH = 920,
+    HEIGHT = 145,
+}

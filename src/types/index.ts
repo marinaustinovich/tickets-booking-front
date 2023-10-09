@@ -6,3 +6,4 @@ export * from './subscribe';
 export * from './train-form';
 export * from './sort-form';
 export * from './tickets';
+export * from './clickable-area';

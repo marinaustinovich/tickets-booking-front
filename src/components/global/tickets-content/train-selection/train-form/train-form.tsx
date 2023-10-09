@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from 'store';
 import { citiesIdSelector } from 'store/route';
 import { FormValuesSpy, classname } from 'utils';
 import { FormIdEnum } from 'enums';
-import { BackArrowIcon, CoupeIcon, ExpressIcon, SedentaryIcon, StarIcon, ToArrowIcon, WifiIcon } from 'icons';
+import { BackArrowIcon, CoupeIcon, ExpressIcon, ReservedSeatIcon, SedentaryIcon, StarIcon, ToArrowIcon, WifiIcon } from 'icons';
 import { validateDates } from 'validators';
 import { DirectionBlock } from 'components';
 import { TrainFormState } from 'types';
@@ -77,7 +77,7 @@ export const TrainForm = () => {
                     </div>
                     <div className={cn('switch-group')}>
                         <Field name='haveSecondClass' Icon={CoupeIcon} component={SwitchInput} label={t(`${locale}.coupe-field-label`)} />
-                        <Field name='haveThirdClass' Icon={CoupeIcon} component={SwitchInput} label={t(`${locale}.reserved-seat-field-label`)} />
+                        <Field name='haveThirdClass' Icon={ReservedSeatIcon} component={SwitchInput} label={t(`${locale}.reserved-seat-field-label`)} />
                         <Field name='haveFourthClass' Icon={SedentaryIcon} component={SwitchInput} label={t(`${locale}.sedentary-field-label`)} />
                         <Field name='haveFirstClass' Icon={StarIcon} component={SwitchInput} label={t(`${locale}.lux-field-label`)} />
                         <Field name='haveWiFi' Icon={WifiIcon} component={SwitchInput} label={t(`${locale}.wi-fi-field-label`)} />

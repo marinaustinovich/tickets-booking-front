@@ -1,5 +1,6 @@
 {
     "title": "Выбор места",
+    "next-button-label": "Далее",
     "choose-button-label": "Выбрать другой поезд",
     "number-tickets": {
         "title": "Количество билетов",
@@ -21,8 +22,8 @@
             "carriage-numbers": "Вагоны",
             "info": "Нумерация вагонов начинается с головы поезда"
         },
-        "carriage-details-block": {
-            "number": "вагон"
+        "carriage-plan": {
+            "occupied-places-number": "{{number}} человек выбирают места в этом поезде"
         }
     }
 }

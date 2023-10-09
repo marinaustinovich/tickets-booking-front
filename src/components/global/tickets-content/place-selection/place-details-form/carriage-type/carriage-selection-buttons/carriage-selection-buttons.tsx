@@ -25,7 +25,7 @@ export const CarriageSelectionButtons = ({ directionId }: Props) => {
     const handleButtonClick = useCallback(
         (type: CarriageTypesEnum) => {
             setActiveType(prevType => (prevType === type ? null : type));
-
+    
             //TODO : пока сервер не возвращает массив вагонов, не работает фильтр
             // const filters = { [`have${formatType(type)}Class`]: activeType !== type };
             // dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters }));

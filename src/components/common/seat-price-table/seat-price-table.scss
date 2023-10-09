@@ -1,5 +1,8 @@
 .seat-price-table {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
     padding: 33px 59px 21px 85px;
 
     tr {

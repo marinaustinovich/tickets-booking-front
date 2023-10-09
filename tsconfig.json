@@ -30,6 +30,6 @@
             "@/*": ["/*"]
         }
     },
-    "include": ["**/*.ts", "**/*.tsx", "src/index.tsx", "**/*.d.ts"],
+    "include": ["**/*.ts", "**/*.tsx", "src/index.tsx", "**/*.d.ts", "src/components/common/interactive-carriage-map/carriage-map/carriage-map.tsx"],
     "exclude": ["node_modules"]
 }

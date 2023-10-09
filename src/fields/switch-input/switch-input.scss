@@ -7,6 +7,17 @@
     gap: 33px;
     user-select: none;
 
+    svg {
+        $size: 22px;
+
+        width: $size;
+        height: $size;
+        
+        path {
+            fill: var(--color-text-header);
+        }
+    }
+
     &__warning {
         width: 100%;
         margin-top: 4px;
@@ -87,7 +98,7 @@
             background: var(--color-background-switch);
         }
 
-        &:disabled:checked + span  {
+        &:disabled:checked + span {
             background: var(--color-background-switch);
         }
 
@@ -96,7 +107,7 @@
             background: var(--color-primary);
         }
     }
-    
+
     &__label {
         color: var(--color-text-white);
         font-size: 18px;
