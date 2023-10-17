@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'components';
@@ -7,6 +7,7 @@ import { classname } from 'utils';
 import { TrainInfo } from 'types';
 import { TrainDetailsBlock } from '../train-details-block';
 import { PlaceDetailsForm } from '../place-details-form';
+import { CarriageType } from '../place-details-form/carriage-type';
 
 import './train-seats-selector.scss';
 
@@ -33,7 +34,8 @@ export const TrainSeatsSelector = ({ isDeparture, train, directionId }: Props) =
                 </Button>
             </div>
             <TrainDetailsBlock isDeparture={isDeparture} departure={train.departure} arrival={train.arrival} />
-            <PlaceDetailsForm directionId={directionId} />
+            <PlaceDetailsForm />
+            <CarriageType directionId={directionId} />
         </div>
     );
 };

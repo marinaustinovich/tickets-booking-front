@@ -28,7 +28,7 @@ export const InteractiveCarriageMap = ({ classType, seats, carriageNumber }: Pro
             <CarriageMap
                 carriageNumber={carriageNumber}
                 seats={seats}
-                areas={ClickableAreasMap[CarriageTypesEnum.SECOND]}
+                areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.SECOND])}
                 urlMap='/image/second-class-carriage.png'
             />
         )}

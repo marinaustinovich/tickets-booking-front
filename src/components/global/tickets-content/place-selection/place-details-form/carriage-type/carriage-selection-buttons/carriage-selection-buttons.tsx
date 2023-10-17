@@ -1,10 +1,10 @@
-import React, { useMemo, useCallback, useState } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'store';
 import { CarriageTypesEnum } from 'enums';
 import { IconButton } from 'components/common';
 import { CoupeIcon, ReservedSeatIcon, SedentaryIcon, StarIcon } from 'icons';
-import { classname } from 'utils';
+import { classname, formatType } from 'utils';
 import { fetchCarriagesDetailsThunk } from 'store/ticket';
 
 import './carriage-selection-buttons.scss';
@@ -32,12 +32,21 @@ export const CarriageSelectionButtons = ({ directionId, showSelectedType }: Prop
                 return newActiveType;
             });
             // TODO: пока сервер не возвращает массив вагонов, не работает фильтр
-            // const filters = { [`have${formatType(type)}Class`]: newActiveType !== type };
-            // dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters }));
             dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters: {} }));
         },
         [dispatch, directionId, showSelectedType],
     );
+
+    // TODO: пока сервер не возвращает массив вагонов, не работает фильтр
+    // useEffect(() => {
+    // if (activeType) {
+    //     const filters = { [`have${formatType(activeType)}Class`]: true };
+    //     console.log(`have${formatType(activeType)}Class`)
+    //     dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters }));
+    // } else {
+    //     dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters: {} }));
+    // }
+    // }, [dispatch, activeType, directionId]);
 
     const options = useMemo(() => {
         return [

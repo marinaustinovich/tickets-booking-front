@@ -1,3 +1,5 @@
+import { CarriageTypesEnum } from "enums";
+
 export const toHeaderCase = (str: string) => {
     return str
         .split(/\s+/)
@@ -14,6 +16,6 @@ export const capitalizeHyphenatedString = (str: string) => {
 
 export const isString = (value: unknown): value is string => typeof value === 'string';
 
-export const formatType = (type: string): string => type.charAt(0).toUpperCase() + type.slice(1);
+export const formatType = (type: CarriageTypesEnum): string => type.charAt(0).toUpperCase() + type.slice(1);
 
 export const formatIndex = (index: number): string => (index).toString().padStart(2, '0');

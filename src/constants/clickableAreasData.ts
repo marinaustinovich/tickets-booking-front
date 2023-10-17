@@ -111,6 +111,7 @@ export const ClickableAreasMap: Record<CarriageTypesEnum, ClickableArea[]> = {
     ],
     [CarriageTypesEnum.THIRD]: [
         ...commonAreas1,
+        { x: 38, y: 0, width: 33, height: 24, index: 0 },
         { x: 134, y: 109, width: 41, height: 24, index: 33 },
         { x: 176, y: 109, width: 41, height: 24, index: 34 },
         { x: 222, y: 109, width: 41, height: 24, index: 35 },
