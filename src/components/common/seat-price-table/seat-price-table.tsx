@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { toKebabCase } from 'js-convert-case';
 import { useTranslation } from 'react-i18next';
 import { SeatTypesEnum } from 'enums';
@@ -16,13 +16,10 @@ type Props = {
 const cn = classname('seat-price-table');
 
 export const SeatPriceTable = ({ coach }: Props) => {
-    const servicesCellRenderedRef = useRef(false);
     const { t } = useTranslation('common');
     const locale = 'commons.seat-price-table';
 
-    useEffect(() => {
-        servicesCellRenderedRef.current = false;
-    }, [coach]);
+    let servicesCellRendered = false;
 
     return (
         <table className={cn()}>
@@ -42,11 +39,8 @@ export const SeatPriceTable = ({ coach }: Props) => {
             <tbody>
                 {Object.values(SeatTypesEnum).map(key => {
                     if (coach[key] !== 0) {
-                        let servicesCell = null;
-                        if (!servicesCellRenderedRef.current) {
-                            servicesCell = <ServicesCell coach={coach} />;
-                            servicesCellRenderedRef.current = true;
-                        }
+                        const servicesCell = !servicesCellRendered ? <ServicesCell coach={coach} /> : null;
+                        servicesCellRendered = true;
 
                         return (
                             <tr key={key}>

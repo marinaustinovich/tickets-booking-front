@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { classname, convertToPercentage } from 'utils';
 import { CarriageTypesEnum } from 'enums';
 import { AvailableSeatInfo } from 'types';
@@ -14,27 +14,39 @@ type Props = {
 };
 const cn = classname('interactive-carriage-map');
 
-export const InteractiveCarriageMap = ({ classType, seats, carriageNumber }: Props) => {
-    const [selectedSeat, setSelectedSeat] = useState(null);
-
-    const handleSeatClick = () => {
-        console.log('click');
-    };
-
-    return (
-        <div className={cn()}>
-            {classType === CarriageTypesEnum.FIRST && (
-                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FIRST])} urlMap='/image/first-class-carriage.png' />
-            )}
-            {classType === CarriageTypesEnum.SECOND && (
-                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={ClickableAreasMap[CarriageTypesEnum.SECOND]} urlMap='/image/second-class-carriage.png' />
-            )}
-            {classType === CarriageTypesEnum.THIRD && (
-                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.THIRD])} urlMap='/image/third-class-carriage.png' />
-            )}
-            {classType === CarriageTypesEnum.FOURTH && (
-                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FOURTH])} urlMap='/image/fourth-class-carriage.png' />
-            )}
-        </div>
-    );
-};
+export const InteractiveCarriageMap = ({ classType, seats, carriageNumber }: Props) => (
+    <div className={cn()}>
+        {classType === CarriageTypesEnum.FIRST && (
+            <CarriageMap
+                carriageNumber={carriageNumber}
+                seats={seats}
+                areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FIRST])}
+                urlMap='/image/first-class-carriage.png'
+            />
+        )}
+        {classType === CarriageTypesEnum.SECOND && (
+            <CarriageMap
+                carriageNumber={carriageNumber}
+                seats={seats}
+                areas={ClickableAreasMap[CarriageTypesEnum.SECOND]}
+                urlMap='/image/second-class-carriage.png'
+            />
+        )}
+        {classType === CarriageTypesEnum.THIRD && (
+            <CarriageMap
+                carriageNumber={carriageNumber}
+                seats={seats}
+                areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.THIRD])}
+                urlMap='/image/third-class-carriage.png'
+            />
+        )}
+        {classType === CarriageTypesEnum.FOURTH && (
+            <CarriageMap
+                carriageNumber={carriageNumber}
+                seats={seats}
+                areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FOURTH])}
+                urlMap='/image/fourth-class-carriage.png'
+            />
+        )}
+    </div>
+);

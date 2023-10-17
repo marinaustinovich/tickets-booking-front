@@ -19,8 +19,6 @@ export const CarriageType = ({ directionId }: Props) => {
     const locale = 'place-selection.carriage-type';
     const carriages = useAppSelector(carriagesDetailsSelector);
 
-    console.log('active', selectedCarriageType, carriages);
-
     const filteredCarriages = useMemo(() => {
         if (!selectedCarriageType) {
             return [];
