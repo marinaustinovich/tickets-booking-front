@@ -8,7 +8,7 @@ import './seat-map-header.scss';
 
 type Props = {
     carriages: CarriagesDetailsInfo;
-    onNumberClick: (id: string, index: number) => void;
+    onNumberClick: (index: number) => void;
 };
 
 const cn = classname('seat-map-header');
@@ -22,7 +22,7 @@ export const SeatMapHeader = ({ carriages, onNumberClick }: Props) => {
             <div className={cn('numbers')}>
                 <span className={cn('numbers-label')}>{t(`${locale}.carriage-numbers`)}</span>
                 {carriages.map((carriage, index) => (
-                    <span key={index} className={cn('number')} onClick={() => onNumberClick(carriage.coach._id, index + 1)}>
+                    <span key={carriage.coach._id} className={cn('number')} onClick={() => onNumberClick(index + 1)}>
                         {formatIndex(index + 1)}
                     </span>
                 ))}

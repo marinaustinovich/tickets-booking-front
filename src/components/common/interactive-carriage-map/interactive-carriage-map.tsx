@@ -8,13 +8,13 @@ import { ClickableAreasMap } from 'constants/clickableAreasData';
 import './interactive-carriage-map.scss';
 
 type Props = {
+    carriageNumber: number;
     classType: CarriageTypesEnum;
     seats: AvailableSeatInfo[];
 };
 const cn = classname('interactive-carriage-map');
 
-export const InteractiveCarriageMap = ({ classType, seats }: Props) => {
-    console.log(classType);
+export const InteractiveCarriageMap = ({ classType, seats, carriageNumber }: Props) => {
     const [selectedSeat, setSelectedSeat] = useState(null);
 
     const handleSeatClick = () => {
@@ -24,16 +24,16 @@ export const InteractiveCarriageMap = ({ classType, seats }: Props) => {
     return (
         <div className={cn()}>
             {classType === CarriageTypesEnum.FIRST && (
-                <CarriageMap seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FIRST])} urlMap='/image/first-class-carriage.png' />
+                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FIRST])} urlMap='/image/first-class-carriage.png' />
             )}
             {classType === CarriageTypesEnum.SECOND && (
-                <CarriageMap seats={seats} areas={ClickableAreasMap[CarriageTypesEnum.SECOND]} urlMap='/image/second-class-carriage.png' />
+                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={ClickableAreasMap[CarriageTypesEnum.SECOND]} urlMap='/image/second-class-carriage.png' />
             )}
             {classType === CarriageTypesEnum.THIRD && (
-                <CarriageMap seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.THIRD])} urlMap='/image/third-class-carriage.png' />
+                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.THIRD])} urlMap='/image/third-class-carriage.png' />
             )}
             {classType === CarriageTypesEnum.FOURTH && (
-                <CarriageMap seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FOURTH])} urlMap='/image/fourth-class-carriage.png' />
+                <CarriageMap carriageNumber={ carriageNumber} seats={seats} areas={convertToPercentage(ClickableAreasMap[CarriageTypesEnum.FOURTH])} urlMap='/image/fourth-class-carriage.png' />
             )}
         </div>
     );

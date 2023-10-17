@@ -3,5 +3,5 @@ export type ClickableArea = {
     y: number;
     width: number;
     height: number;
-    index: number;
+    index: number | string;
   };

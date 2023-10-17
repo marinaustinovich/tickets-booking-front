@@ -8,6 +8,7 @@ const createCommonArea = (args: ClickableAreaArgs): ClickableArea => {
 };
 
 const commonAreas1: ClickableArea[] = [
+    { x: 38, y: 0, width: 33, height: 24, index: 0 },
     createCommonArea({ x: 133, y: 58, index: 1 }),
     createCommonArea({ x: 133, y: 28, index: 2 }),
     createCommonArea({ x: 193, y: 58, index: 3 }),
@@ -44,6 +45,7 @@ const commonAreas1: ClickableArea[] = [
 
 export const ClickableAreasMap: Record<CarriageTypesEnum, ClickableArea[]> = {
     [CarriageTypesEnum.FOURTH]: [
+        { x: 38, y: 0, width: 33, height: 24, index: 0 },
         { x: 145, y: 53, width: 25, height: 17, index: 1 },
         { x: 145, y: 33, width: 25, height: 17, index: 2 },
         { x: 190, y: 53, width: 25, height: 17, index: 3 },
@@ -128,6 +130,7 @@ export const ClickableAreasMap: Record<CarriageTypesEnum, ClickableArea[]> = {
     ],
     [CarriageTypesEnum.SECOND]: [...commonAreas1],
     [CarriageTypesEnum.FIRST]: [
+        { x: 38, y: 0, width: 33, height: 24, index: 0 },
         { x: 133, y: 28, width: 27, height: 60, index: 1 },
         { x: 193, y: 28, width: 27, height: 60, index: 3 },
         { x: 223, y: 28, width: 27, height: 60, index: 4 },

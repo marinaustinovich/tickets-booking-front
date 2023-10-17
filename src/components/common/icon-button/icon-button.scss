@@ -17,6 +17,10 @@
         & > svg line {
             stroke: var(--color-primary);
         }
+
+        .icon-button__label {
+            color: var(--color-primary);
+        }
     }
 
     &:not(:hover) {
