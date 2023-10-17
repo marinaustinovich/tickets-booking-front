@@ -22,6 +22,12 @@
     &__number:hover {
         cursor: pointer;
     }
+
+    &__number {
+        &--active {
+            color: var(--color-text-white);
+        }
+    }
     
     &__info {
         color: var(--color-background-dark);
