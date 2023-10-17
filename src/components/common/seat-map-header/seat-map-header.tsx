@@ -8,12 +8,13 @@ import './seat-map-header.scss';
 
 type Props = {
     carriages: CarriagesDetailsInfo;
+    selectedCarriage: number;
     onNumberClick: (index: number) => void;
 };
 
 const cn = classname('seat-map-header');
 
-export const SeatMapHeader = ({ carriages, onNumberClick }: Props) => {
+export const SeatMapHeader = ({ carriages, selectedCarriage, onNumberClick }: Props) => {
     const { t } = useTranslation('global');
     const locale = 'place-selection.seat-map.header';
 
@@ -22,14 +23,18 @@ export const SeatMapHeader = ({ carriages, onNumberClick }: Props) => {
             <div className={cn('numbers')}>
                 <span className={cn('numbers-label')}>{t(`${locale}.carriage-numbers`)}</span>
                 {carriages.map((carriage, index) => (
-                    <span key={carriage.coach._id} className={cn('number')} onClick={() => onNumberClick(index + 1)}>
+                    <span
+                        key={carriage.coach._id}
+                        className={cn('number', {
+                            active: index === selectedCarriage,
+                        })}
+                        onClick={() => onNumberClick(index + 1)}
+                    >
                         {formatIndex(index + 1)}
                     </span>
                 ))}
             </div>
-            <span className={cn('info')}  >
-                {t(`${locale}.info`)}
-            </span>
+            <span className={cn('info')}>{t(`${locale}.info`)}</span>
         </div>
     );
 };

@@ -34,7 +34,7 @@ export const SeatMap = ({ carriages, selectedClassType }: Props) => {
 
     return (
         <div className={cn()}>
-            <SeatMapHeader carriages={carriages} onNumberClick={handleCarriageNumberClick} />
+            <SeatMapHeader carriages={carriages} onNumberClick={handleCarriageNumberClick} selectedCarriage={index}/>
             <div className={cn('carriage-details')}>
                 <NumberCarriageBlock carriageNumber={index} />
                 <SeatPriceTable coach={selectedCarriage.coach} />
