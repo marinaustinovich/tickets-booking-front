@@ -23,18 +23,14 @@ export const SeatMap = ({ carriages, selectedClassType }: Props) => {
     const [index, setIndex] = useState<number>(0);
 
     const selectedCarriage = useMemo(() => carriages[index], [carriages, index]);
-    const availableSeats = useMemo(() => selectedCarriage.seats.filter(seat => seat.available), [selectedCarriage.seats]);
-
-    const handleCarriageNumberClick = useCallback((index: number) => {
-        setIndex(index);
-    }, []);
-   
+    const availableSeats = useMemo(() => selectedCarriage.seats.filter(seat => seat.available), [selectedCarriage]);
     const totalPrice = useMemo(() => calculateTotalPrice(selectedSeats, selectedCarriage.coach), [selectedSeats, selectedCarriage]);
-
+    
+    const handleCarriageNumberClick = useCallback((index: number) => setIndex(index), []);
 
     return (
         <div className={cn()}>
-            <SeatMapHeader carriages={carriages} onNumberClick={handleCarriageNumberClick} selectedCarriage={index}/>
+            <SeatMapHeader carriages={carriages} onNumberClick={handleCarriageNumberClick} selectedCarriage={index} />
             <div className={cn('carriage-details')}>
                 <NumberCarriageBlock carriageNumber={index} />
                 <SeatPriceTable coach={selectedCarriage.coach} />

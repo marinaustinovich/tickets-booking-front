@@ -28,7 +28,7 @@ export const SeatMapHeader = ({ carriages, selectedCarriage, onNumberClick }: Pr
                         className={cn('number', {
                             active: index === selectedCarriage,
                         })}
-                        onClick={() => onNumberClick(index + 1)}
+                        onClick={() => onNumberClick(index)}
                     >
                         {formatIndex(index + 1)}
                     </span>

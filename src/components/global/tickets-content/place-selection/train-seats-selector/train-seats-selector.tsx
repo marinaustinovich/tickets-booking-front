@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'components/common';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'components';
 import { LeftArrowYellowIcon, RightArrowYellowIcon } from 'icons';
 import { classname } from 'utils';
 import { TrainInfo } from 'types';
@@ -19,12 +20,15 @@ const cn = classname('train-seats-selector');
 
 export const TrainSeatsSelector = ({ isDeparture, train, directionId }: Props) => {
     const { t } = useTranslation('global');
+    const navigate = useNavigate();
+
+    const handleButtonClick = useCallback(() => navigate('/tickets/train'), [navigate]);
 
     return (
         <div className={cn()}>
             <div className={cn('actions')}>
                 {isDeparture ? <LeftArrowYellowIcon /> : <RightArrowYellowIcon />}
-                <Button type='button' size='large' view='default-white'>
+                <Button type='button' size='large' view='default-white' onClick={handleButtonClick}>
                     {t('place-selection.choose-button-label')}
                 </Button>
             </div>
