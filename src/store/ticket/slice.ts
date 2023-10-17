@@ -17,6 +17,7 @@ const initialState: TicketsSliceState = {
         haveAirConditioning: false,
         haveExpress: false,
     },
+    selectedSeats: [],
 };
 
 const ticketsSlice = createSlice({
@@ -25,6 +26,9 @@ const ticketsSlice = createSlice({
     reducers: {
         setCarriagesDetails: (state, action: PayloadAction<CarriagesDetailsInfo>) => {
             state.carriagesDetails = action.payload;
+        },
+        setSelectedSeats: (state, action: PayloadAction<number[]>) => {
+            state.selectedSeats = action.payload;
         },
     },
     extraReducers: builder => composeBuilder(builder, [fetchCarriagesDetailsThunk]),

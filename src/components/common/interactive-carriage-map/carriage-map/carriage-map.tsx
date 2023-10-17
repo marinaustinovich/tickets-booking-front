@@ -1,6 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { classname, formatIndex } from 'utils';
 import { AvailableSeatInfo, ClickableArea } from 'types';
+import { useAppDispatch } from 'store';
+import { ticketsActions } from 'store/ticket/slice';
 
 import './carriage-map.scss';
 
@@ -37,17 +39,26 @@ const Area = ({ area, isActive, isAvailable, handleClick, className }: AreaProps
 );
 
 export const CarriageMap = ({ seats, areas, urlMap, carriageNumber }: Props) => {
-    const [activeAreas, setActiveAreas] = useState<ClickableArea[]>([]);
+    const [activeAreaIndexes, setActiveAreaIndexes] = useState<(number | string)[]>([]);
+    const dispatch = useAppDispatch();
+
     const handleClick = useCallback((area: ClickableArea, available: boolean) => {
         if (available) return;
-        setActiveAreas(prevActiveAreas => {
-            if (prevActiveAreas.some(activeArea => activeArea.index === area.index)) {
-                return prevActiveAreas.filter(activeArea => activeArea.index !== area.index);
-            } else {
-                return [...prevActiveAreas, area];
-            }
-        });
+
+        if (area.index === 0 || typeof area.index !== 'number') {
+            return;
+        }
+
+        setActiveAreaIndexes(prevActiveAreaIndexes =>
+            prevActiveAreaIndexes.includes(area.index)
+                ? prevActiveAreaIndexes.filter(activeAreaIndex => activeAreaIndex !== area.index)
+                : [...prevActiveAreaIndexes, area.index],
+        );
     }, []);
+
+    useEffect(() => {
+        dispatch(ticketsActions.setSelectedSeats(activeAreaIndexes.map(index => Number(index))));
+    }, [dispatch, activeAreaIndexes]);
 
     return (
         <div className={cn()}>
@@ -56,11 +67,11 @@ export const CarriageMap = ({ seats, areas, urlMap, carriageNumber }: Props) => 
                 if (area.index === 0) {
                     area.index = formatIndex(carriageNumber + 1);
 
-                    return <Area area={area} key={area.index} className='area-carriage-number'/>;
+                    return <Area area={area} key={area.index} className='area-carriage-number' />;
                 }
 
                 const areaData = seats.find(seat => seat.index === area.index);
-                const isActive = activeAreas.some(activeArea => activeArea.index === area.index);
+                const isActive = activeAreaIndexes.includes(area.index);
                 const isAvailable = areaData && areaData.available;
 
                 return <Area area={area} isActive={isActive} isAvailable={!!isAvailable} handleClick={handleClick} key={area.index} />;

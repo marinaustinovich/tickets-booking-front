@@ -18,3 +18,6 @@ export const carriageDetailByIndexSelector = createSelector(
 export const selectedCarriageSelector = (index: number) => {
     return createSelector([carriagesDetailsSelector], carriages => carriages[index]);
 };
+
+const fetchSelectedSeatsDataSelector = (state: AppState) => SearchSelector(state).selectedSeats;
+export const selectedSeatsSelector = createSelector([fetchSelectedSeatsDataSelector], seatsData => seatsData ?? []);

@@ -1,4 +1,7 @@
 .seat-map {
+    display: flex;
+    flex-direction: column;
+
     &__carriage-details {
         display: flex;
     }
@@ -20,5 +23,15 @@
         color: var(--color-background-dark);
         font-size: 16px;
         margin-left: auto;
+    }
+
+    &__total {
+        align-self: flex-end;
+        display: flex;
+        gap: 5px;
+        padding-right: 38px;
+        color: var(--color-primary);
+        font-size: 24px;
+        font-weight: 700;
     }
 }

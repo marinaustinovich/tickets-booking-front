@@ -5,4 +5,5 @@ export type TicketsSliceState = {
     fetchCarriagesDetails: RequestWithStatus<CarriagesDetailsInfo>;
     carriagesDetails: CarriagesDetailsInfo;
     carriagesFilters: CarriageFilters;
+    selectedSeats: number[];
 };
