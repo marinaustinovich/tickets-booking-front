@@ -30,7 +30,7 @@ const Area = ({ area, isActive, isAvailable, handleClick, className }: AreaProps
             width: `${area.width}%`,
             height: `${area.height}%`,
         }}
-        onClick={handleClick && isAvailable ? () => handleClick(area, true) : undefined}
+        onClick={handleClick && isAvailable !== undefined ? () => handleClick(area, isAvailable) : undefined}
     >
         {area.index}
     </div>
@@ -56,9 +56,9 @@ export const CarriageMap = ({ seats, areas, urlMap, carriageNumber }: Props) => 
                 if (area.index === 0) {
                     area.index = formatIndex(carriageNumber + 1);
 
-                    return <Area area={area} key={area.index} className='area-carriage-number' />;
+                    return <Area area={area} key={area.index} className='area-carriage-number'/>;
                 }
-                
+
                 const areaData = seats.find(seat => seat.index === area.index);
                 const isActive = activeAreas.some(activeArea => activeArea.index === area.index);
                 const isAvailable = areaData && areaData.available;
