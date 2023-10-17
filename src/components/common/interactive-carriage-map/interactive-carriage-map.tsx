@@ -12,6 +12,7 @@ type Props = {
     classType: CarriageTypesEnum;
     seats: AvailableSeatInfo[];
 };
+
 const cn = classname('interactive-carriage-map');
 
 export const InteractiveCarriageMap = ({ classType, seats, carriageNumber }: Props) => (

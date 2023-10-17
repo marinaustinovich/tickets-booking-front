@@ -51,5 +51,8 @@
             "food": "питание"
         }
     },
-    "language": "ru"
+    "language": "ru",
+    "modal": {
+        "button-label": "Понятно"
+    }
 }

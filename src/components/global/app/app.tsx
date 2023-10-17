@@ -5,6 +5,7 @@ import { classname } from 'utils';
 import { Footer } from '../footer';
 import MainPage from 'pages/main/main';
 import TicketsPage from 'pages/tickets/tickets';
+import { Modal } from 'components/common';
 
 import './app.scss';
 
@@ -17,5 +18,6 @@ export const App = () => (
             <Route path='/tickets/*' element={<TicketsPage />} />
         </Routes>
         <Footer />
+        <Modal />
     </div>
 );

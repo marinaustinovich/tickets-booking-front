@@ -25,5 +25,8 @@
         "carriage-plan": {
             "occupied-places-number": "{{number}} человек выбирают места в этом поезде"
         }
+    },
+    "notification": {
+        "error": "The number of passengers must match the number of selected seats in the carriage"
     }
 }

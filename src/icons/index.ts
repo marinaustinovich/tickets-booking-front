@@ -40,8 +40,12 @@ import { ReactComponent as WatchIcon } from './watch.svg';
 import { ReactComponent as ReservedSeatIcon } from './reserved-seat.svg';
 import { ReactComponent as AirConditionerIcon } from './air-conditioner.svg';
 import { ReactComponent as LinensIcon } from './linens.svg';
+import { ReactComponent as ErrorIcon } from './error.svg';
+import { ReactComponent as InfoIcon } from './error.svg';
 
 export {
+    ErrorIcon,
+    InfoIcon,
     ReactLogoIcon,
     GroupTwoIcon,
     LogoIcon,

@@ -26,3 +26,4 @@ export * from './seat-price-table';
 export * from './tooltip';
 export * from './number-carriage-block';
 export * from './interactive-carriage-map';
+export * from './modal';

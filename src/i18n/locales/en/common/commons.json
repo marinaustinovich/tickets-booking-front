@@ -52,5 +52,8 @@
 
         }
     },
-    "language": "en"
+    "language": "en",
+    "modal": {
+        "button-label": "It's clear"
+    }
 }

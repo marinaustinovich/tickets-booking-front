@@ -4,6 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; 
 
 import { searchReducer } from './search';
+import { commonReducer } from './common';
 
 const persistConfig = {
   key: 'root',
@@ -13,6 +14,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     search: searchReducer,
+    common: commonReducer
   });
   
 const persistedReducer = persistReducer(persistConfig, rootReducer);
