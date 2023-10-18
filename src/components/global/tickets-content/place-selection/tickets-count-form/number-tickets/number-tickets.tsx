@@ -30,7 +30,7 @@ const NumberInputField = ({ name, clueLocaleKey, max, className, ...rest }: Numb
     return (
         <div className={cn('number-people')}>
             <Field name={name} component={NumberInput} type='number' max={max} {...rest} />
-            {(clueLocaleKey && number !==0) && <div className={cn('clue', [className])}>{clueLocale}</div>}
+            {clueLocaleKey && number !== 0 && <div className={cn('clue', [className])}>{clueLocale}</div>}
         </div>
     );
 };

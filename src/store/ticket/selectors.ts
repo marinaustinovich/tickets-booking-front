@@ -21,3 +21,6 @@ export const selectedCarriageSelector = (index: number) => {
 
 const fetchSelectedSeatsDataSelector = (state: AppState) => SearchSelector(state).selectedSeats;
 export const selectedSeatsSelector = createSelector([fetchSelectedSeatsDataSelector], seatsData => seatsData ?? []);
+
+const fetchTicketsCountDataSelector = (state: AppState) => SearchSelector(state).ticketsCount;
+export const ticketsCountSelector = createSelector([fetchTicketsCountDataSelector], ticketsCountData => ticketsCountData ?? {});

@@ -7,16 +7,17 @@
     }
 
     &__steps {
-        display: flex;
+        display: grid;
+        grid-template-columns: 3fr 3fr 2fr 3fr;
         background-color: var(--color-background-form);
     }
 
     &__step {
         position: relative;
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 28px;
-        padding: 0 0 0 180px;
 
         h3 {
             text-transform: none;
@@ -39,7 +40,7 @@
     .current-step:after {
         content: '';
         position: absolute;
-        right: -99px;
+        right: -100px;
         top: 50%;
         border: 50px solid transparent;
         border-left-color: var(--color-primary);

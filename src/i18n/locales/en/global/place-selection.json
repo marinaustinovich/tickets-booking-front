@@ -27,6 +27,7 @@
         }
     },
     "notification": {
-        "error": "The number of passengers must match the number of selected seats in the carriage"
+        "compare-error": "The number of passengers must match the number of selected seats in the carriage",
+        "count-error": "The number of passengers is not specified"
     }
 }

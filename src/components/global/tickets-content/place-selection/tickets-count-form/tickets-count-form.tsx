@@ -1,20 +1,24 @@
 import React, { useCallback } from 'react';
-
-import { FormValuesSpy, classname } from 'utils';
 import { Form } from 'react-final-form';
+import { FormValuesSpy, classname } from 'utils';
+
 import { FormIdEnum } from 'enums';
+import { useAppDispatch } from 'store';
+import { ticketsActions } from 'store/ticket/slice';
 import { NumberTickets } from './number-tickets';
 
-import './place-details-form.scss';
+import './tickets-count-form.scss';
 
-const cn = classname('place-details-form');
+const cn = classname('tickets-count-form');
 
-export const PlaceDetailsForm = () => {
+export const TicketsCountForm = () => {
+    const dispatch = useAppDispatch();
     const handleFormSubmit = useCallback(() => undefined, []);
 
     const handleFormChange = useCallback(async (values: any) => {
         console.log(values);
-    }, []);
+        dispatch(ticketsActions.setTicketsCount(values));
+    }, [dispatch]);
 
     return (
         <Form

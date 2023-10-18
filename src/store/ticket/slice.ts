@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { composeBuilder, requestInitial } from 'utils';
 import { fetchCarriagesDetailsThunk } from './actions';
-import { TicketsSliceState } from './types';
+import { TicketsCount, TicketsSliceState } from './types';
 import { CarriagesDetailsInfo } from 'types';
 
 const initialState: TicketsSliceState = {
@@ -18,6 +18,7 @@ const initialState: TicketsSliceState = {
         haveExpress: false,
     },
     selectedSeats: [],
+    ticketsCount: {},
 };
 
 const ticketsSlice = createSlice({
@@ -29,6 +30,9 @@ const ticketsSlice = createSlice({
         },
         setSelectedSeats: (state, action: PayloadAction<number[]>) => {
             state.selectedSeats = action.payload;
+        },
+        setTicketsCount: (state, action: PayloadAction<TicketsCount>) => {
+            state.ticketsCount = action.payload;
         },
     },
     extraReducers: builder => composeBuilder(builder, [fetchCarriagesDetailsThunk]),

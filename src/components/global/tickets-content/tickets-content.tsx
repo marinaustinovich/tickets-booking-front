@@ -7,11 +7,11 @@ import { useAppSelector } from 'store';
 import { routesSelector } from 'store/route';
 import { PlaceSelection } from './place-selection';
 
-import './train-content.scss';
+import './tickets-content.scss';
 
-const cn = classname('train-content');
+const cn = classname('tickets-content');
 
-export const TrainContent = () => {
+export const TicketsContent = () => {
     const routes = useAppSelector(routesSelector);
     return (
         <main className={cn()}>
@@ -21,7 +21,7 @@ export const TrainContent = () => {
             </div>
 
             <Routes>
-                <Route index  element={<TrainsList trains={routes.items} totalCount={routes.total_count} />} />
+                <Route index element={<TrainsList trains={routes.items} totalCount={routes.total_count} />} />
                 <Route path='place/:index' element={<PlaceSelection />} />
             </Routes>
         </main>

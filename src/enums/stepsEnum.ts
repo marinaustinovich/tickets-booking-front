@@ -1,6 +1,6 @@
 export enum StepsEnum {
-    FIRST = 'passengers',
-    SECOND = 'tickets',
+    FIRST = 'tickets',
+    SECOND = 'passengers',
     tHIRD  = 'payment',
     FOURTH = 'verification'
 }

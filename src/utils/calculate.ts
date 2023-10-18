@@ -1,3 +1,4 @@
+import { TicketsCount } from '@store/ticket';
 import { CarriageTypesEnum } from 'enums';
 import { CoachInfo } from 'types/tickets';
 
@@ -15,21 +16,23 @@ export const findMinValue = (obj: Record<string, any>): number => {
 };
 
 export const calculateTotalPrice = (indexes: number[], coach: CoachInfo) => {
-    let totalPrice = 0;
+    return indexes.reduce((totalPrice, index) => {
+        const price =
+            coach.class_type === CarriageTypesEnum.FIRST
+                ? coach.price
+                : coach.class_type === CarriageTypesEnum.FOURTH
+                ? coach.side_price
+                : index % 2 === 0
+                ? coach.top_price
+                : coach.bottom_price;
 
-    for (const index of indexes) {
-        if (coach.class_type === CarriageTypesEnum.FIRST) {
-            totalPrice += coach.price;
-        } else if (coach.class_type === CarriageTypesEnum.FOURTH) {
-            totalPrice += coach.side_price;
-        } else {
-            if (index % 2 === 0) {
-                totalPrice += coach.top_price;
-            } else {
-                totalPrice += coach.bottom_price;
-            }
-        }
-    }
+        return totalPrice + price;
+    }, 0);
+};
 
-    return totalPrice;
+export const compareSelectedSeatsAndTicketCount = (selectedSeats: number[], ticketsCount: TicketsCount) => {
+    const adultCount = Number(ticketsCount.adult || 0);
+    const childCount = Number(ticketsCount.child || 0);
+   
+    return selectedSeats.length === adultCount + childCount;
 };

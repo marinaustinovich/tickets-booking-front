@@ -6,8 +6,8 @@ import { LeftArrowYellowIcon, RightArrowYellowIcon } from 'icons';
 import { classname } from 'utils';
 import { TrainInfo } from 'types';
 import { TrainDetailsBlock } from '../train-details-block';
-import { PlaceDetailsForm } from '../place-details-form';
-import { CarriageType } from '../place-details-form/carriage-type';
+import { TicketsCountForm } from '../tickets-count-form';
+import { CarriageType } from '../carriage-type';
 
 import './train-seats-selector.scss';
 
@@ -34,7 +34,7 @@ export const TrainSeatsSelector = ({ isDeparture, train, directionId }: Props) =
                 </Button>
             </div>
             <TrainDetailsBlock isDeparture={isDeparture} departure={train.departure} arrival={train.arrival} />
-            <PlaceDetailsForm />
+            <TicketsCountForm />
             <CarriageType directionId={directionId} />
         </div>
     );

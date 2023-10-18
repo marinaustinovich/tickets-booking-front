@@ -6,6 +6,7 @@ import { IconButton } from 'components/common';
 import { CoupeIcon, ReservedSeatIcon, SedentaryIcon, StarIcon } from 'icons';
 import { classname, formatType } from 'utils';
 import { fetchCarriagesDetailsThunk } from 'store/ticket';
+import { ticketsActions } from 'store/ticket/slice';
 
 import './carriage-selection-buttons.scss';
 
@@ -33,6 +34,7 @@ export const CarriageSelectionButtons = ({ directionId, showSelectedType }: Prop
             });
             // TODO: пока сервер не возвращает массив вагонов, не работает фильтр
             dispatch(fetchCarriagesDetailsThunk({ id: directionId, filters: {} }));
+            dispatch(ticketsActions.setSelectedSeats([]));
         },
         [dispatch, directionId, showSelectedType],
     );

@@ -6,4 +6,12 @@ export type TicketsSliceState = {
     carriagesDetails: CarriagesDetailsInfo;
     carriagesFilters: CarriageFilters;
     selectedSeats: number[];
+    ticketsCount: TicketsCount,
 };
+
+export type TicketsCount = Partial<{
+    adult: string;
+    child: string;
+    includeChildren: string;
+}>;
+
