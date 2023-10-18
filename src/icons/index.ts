@@ -42,8 +42,12 @@ import { ReactComponent as AirConditionerIcon } from './air-conditioner.svg';
 import { ReactComponent as LinensIcon } from './linens.svg';
 import { ReactComponent as ErrorIcon } from './error.svg';
 import { ReactComponent as InfoIcon } from './error.svg';
+import { ReactComponent as MinusCircleIcon } from './minus-circle.svg';
+import { ReactComponent as PlusCircleIcon } from './plus-circle.svg';
+import { ReactComponent as CloseIcon } from './close.svg';
 
 export {
+    PlusCircleIcon,
     ErrorIcon,
     InfoIcon,
     ReactLogoIcon,
@@ -88,4 +92,6 @@ export {
     ReservedSeatIcon,
     AirConditionerIcon,
     LinensIcon,
+    MinusCircleIcon,
+    CloseIcon,
 };

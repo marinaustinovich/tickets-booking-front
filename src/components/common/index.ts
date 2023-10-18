@@ -28,3 +28,4 @@ export * from './number-carriage-block';
 export * from './interactive-carriage-map';
 export * from './modal';
 export * from './main';
+export * from './paper';

@@ -4,32 +4,48 @@
     padding: 0;
     text-align: center;
 
-    &:hover {
-        background: transparent;
-        color: var(--color-primary);
-
-        & > svg path,
-        & > svg circle {
-            fill: var(--color-primary);
-            stroke: var(--color-text-white);
-        }
-
-        & > svg line {
-            stroke: var(--color-primary);
-        }
-
-        .icon-button__label {
-            color: var(--color-primary);
-        }
-    }
-
-    &:not(:hover) {
-        background: transparent;
-        color: var(--color-text-default);
-    }
-
     &:not(:disabled) {
         cursor: pointer;
+    }
+
+    &--view {
+        &-default {
+            &:hover {
+                background: transparent;
+                color: var(--color-primary);
+
+                & > svg path,
+                & > svg circle {
+                    fill: var(--color-primary);
+                    stroke: var(--color-text-white);
+                }
+
+                & > svg line {
+                    stroke: var(--color-primary);
+                }
+
+                .icon-button__label {
+                    color: var(--color-primary);
+                }
+            }
+
+            &:not(:hover) {
+                background: transparent;
+                color: var(--color-text-default);
+            }
+        }
+
+        &-primary {
+            &:hover {
+                & > svg circle {
+                    stroke: transparent;
+                }
+                
+                & > svg line {
+                    stroke: var(--color-primary);
+                }
+            }
+        }
     }
 
     &--size {
