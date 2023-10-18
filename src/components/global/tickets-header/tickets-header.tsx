@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { classname } from 'utils';
 import { Header } from '../header';
@@ -20,12 +21,26 @@ const Step = ({ label, index, className, isLast }: StepProps) => (
     <div className={cn('step', [className])}>
         <span>{index}</span>
         <h3>{label}</h3>
-        {!className && !isLast && <ArrowRightThinIcon />}
+        {!isLast && <ArrowRightThinIcon />}
     </div>
 );
 
 export const TicketsHeader = () => {
+    const location = useLocation();
     const { t } = useTranslation('global');
+    const hasPassengerSegment = useMemo(() => location.pathname.includes('passenger'), [location]);
+    const hasPaymentSegment = useMemo(() => location.pathname.includes('payment'), [location]);
+
+
+    const getCurrentStepClass = useCallback(
+        (index: number) => {
+            if (index === 0 || (index === 1 && hasPassengerSegment) || (index === 2 && hasPaymentSegment)) {
+                return 'current-step';
+            }
+            return '';
+        },
+        [hasPassengerSegment, hasPaymentSegment],
+    );
 
     return (
         <div className={cn()}>
@@ -40,7 +55,7 @@ export const TicketsHeader = () => {
                         index={index + 1}
                         key={index}
                         isLast={index === Object.keys(StepsEnum).length - 1}
-                        className={index === 0 ? 'current-step' : ''}
+                        className={getCurrentStepClass(index)}
                     />
                 ))}
             </div>

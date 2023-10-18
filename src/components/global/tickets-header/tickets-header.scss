@@ -8,16 +8,19 @@
 
     &__steps {
         display: grid;
-        grid-template-columns: 3fr 3fr 2fr 3fr;
+        grid-template-columns: 3fr 2fr 2fr 3fr;
         background-color: var(--color-background-form);
     }
 
     &__step {
+        $height: 99px;
+        $witch: 38px;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 28px;
+        min-height: $height;
 
         h3 {
             text-transform: none;
@@ -35,19 +38,21 @@
             font-weight: 700;
             color: var(--color-text-white);
         }
-    }
 
-    .current-step:after {
-        content: '';
-        position: absolute;
-        right: -100px;
-        top: 50%;
-        border: 50px solid transparent;
-        border-left-color: var(--color-primary);
-        transform: translateY(-50%);
+        svg {
+            position: absolute;
+            right:-37px;
+            height: $height;
+            width: $witch;
+            z-index: 1;
+        }
     }
 
     .current-step {
         background-color: var(--color-primary);
+
+        svg {
+            fill: var(--color-primary);
+        }
     }
 }

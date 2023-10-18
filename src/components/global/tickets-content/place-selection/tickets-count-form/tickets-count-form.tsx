@@ -16,7 +16,6 @@ export const TicketsCountForm = () => {
     const handleFormSubmit = useCallback(() => undefined, []);
 
     const handleFormChange = useCallback(async (values: any) => {
-        console.log(values);
         dispatch(ticketsActions.setTicketsCount(values));
     }, [dispatch]);
 
