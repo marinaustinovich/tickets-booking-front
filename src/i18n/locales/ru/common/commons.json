@@ -29,6 +29,10 @@
         "price": "Стоимости",
         "duration": "Длительности"
     },
+    "age-select": {
+        "adult": "Взрослый",
+        "children": "Детский"
+    },
     "results-per-page": {
         "five": "5",
         "ten": "10",

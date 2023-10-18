@@ -7,3 +7,4 @@ export * from './train-form';
 export * from './sort-form';
 export * from './tickets';
 export * from './clickable-area';
+export * from './passenger-form';

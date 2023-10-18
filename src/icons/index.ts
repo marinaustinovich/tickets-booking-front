@@ -45,8 +45,10 @@ import { ReactComponent as InfoIcon } from './error.svg';
 import { ReactComponent as MinusCircleIcon } from './minus-circle.svg';
 import { ReactComponent as PlusCircleIcon } from './plus-circle.svg';
 import { ReactComponent as CloseIcon } from './close.svg';
+import { ReactComponent as DropdownIcon } from './dropdown.svg';
 
 export {
+    DropdownIcon,
     PlusCircleIcon,
     ErrorIcon,
     InfoIcon,

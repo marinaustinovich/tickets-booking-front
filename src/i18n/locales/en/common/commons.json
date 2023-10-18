@@ -26,8 +26,12 @@
     },
     "sort-by-select": {
         "date": "Date",
-         "price": "Price",
-          "duration": "Duration"
+        "price": "Price",
+        "duration": "Duration"
+    },
+    "age-select": {
+        "adult": "Adult",
+        "children": "Children's"
     },
     "results-per-page": {
         "five": "5",
@@ -43,13 +47,12 @@
         "price": "Lux",
         "top-price": "Top",
         "bottom-price": "Bottom",
-        "side-price": "Side", 
+        "side-price": "Side",
         "tips": {
             "conditioner": "conditioner",
             "wi-fi": "Wi-Fi",
             "linen": "linen",
             "food": "food"
-
         }
     },
     "language": "en",
