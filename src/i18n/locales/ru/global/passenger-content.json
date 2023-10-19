@@ -2,5 +2,7 @@
     "paper": {
         "title": "Пассажир {{number}}"
     },
-    "passenger-form": {}
+    "passenger-form": {
+       
+    }
 }

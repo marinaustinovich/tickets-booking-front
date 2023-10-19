@@ -1,4 +1,4 @@
-import { CarriageFilters, CarriagesDetailsInfo } from 'types';
+import { CarriageFilters, CarriagesDetailsInfo, PassengerFormState, PersonInfo } from 'types';
 import { RequestWithStatus } from 'utils';
 
 export type TicketsSliceState = {
@@ -6,7 +6,9 @@ export type TicketsSliceState = {
     carriagesDetails: CarriagesDetailsInfo;
     carriagesFilters: CarriageFilters;
     selectedSeats: number[];
-    ticketsCount: TicketsCount,
+    ticketsCount: TicketsCount;
+    passengers: PersonInfo[];
+    passengersFormState: PassengerFormState;
 };
 
 export type TicketsCount = Partial<{
@@ -14,4 +16,3 @@ export type TicketsCount = Partial<{
     child: string;
     includeChildren: string;
 }>;
-
