@@ -33,6 +33,11 @@
         "adult": "Взрослый",
         "children": "Детский"
     },
+    "document-type-select": {
+        "birth-certificate": "Свидетельство о рождении",
+        "passport": "Паспорт",
+        "driver-license": "Водительское удостоверение"
+    },
     "results-per-page": {
         "five": "5",
         "ten": "10",
@@ -63,7 +68,7 @@
     "modal": {
         "button-label": "Понятно"
     },
-    "personal-info-block": {
+    "person-info-block": {
         "first-name-label": "Имя",
         "last-name-label": "Фамилия",
         "patronymic-label": "Отчество",
@@ -74,5 +79,14 @@
         "last-name-placeholder": "Введите фамилию",
         "patronymic-placeholder": "Введите отчество",
         "birthday-placeholder": "ДД/ММ/ГГ"
+    },
+    "person-details-block": {
+        "document-type-label": "Тип документа",
+        "document-number-label": "Номер",
+        "document-series-label": "Серия",
+        "document-type-placeholder": "Выберите тип документа",
+        "document-number-placeholder": "_ _ _ _ _ _",
+        "document-series-placeholder": "_ _ _ _",
+        "document-data-placeholder": "Введите 12 символов"
     }
 }

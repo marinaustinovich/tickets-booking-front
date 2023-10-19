@@ -1,1 +1,1 @@
-export * from './personal-info-block';
+export * from './person-info-block';

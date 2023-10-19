@@ -1,0 +1,36 @@
+.person-details-block {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 25px 45px;
+   
+    background-color: var(--color-text-white);
+    padding: 38px 36px 33px 36px;
+
+    &--view {
+        &-default {
+            grid-template-areas:
+            "documentType documentSeries documentNumber .";
+        }
+
+        &-long {
+            grid-template-areas:
+            "documentType documentType documentData .";
+        }
+    }
+
+    &__document-type {
+        grid-area: documentType;
+    }
+
+    &__document-number {
+        grid-area: documentNumber;
+    }
+
+    &__document-data {
+        grid-area: documentData;
+    }
+
+    &__document-series {
+        grid-area: documentSeries;
+    }
+}

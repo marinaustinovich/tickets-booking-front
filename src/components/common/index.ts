@@ -31,4 +31,5 @@ export * from './main';
 export * from './paper';
 export * from './checkbox';
 export * from './person-info-block';
+export * from './person-details-block';
 export * from './divider';

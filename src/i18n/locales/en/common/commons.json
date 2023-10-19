@@ -33,6 +33,11 @@
         "adult": "Adult",
         "children": "Children's"
     },
+    "document-type-select": {
+        "birth-certificate": "Birth Certificate",
+        "passport": "Passport",
+        "driver-license": "Driver's License"
+    },
     "results-per-page": {
         "five": "5",
         "ten": "10",
@@ -63,7 +68,7 @@
     "modal": {
         "button-label": "It's clear"
     },
-    "personal-info-block": {
+    "person-info-block": {
         "first-name-label": "Name",
         "last-name-label": "Last name",
         "patronymic-label": "Middle name",
@@ -74,5 +79,14 @@
         "last-name-placeholder": "Enter last name",
         "patronymic-placeholder": "Enter your middle name",
         "birthday-placeholder": "DD/MM/YY"
+    },
+    "person-details-block": {
+        "document-type-label": "Document Type",
+        "document-number-label": "Number",
+        "document-series-label": "Series",
+        "document-type-placeholder": "Select a document type",
+        "document-number-placeholder": "_ _ _ _ _ _",
+        "document-series-placeholder": "_ _ _ _",
+        "document-data-placeholder": "Enter 12 characters"
     }
 }
