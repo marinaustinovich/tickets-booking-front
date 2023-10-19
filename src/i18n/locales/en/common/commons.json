@@ -62,5 +62,17 @@
     "language": "en",
     "modal": {
         "button-label": "It's clear"
+    },
+    "personal-info-block": {
+        "first-name-label": "Name",
+        "last-name-label": "Last name",
+        "patronymic-label": "Middle name",
+        "gender-label": "Gender",
+        "birthday-label": "Birthday",
+        "limited-mobility-label": "limited mobility",
+        "first-name-placeholder": "Enter a name",
+        "last-name-placeholder": "Enter last name",
+        "patronymic-placeholder": "Enter your middle name",
+        "birthday-placeholder": "DD/MM/YY"
     }
 }

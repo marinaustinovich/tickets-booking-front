@@ -1,0 +1,41 @@
+.personal-info-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px 45px;
+    grid-template-areas:
+    "age . ."
+    "lastName firstName patronymic"
+    "gender birthday ."
+    "limitedMobility limitedMobility . ";
+    background-color: var(--color-text-white);
+    padding: 38px 36px 33px 36px;
+
+    &__age {
+        grid-area: age;
+    }
+
+    &__last-name {
+        grid-area: lastName;
+    }
+
+    &__first-name {
+        grid-area: firstName;
+    }
+
+    &__patronymic {
+        grid-area: patronymic;
+    }
+
+    
+    &__gender {
+        grid-area: gender;
+    }
+
+    &__birthday {
+        grid-area: birthday;
+    }
+
+    &__limited-mobility {
+        grid-area: limitedMobility;
+    }
+}

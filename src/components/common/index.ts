@@ -30,3 +30,5 @@ export * from './modal';
 export * from './main';
 export * from './paper';
 export * from './checkbox';
+export * from './person-info-block';
+export * from './divider';

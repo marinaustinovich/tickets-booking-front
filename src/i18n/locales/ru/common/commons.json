@@ -62,5 +62,17 @@
     "language": "ru",
     "modal": {
         "button-label": "Понятно"
+    },
+    "personal-info-block": {
+        "first-name-label": "Имя",
+        "last-name-label": "Фамилия",
+        "patronymic-label": "Отчество",
+        "gender-label": "Пол",
+        "birthday-label": "Дата рождения",
+        "limited-mobility-label": "ограниченная подвижность",
+        "first-name-placeholder": "Введите имя",
+        "last-name-placeholder": "Введите фамилию",
+        "patronymic-placeholder": "Введите отчество",
+        "birthday-placeholder": "ДД/ММ/ГГ"
     }
 }
