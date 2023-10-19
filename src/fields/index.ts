@@ -12,3 +12,4 @@ export * from './results-per-page-radio-group';
 export * from './number-input';
 export * from './age-select';
 export * from './field-prefix';
+export * from './gender-radio-group';

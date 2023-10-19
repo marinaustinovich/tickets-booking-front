@@ -38,6 +38,10 @@
         "ten": "10",
         "twenty": "20"
     },
+    "gender-radio-group": {
+        "male": "M",
+        "female": "F"
+    },
     "number-carriage-block": "carriage",
     "seat-price-table": {
         "seats-label": "Seats",

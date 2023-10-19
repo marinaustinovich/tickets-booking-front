@@ -2,7 +2,7 @@ import { classname } from 'utils';
 
 import './review.scss';
 import { User } from 'types';
-import { UrlsEnum } from 'enums/urlEnum';
+import { UrlsEnum } from 'enums/url-enum';
 
 type Props = {
     user: User;

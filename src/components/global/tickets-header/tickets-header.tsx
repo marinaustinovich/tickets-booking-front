@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { classname } from 'utils';
 import { Header } from '../header';
 import { TravelForm } from 'components';
-import { StepsEnum } from 'enums/stepsEnum';
+import { StepsEnum } from 'enums/steps-enum';
 import { ArrowRightThinIcon } from 'icons';
 
 import './tickets-header.scss';

@@ -16,6 +16,7 @@ type DatePickerInputProps = {
     placeholder?: string;
     label?: string;
     required?: boolean;
+    inputSize?: string;
 };
 
 export const DatePickerInput = ({ input, meta, className, ...restProps }: DatePickerInputProps) => {

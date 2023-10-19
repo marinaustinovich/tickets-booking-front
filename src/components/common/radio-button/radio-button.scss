@@ -27,21 +27,55 @@
         color: var(--color-text-disabled);
     }
 
-    &__label {
-        font-weight: 400;
-    }
-
     &__description {
         font-weight: 400;
     }
 
-    &__control:hover + &__label-container &__label,
-    &__label-container:hover &__label {
-        color: var(--color-primary);
-    }
+    &--view {
+        &-default {
+            .radio-button__label {
+                font-weight: 400;
+            }
 
-    &__control:focus + &__label-container &__label,
-    &__control:checked + &__label-container &__label {
-        color: var(--color-background-dark);
+            .radio-button__control:hover + .radio-button__label-container .radio-button__label,
+            .radio-button__label-container:hover .radio-button__label {
+                color: var(--color-primary);
+            }
+
+            .radio-button__control:focus + .radio-button__label-container .radio-button__label,
+            .radio-button__control:checked + .radio-button__label-container .radio-button__label {
+                color: var(--color-background-dark);
+            }
+        }
+
+        &-primary {
+            justify-content: center;
+
+            .radio-button__label-container {
+                width: 100%;
+            }
+
+            .radio-button__label {
+                width: 100%;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 900;
+                text-transform: uppercase;
+                font-size: 30px;
+                color: var(--color-text-default);
+            }
+
+            .radio-button__control:hover + .radio-button__label-container .radio-button__label,
+            .radio-button__label-container:hover .radio-button__label {
+                background-color: var(--color-background-switch);
+            }
+
+            .radio-button__control:focus + .radio-button__label-container .radio-button__label,
+            .radio-button__control:checked + .radio-button__label-container .radio-button__label {
+                background-color: var(--color-primary);
+            }
+        }
     }
 }

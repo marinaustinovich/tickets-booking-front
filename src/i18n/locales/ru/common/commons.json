@@ -38,6 +38,10 @@
         "ten": "10",
         "twenty": "20"
     },
+    "gender-radio-group": {
+        "male": "М",
+        "female": "Ж"
+    },
     "number-carriage-block": "вагон",
     "seat-price-table": {
         "seats-label": "Места",

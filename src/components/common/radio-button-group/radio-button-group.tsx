@@ -18,11 +18,12 @@ type RadioButtonGroupProps = {
     options: RadioOption[];
     onChange?: (value: string) => void;
     checkedValue?: string;
+    view?: 'primary' | 'default';
 };
 
 const cn = classname('radio-button-group');
 
-export const RadioButtonGroup = ({ label, options, name, onChange, required, checkedValue }: RadioButtonGroupProps) => {
+export const RadioButtonGroup = ({ label, options, name, onChange, required, checkedValue, view = 'default' }: RadioButtonGroupProps) => {
     const [localCheckedValue, setLocalCheckedValue] = useState<string>('');
 
     useEffect(() => {
@@ -42,7 +43,7 @@ export const RadioButtonGroup = ({ label, options, name, onChange, required, che
     };
 
     return (
-        <fieldset className={cn()}>
+        <fieldset className={cn('', { view })}>
             {label && (
                 <legend className={cn('group-label')}>
                     {required && <span className={cn('group-label-required')}>* </span>}
@@ -56,6 +57,7 @@ export const RadioButtonGroup = ({ label, options, name, onChange, required, che
 
                     return (
                         <RadioButton
+                            view={view}
                             key={optionId}
                             label={label}
                             value={value}

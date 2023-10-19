@@ -3,11 +3,6 @@
     padding: 0;
     margin: 0;
 
-    &__options-wrapper {
-        display: flex;
-        gap: 12px;
-    }
-
     &__group-label {
         font-weight: 700;
         color: var(--color-text-default);
@@ -16,6 +11,27 @@
         &-required {
             font-weight: normal;
             color: var(--color-danger);
+        }
+    }
+
+    &--view {
+        &-default {
+            .radio-button-group__options-wrapper {
+                display: flex;
+                gap: 12px;
+            }
+        }
+
+        &-primary {
+            height: 50px;
+            border: 1px solid var(--color-text-disabled);
+            border-radius: 5px;
+            background-color: var(--color-text-white);
+
+            .radio-button-group__options-wrapper {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     }
 }

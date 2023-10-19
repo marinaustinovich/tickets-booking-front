@@ -11,12 +11,13 @@ type RadioButtonProps = {
     description?: string;
     checked?: boolean;
     id: string;
+    view?: 'primary' | 'default';
     onChange?: (value: string) => void;
 };
 
 const cn = classname('radio-button');
 
-export const RadioButton = ({ id, name, label, description, onChange, value, checked }: RadioButtonProps) => {
+export const RadioButton = ({ id, name, label, description, onChange, value, checked, view = 'default' }: RadioButtonProps) => {
     const handleChange = useCallback(
         (e: ChangeEvent<HTMLInputElement>) => {
             onChange?.(e.target.value);
@@ -25,7 +26,7 @@ export const RadioButton = ({ id, name, label, description, onChange, value, che
     );
 
     return (
-        <div className={cn()}>
+        <div className={cn('', { view })}>
             <input className={cn('control')} type='radio' id={id} onChange={handleChange} name={name} value={value} checked={checked} />
             <label className={cn('label-container')} htmlFor={id}>
                 <span className={cn('label')}>{label}</span>

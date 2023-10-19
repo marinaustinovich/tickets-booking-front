@@ -14,7 +14,7 @@ const cn = classname('datepicker');
 
 type DatePickerProps = Omit<ReactDatePickerProps, 'onChange'> & FieldRenderProps<string | Date>;
 
-export const DatePicker = ({ input, placeholder, className, ...rest }: DatePickerProps) => {
+export const DatePicker = ({ input, placeholder, className, inputSize='default', ...rest }: DatePickerProps) => {
     const { t } = useTranslation('common');
     const locale = 'commons.datepicker';
     const [value, setValue] = useState<Date | null>(input.value ? new Date(input.value) : null);
@@ -38,7 +38,7 @@ export const DatePicker = ({ input, placeholder, className, ...rest }: DatePicke
             name={input.name}
             calendarClassName={cn('', [className])}
             renderCustomHeader={props => <DatePickerCustomHeader {...props} />}
-            customInput={<Input endAdornment={<CalendarIcon />} />}
+            customInput={<Input endAdornment={<CalendarIcon />} inputSize={inputSize}/>}
             selected={value}
             onChange={date => {
                 setValue(date);
