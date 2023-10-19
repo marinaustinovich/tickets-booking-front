@@ -1,4 +1,6 @@
 .passenger-item {
- 
-    
+    &__actions {
+        display: flex;
+        justify-content: flex-end;
+    }
 }

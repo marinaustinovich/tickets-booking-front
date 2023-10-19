@@ -1,6 +1,8 @@
 {
+    "add-passenger-button-label": "Add Passenger",
+    "next-button-label": "Next",
     "paper": {
-        "title": "Passenger {{number}}"
-    },
-    "passenger-form": {}
+        "title": "Passenger {{number}}",
+        "action-button-label": "Next Passenger"
+    }
 }

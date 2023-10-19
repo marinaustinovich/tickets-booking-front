@@ -1,8 +1,8 @@
 {
+    "add-passenger-button-label": "Добавить пассажира",
+    "next-button-label": "Далее",
     "paper": {
-        "title": "Пассажир {{number}}"
-    },
-    "passenger-form": {
-       
+        "title": "Пассажир {{number}}",
+        "action-button-label": "Следующий пассажир"
     }
 }

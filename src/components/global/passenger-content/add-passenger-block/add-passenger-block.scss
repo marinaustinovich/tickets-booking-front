@@ -1,0 +1,9 @@
+.add-passenger-block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    svg circle {
+        stroke: transparent;
+    }
+}

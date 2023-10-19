@@ -36,7 +36,13 @@
         }
 
         &-primary {
+            background: transparent;
+
             &:hover {
+                & > svg {
+                    transform: scale(1.2);
+                }
+
                 & > svg circle {
                     stroke: transparent;
                 }

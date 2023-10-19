@@ -23,7 +23,7 @@ export const Paper = ({ title, actions, body, footer, className, header }: Props
                 {actions}
             </div>
         )}
-        <div className={cn('body')}>{body}</div>
+        {body && <div className={cn('body')}>{body}</div>}
         {footer && <div className={cn('footer')}>{footer}</div>}
     </div>
 );
