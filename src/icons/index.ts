@@ -46,8 +46,12 @@ import { ReactComponent as MinusCircleIcon } from './minus-circle.svg';
 import { ReactComponent as PlusCircleIcon } from './plus-circle.svg';
 import { ReactComponent as CloseIcon } from './close.svg';
 import { ReactComponent as DropdownIcon } from './dropdown.svg';
+import { ReactComponent as CheckIconDefault } from './check-default.svg';
+import { ReactComponent as CheckIconMini } from './check-mini.svg';
 
 export {
+    CheckIconDefault,
+    CheckIconMini,
     DropdownIcon,
     PlusCircleIcon,
     ErrorIcon,

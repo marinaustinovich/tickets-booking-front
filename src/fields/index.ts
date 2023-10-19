@@ -13,3 +13,4 @@ export * from './number-input';
 export * from './age-select';
 export * from './field-prefix';
 export * from './gender-radio-group';
+export * from './checkbox-input';

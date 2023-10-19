@@ -1,0 +1,12 @@
+.labeled-check-box {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    &__label {
+        color: var(--color-background-dark);
+        font-size: 18px;
+        text-align: left;
+        cursor: pointer;
+    }
+}
