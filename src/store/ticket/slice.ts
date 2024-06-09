@@ -1,10 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
 import { composeBuilder, requestInitial } from 'utils';
 import { fetchCarriagesDetailsThunk } from './actions';
 import { TicketsCount, TicketsSliceState } from './types';
-import { CarriagesDetailsInfo, PassengerFormState } from 'types';
-import { AgeEnum, DocumentTypeEnum, GenderEnum } from 'enums';
+import { CarriagesDetailsInfo, PassengerDataState } from 'types';
 
 const initialState: TicketsSliceState = {
     fetchCarriagesDetails: requestInitial(),
@@ -21,18 +19,6 @@ const initialState: TicketsSliceState = {
     selectedSeats: [],
     ticketsCount: {},
     passengers: [],
-    passengersFormState: {
-        isAdult: AgeEnum.ADULT,
-        gender: GenderEnum.MALE,
-        firsName: '',
-        lastName: '',
-        birthday: '',
-        documentType: DocumentTypeEnum.PASSPORT,
-        documentData: '',
-        documentNumber: '',
-        documentSeries: '',
-        limitedMobility: false,
-    },
 };
 
 const ticketsSlice = createSlice({
@@ -48,8 +34,16 @@ const ticketsSlice = createSlice({
         setTicketsCount: (state, action: PayloadAction<TicketsCount>) => {
             state.ticketsCount = action.payload;
         },
-        setPassengersFormDate: (state, action: PayloadAction<PassengerFormState>) => {
-            state.passengersFormState = action.payload;
+        setPassengersDate: (state, action: PayloadAction<PassengerDataState>) => {
+            const key = Object.keys(action.payload)[0];
+            console.log(state.passengers, key);
+
+            const existingIndex = state.passengers.findIndex(passenger => passenger.hasOwnProperty(key));
+            if (existingIndex !== -1) {
+                state.passengers[existingIndex] = action.payload;
+            } else {
+                state.passengers = [...state.passengers, action.payload];
+            }
         },
     },
     extraReducers: builder => composeBuilder(builder, [fetchCarriagesDetailsThunk]),

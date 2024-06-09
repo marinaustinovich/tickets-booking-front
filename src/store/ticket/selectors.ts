@@ -1,5 +1,6 @@
 import { AppState } from 'store';
 import { createSelector } from 'reselect';
+import { PassengerDataState } from 'types';
 
 const SearchSelector = (state: AppState) => state.search.tickets;
 
@@ -24,5 +25,19 @@ export const selectedSeatsSelector = createSelector([fetchSelectedSeatsDataSelec
 const fetchTicketsCountDataSelector = (state: AppState) => SearchSelector(state).ticketsCount;
 export const ticketsCountSelector = createSelector([fetchTicketsCountDataSelector], ticketsCountData => ticketsCountData ?? {});
 
-const fetchPassengersFormSelector = (state: AppState) => SearchSelector(state).passengersFormState;
-export const passengersFormDataSelector = createSelector([fetchPassengersFormSelector], passengersFormData => passengersFormData ?? {});
+// const fetchPassengersDataSelector = (state: AppState) => SearchSelector(state).passengers;
+// export const passengersDataSelector = createSelector([fetchPassengersDataSelector], passengersData => passengersData ?? []);
+const fetchPassengersDataSelector = (state: AppState) => {
+    const result = SearchSelector(state).passengers;
+    const a = SearchSelector(state);
+    console.log('fetchPassengersFormSelector result:', a, result);
+    return result;
+};
+
+export const passengersDataSelector = (key: string) => {
+    return createSelector([fetchPassengersDataSelector], (passengers: PassengerDataState[]) => {
+        const passengerData = passengers.find(passenger => passenger.key === key);
+        
+        return passengerData || {};
+    });
+};

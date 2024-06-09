@@ -1,6 +1,6 @@
 import { AgeEnum, DocumentTypeEnum, GenderEnum } from 'enums';
 
-export type PassengerFormState = {
+export type PassengerFormState = Partial<{
     isAdult: AgeEnum;
     gender: GenderEnum;
     firsName: string;
@@ -11,7 +11,11 @@ export type PassengerFormState = {
     documentNumber: string;
     documentSeries: string;
     limitedMobility: boolean;
-};
+}>;
+
+export type PassengerDataState = {
+    [key: string]: PassengerFormState;
+  };
 
 export type PersonInfo = {
     is_adult: boolean;

@@ -1,4 +1,10 @@
 .passenger-content {
- 
-    
+    &__passenger-list {
+        display: grid;
+        gap: 44px;
+
+        & > button {
+            justify-self: end;
+        }
+    }
 }
